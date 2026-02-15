@@ -100,15 +100,22 @@
   </section>
 
   <!-- ================= KONTAKT ================= -->
-  <section id="kontakt" class="section section-light">
-    <div class="container">
-      <h2>Kontakt</h2>
-      <form class="contact-form">
-        <input type="text" placeholder="Name" required />
-        <input type="email" placeholder="E-Mail" required />
-        <textarea placeholder="Nachricht"></textarea>
-        <button type="submit" class="btn-primary">Absenden</button>
-      </form>
+    <form class="contact-form reveal" action="https://formspree.io/f/xaqdoazq" method="POST">
+      <h2>Kontakt aufnehmen</h2>
+      
+      <div class="form-row">
+        <input type="text" name="vorname" placeholder="Vorname *" required>
+        <input type="text" name="nachname" placeholder="Nachname *" required>
+      </div>
+
+      <div class="form-row">
+        <input type="email" name="email" placeholder="E-Mail *" required>
+      </div>
+
+      <textarea name="nachricht" placeholder="Deine Nachricht an uns *" required></textarea>
+
+      <button type="submit" class="btn-primary">Absenden</button>
+    </form>
     </div>
   </section>
 
