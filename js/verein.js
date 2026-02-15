@@ -1,55 +1,44 @@
-// ===== Timeline Animation =====
 document.addEventListener("DOMContentLoaded", () => {
-  const reveals = document.querySelectorAll(".reveal");
+  
+  // HINWEIS: Die Reveal-Animation wird global über mobile-nav.js gesteuert.
+  // Hier kümmern wir uns nur um die spezifischen Zahlen-Animationen.
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
+  // ===== STATS COUNTER ANIMATION =====
+  const counters = document.querySelectorAll('.count');
+  
+  // Wir nutzen einen Observer, damit die Animation erst startet, wenn sichtbar
+  const counterObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        
+        // Werte auslesen
+        const target = +counter.getAttribute('data-target'); // "+" wandelt string in nummer
+        const hasPlus = counter.getAttribute('data-plus') === "true";
+        
+        const duration = 2000; // 2 Sekunden Animationsdauer
+        const increment = target / (duration / 16); // 60 FPS
 
-  reveals.forEach(el => observer.observe(el));
+        let currentCount = 0;
 
+        const updateCounter = () => {
+          currentCount += increment;
+
+          if (currentCount < target) {
+            // Zahl runden für saubere Anzeige
+            counter.innerText = Math.ceil(currentCount);
+            requestAnimationFrame(updateCounter);
+          } else {
+            // Ziel erreicht -> Finalen Wert setzen + optionales Plus
+            counter.innerText = target + (hasPlus ? "+" : "");
+          }
+        };
+
+        updateCounter();
+        observer.unobserve(counter); // Nur einmal animieren
+      }
+    });
+  }, { threshold: 0.5 }); // Startet, wenn 50% sichtbar
+
+  counters.forEach(c => counterObserver.observe(c));
 });
-
-// ===== STATS Animation =====
-
-const counters = document.querySelectorAll('.count');
-
-const options = {
-  threshold: 0.5
-};
-
-const counterObserver = new IntersectionObserver(function(entries, observer){
-  entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      const el = entry.target;
-      const target = parseInt(el.getAttribute('data-target'));
-      let count = 0;
-      const duration = 1500; // Dauer in ms
-      const increment = target / (duration / 16); // ~60fps
-
-      const updateCount = () => {
-        count += increment;
-        if(count >= target) count = target;
-
-        // Für alle Counter ein Plus anhängen, wenn Ziel erreicht
-        el.textContent = Math.floor(count) + (count === target ? " +" : "");
-
-        if(count < target) {
-          requestAnimationFrame(updateCount);
-        }
-      };
-
-      updateCount();
-      observer.unobserve(el);
-    }
-  });
-}, options);
-
-counters.forEach(counter => counterObserver.observe(counter));

@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unser Verein – SV Grün-Weiß Lehrte 1946 e.V.</title>
 
-  <!-- Global -->
+  <!-- Global Styles -->
   <link rel="stylesheet" href="../css/style.css">
-  <!-- Vereinsseite -->
+  <!-- Spezifische Styles für diese Seite -->
   <link rel="stylesheet" href="../css/verein.css">
 </head>
 <body>
 
-<!-- HEADER -->   
+<!-- HEADER (Identisch zur Startseite, Pfade angepasst) -->   
 <header class="site-header">
   <div class="header-inner container">
 
@@ -23,27 +23,29 @@
           alt="SV Grün-Weiß Lehrte"
           class="brand-logo"
         >
-        <span class="brand-name">SV Grün-Weiß Lehrte 1946 e.V.</span>
+        <span class="brand-name">SV Grün-Weiß Lehrte</span>
       </a>
     </div>
 
     <nav class="main-nav">
       <ul>
         <li><a href="../index.html">Start</a></li>
-        <li><a href="#verein">Verein</a></li>
-        <li><a href="../index.html#sportangebot">Sportangebot</a></li>
+        <!-- Aktiv-Status für aktuelle Seite -->
+        <li><a href="#verein" style="color:var(--green-dark)">Verein</a></li>
+        <li><a href="../index.html#sport">Sportangebot</a></li>
         <li><a href="../index.html#kontakt">Kontakt</a></li>
       </ul>
     </nav>
 
-    <button class="nav-toggle" aria-label="Menü öffnen"></button>
-
+    <button class="nav-toggle" aria-label="Menü öffnen">☰</button>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="verein-hero">
-  <div class="hero-bg"></div>
+  <!-- Gleiche Klasse wie Index für Parallax-Effekt -->
+  <img src="../assets/images/hero.png" alt="" class="hero-bg" />
+  
   <div class="hero-content reveal">
     <h1>Unser Verein</h1>
     <p>Gemeinschaft. Tradition. Sport seit 1946.</p>
@@ -53,24 +55,20 @@
 <!-- TEXT -->
 <section class="verein-section section" id="verein">
   <div class="container verein-intro">
+    <span class="verein-eyebrow reveal">Seit 1946 ein Zuhause für Sport & Gemeinschaft</span>
 
-  <span class="verein-eyebrow reveal">
-    Seit 1946 ein Zuhause für Sport & Gemeinschaft
-  </span>
+    <h2 class="reveal">
+      Mehr als ein Verein.<br>
+      Ein Stück Lehrte.
+    </h2>
 
-  <h2 class="reveal">
-    Mehr als ein Verein.<br>
-    Ein Stück Lehrte.
-  </h2>
-
-  <p class="reveal reveal-delay">
-    Seit unserer Gründung im Jahr 1946 steht der SV Grün-Weiß Lehrte
-    für Zusammenhalt, Leidenschaft und sportliche Vielfalt.
-    Generationen von Mitgliedern haben unseren Verein geprägt –
-    und tun es bis heute.
-  </p>
-
-</div>
+    <p class="reveal reveal-delay">
+      Seit unserer Gründung im Jahr 1946 steht der SV Grün-Weiß Lehrte
+      für Zusammenhalt, Leidenschaft und sportliche Vielfalt.
+      Generationen von Mitgliedern haben unseren Verein geprägt –
+      und tun es bis heute.
+    </p>
+  </div>
 </section>
 
 <!-- TIMELINE -->
@@ -80,86 +78,95 @@
     <h2 class="section-title reveal">Unsere Geschichte</h2>
 
     <div class="timeline-list">
-    <div class="timeline-item reveal">
-      <span class="year">1946</span>
-      <p>Gründung des SV Grün-Weiß Lehrte</p>
-    </div>
-    <div class="timeline-item reveal">
-      <span class="year">1970</span>
-      <p>Ausbau des Sportangebots</p>
-    </div>
-    <div class="timeline-item reveal">
-      <span class="year">2000</span>
-      <p>Strukturelle Modernisierung</p>
-    </div>
-    <div class="timeline-item reveal">
-      <span class="year">Heute</span>
-      <p>Lebendiger Verein mit breitem Angebot</p>
+      <!-- Item 1 -->
+      <div class="timeline-item reveal">
+        <span class="year">1946</span>
+        <p>Gründung des SV Grün-Weiß Lehrte</p>
+      </div>
+      <!-- Item 2 -->
+      <div class="timeline-item reveal">
+        <span class="year">1970</span>
+        <p>Ausbau des Sportangebots & neue Halle</p>
+      </div>
+      <!-- Item 3 -->
+      <div class="timeline-item reveal">
+        <span class="year">2000</span>
+        <p>Strukturelle Modernisierung des Vereins</p>
+      </div>
+      <!-- Item 4 -->
+      <div class="timeline-item reveal">
+        <span class="year">Heute</span>
+        <p>Lebendiger Verein mit über 500 Mitgliedern</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- STATS -->
 <section class="stats-section section">
-  <div class="stats">
+  <div class="container">
     <div class="stats-grid">
+      <!-- data-plus="true" sorgt für das "+" Zeichen im JS -->
       <div class="stat reveal">
         <strong class="count" data-target="500" data-plus="true">0</strong>
         <p>Mitglieder</p>
       </div>
       <div class="stat reveal">
-            <strong class="count" data-target="3">0</strong>
-            <p>Sparten</p>
+        <strong class="count" data-target="8">0</strong>
+        <p>Sparten</p>
       </div>
-        <div class="stat reveal">
-        <strong class="count" data-target="40">0</strong>
-        <p>Ehrenamtiliche</p>
-        </div>
+      <div class="stat reveal">
+        <strong class="count" data-target="40" data-plus="true">0</strong>
+        <p>Ehrenamtliche</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- KONTAKT -->
-<section class="contact-section section">
+<section class="contact-section section section-light">
   <div class="container contact-grid">
-    <!-- FORMULAR LINKS -->
-    <form class="contact-form reveal" action="../php/send-mail.php" method="POST" id="contactForm">
-      <h2>Kontakt</h2>
-
-      <!-- Honeypot für Spam-Schutz -->
-      <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-
-      <!-- Vorname + Nachname -->
+    
+    <!-- FORMULAR 
+         WICHTIG: action="https://formspree.io/f/DEINE_FORMSPREE_ID" nutzen 
+         oder vorerst leer lassen. PHP funktioniert auf GitHub Pages NICHT.
+    -->
+    <form class="contact-form reveal" action="https://formspree.io/f/PLACEHOLDER" method="POST">
+      <h2>Kontakt aufnehmen</h2>
+      
       <div class="form-row">
         <input type="text" name="vorname" placeholder="Vorname *" required>
         <input type="text" name="nachname" placeholder="Nachname *" required>
       </div>
 
-      <!-- E-Mail + Telefon -->
       <div class="form-row">
         <input type="email" name="email" placeholder="E-Mail *" required>
-        <input type="tel" name="telefon" placeholder="Telefon">
       </div>
 
-      <!-- Nachricht -->
-      <div class="form-row">
-        <textarea name="nachricht" placeholder="Nachricht *" maxlength="500" required></textarea>
-      </div>
+      <textarea name="nachricht" placeholder="Deine Nachricht an uns *" required></textarea>
 
-      <!-- Absenden Button -->
       <button type="submit" class="btn-primary">Absenden</button>
     </form>
 
-    <!-- MAP RECHTS -->
+    <!-- MAP -->
     <div class="contact-map reveal">
       <iframe
-        src="https://www.google.de/maps/embed?pb=!1m18!1m12!1m3!1d2428.057896000186!2d7.39958281592545!3d52.673576279020754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b79a556179cae5%3A0x1987748366647113!2sSV+Gr%C3%BCn-Weiß+Lehrte+1946+e.V.!5e0!3m2!1sde!2sde!4v1695654321012!5m2!1sde!2sde"
-        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        title="Google Maps Standort"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.057896000186!2d7.39958281592545!3d52.673576279020754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b79a556179cae5%3A0x1987748366647113!2sSV+Gr%C3%BCn-Weiß+Lehrte+1946+e.V.!5e0!3m2!1sde!2sde!4v1695654321012!5m2!1sde!2sde"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 SV Grün-Weiß Lehrte 1946 e.V.</p>
+  </div>
+</footer>
+
+<!-- JS -->
 <script src="../js/mobile-nav.js"></script>
 <script src="../js/verein.js"></script>
 
