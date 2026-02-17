@@ -1,4 +1,5 @@
 /* ===== RESET ===== */
+
 :root {
   /* Vereinsfarben */
   --green-main: #0b6b3a;
@@ -19,6 +20,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 html {
@@ -43,6 +49,11 @@ body {
 
 .section-light {
   background: var(--gray-light);
+}
+
+/* Sorgt dafür, dass der Browser beim Klick Abstand zum Header hält */
+section[id] {
+  scroll-margin-top: 120px;
 }
 
 h1, h2, h3 {
@@ -194,6 +205,28 @@ h1, h2, h3 {
   text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
+/* Animation für Spans */
+.hero-title span,
+.hero-subline span {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroLineIn 0.8s forwards;
+}
+
+.hero-title span:nth-child(1) { animation-delay: 0.2s; }
+.hero-title span:nth-child(2) { animation-delay: 0.4s; }
+.hero-subline span:nth-child(1) { animation-delay: 0.6s; }
+.hero-subline span:nth-child(2) { animation-delay: 0.8s; }
+.hero-subline span:nth-child(3) { animation-delay: 1s; }
+
+@keyframes heroLineIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Button Styles */
 .btn-primary {
   display: inline-block;
@@ -208,10 +241,23 @@ h1, h2, h3 {
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+  
+  /* Animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroButtonIn 0.8s forwards;
+  animation-delay: 1.2s;
+}
+
+@keyframes heroButtonIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
+  transform: scale(1.05); /* Skaliert leicht beim Hover, überschreibt aber nicht animation komplett */
   box-shadow: 0 8px 25px rgba(11, 107, 58, 0.6);
   background-color: var(--green-dark);
 }
@@ -250,6 +296,41 @@ h1, h2, h3 {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* ===== ANPASSUNG "DER VEREIN" (Stil-Angleichung) ===== */
+/* Wir nutzen die gleichen Fonts wie bei .section-header, aber linksbündig */
+
+.club-text .section-eyebrow {
+  /* Gleicher Stil wie global, aber kein Margin-Auto */
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--green-main);
+  margin-bottom: 0.5rem;
+}
+
+.club-text h2 {
+  /* Gleiche Größe wie die anderen Headlines */
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  position: relative;
+}
+
+/* Unterstrich linksbündig statt zentriert */
+.club-text h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--green-main);
+  margin-top: 1rem; /* Abstand nach unten */
+  border-radius: 2px;
 }
 
 /* Scroll Reveal Klassen */
@@ -359,4 +440,325 @@ h1, h2, h3 {
     opacity: 1;
     pointer-events: auto;
   }
+
+} /* ENDE MEDIA QUERY MAX-WIDTH 768PX - WICHTIG! */
+
+
+/* ===== SPORTANGEBOT (MODERN GRID - GLOBAL) ===== */
+/* ===== NEUE STYLISCHE HEADLINE ===== */
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding: 0 1rem;
+}
+
+/* "Eyebrow" - Der kleine Text darüber */
+.section-eyebrow {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--green-main);
+  margin-bottom: 0.5rem;
+}
+
+/* Die Haupt-Headline */
+.section-header h2 {
+  font-size: clamp(2rem, 5vw, 3rem); /* Responsive Größe */
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+/* Dekorativer Unterstrich */
+.section-header h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--green-main);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 1rem;
+}
+
+.sports-grid {
+  display: grid;
+  gap: 1.5rem;
+  /* Standard (Mobile): 1 Spalte */
+  grid-template-columns: 1fr;
+}
+
+/* Tablet: Schönes 2x2 Grid */
+@media (min-width: 600px) {
+  .sports-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Desktop: Alle 4 nebeneinander */
+@media (min-width: 1100px) {
+  .sports-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.sport-card {
+  position: relative;
+  display: block;
+  height: 320px;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--white);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hintergrundbild (Zoom Effekt) */
+.sport-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-color: #ccc; /* Fallback Farbe */
+  transition: transform 0.6s ease;
+}
+
+/* Gradient Overlay für Lesbarkeit - etwas stärker machen für guten Kontrast */
+.sport-overlay {
+  position: absolute;
+  inset: 0;
+  /* Verlauf von transparent (oben) zu dunklem Grün (unten) */
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 107, 58, 0.2) 0%, 
+    rgba(9, 82, 44, 0.8) 60%,
+    rgba(9, 82, 44, 0.95) 100%
+  );
+  transition: background 0.3s ease;
+  z-index: 1;
+}
+
+/* Inhalt nach vorne holen */
+.sport-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  z-index: 2; /* Wichtig: Über dem Watermark */
+}
+
+
+.sport-card h3 {
+  font-size: 2rem;      
+  font-weight: 800;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Stärkerer Schatten für Lesbarkeit */
+  margin-bottom: 1rem;
+  transform: translateY(10px); /* Startposition leicht unten */
+  transition: transform 0.3s ease;
+}
+
+/* Beim Hover hebt sich der Text leicht */
+.sport-card:hover h3 {
+  transform: translateY(0);
+}
+
+.btn-text {
+  background: var(--green-main);
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  /* Der Button ist immer sichtbar, nicht nur beim Hover */
+  opacity: 1; 
+  transform: translateX(0);
+}
+
+/* HOVER EFFEKTE */
+.sport-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-strong);
+}
+
+.sport-card:hover .btn-text {
+  background: var(--white);
+  color: var(--green-main);
+}
+
+/* Beim Hover wird das Bild rangezoomt */
+.sport-card:hover .sport-bg {
+  transform: scale(1.1);
+}
+
+.sport-card:hover .sport-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(9, 82, 44, 0.95) 0%,
+    rgba(9, 82, 44, 0.6) 100%
+  );
+}
+
+/* Beim Hover bewegt sich das Watermark leicht */
+.sport-card:hover .sport-watermark {
+  transform: rotate(0deg) scale(1.1); /* Dreht sich gerade und wird größer */
+  opacity: 0.25; /* Wird etwas sichtbarer */
+}
+
+.sport-card:hover .btn-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===== NEWS SLIDER (HORIZONTAL SCROLL) ===== */
+.news-scroller {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 2rem; /* Platz für Scrollbar */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Smooth scroll iOS */
+}
+
+/* Scrollbar Styles (optional, Chrome/Safari) */
+.news-scroller::-webkit-scrollbar {
+  height: 8px;
+}
+.news-scroller::-webkit-scrollbar-thumb {
+  background: var(--green-light);
+  border-radius: 10px;
+}
+.news-scroller::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+.news-card {
+  flex: 0 0 300px; /* Feste Breite pro Karte */
+  scroll-snap-align: start;
+  background: var(--white);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-image {
+  height: 180px;
+  position: relative;
+  background-color: #ddd;
+}
+
+.news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-date {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--white);
+  color: var(--green-dark);
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.news-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.news-category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--green-main);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.news-body h3 {
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.news-body p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.news-link {
+  text-decoration: none;
+  color: var(--green-main);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.news-link:hover {
+  text-decoration: underline;
+}
+
+/* Kontakt Grid CSS */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-map {
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+  
+/* Fallback, falls Bilder fehlen */
+img {
+  background-color: #e0e0e0;
+}
+.sport-bg {
+  background-color: var(--green-dark);
 }
