@@ -135,17 +135,15 @@
     </div>
   </section>
 
-  <!-- ================= NEWS SLIDER (NEU) ================= -->
-<section id="news" class="section section-light">
+<!-- ================= NEWS SLIDER ================= -->
+  <section id="news" class="section section-light">
     <div class="container">
       
-      <!-- NEUER HEADER STYLE -->
       <div class="section-header reveal">
         <span class="section-eyebrow">Bleib informiert</span>
         <h2>Aktuelles aus dem Verein</h2>
       </div>
 
-      <!-- Horizontaler Scroll Container -->
       <div class="news-scroller reveal">
         
         <!-- News 1 -->
@@ -158,49 +156,60 @@
             <span class="news-category">Fußball</span>
             <h3>Großer Erfolg beim Herbstturnier</h3>
             <p>Unsere 1. Herren haben sich im spannenden Finale durchgesetzt...</p>
-            <a href="#" class="news-link">Weiterlesen</a>
+            
+            <!-- Der Link trägt jetzt die Daten -->
+            <a href="#" class="news-link" 
+               data-image="assets/images/news1.jpg"
+               data-date="12. Oktober 2026"
+               data-category="Fußball"
+               data-title="Großer Erfolg beim Herbstturnier"
+               data-description="Es war ein Spiel für die Geschichtsbücher! Unsere 1. Herren haben sich im spannenden Finale gegen den TV Musterstadt mit 3:2 durchgesetzt. <br><br>Besonders hervorzuheben ist die Leistung unseres Torwarts, der in der letzten Minute einen Elfmeter hielt. Danke an alle Fans, die uns lautstark unterstützt haben! Das nächste Spiel findet am kommenden Sonntag statt.">
+               Weiterlesen
+            </a>
           </div>
         </article>
 
         <!-- News 2 -->
         <article class="news-card">
           <div class="news-image">
-             <img src="assets/images/news2.jpg" alt="Jahreshauptversammlung">
+             <img src="assets/images/news2.jpg" alt="Versammlung">
              <span class="news-date">05. Sep</span>
           </div>
           <div class="news-body">
             <span class="news-category">Verein</span>
             <h3>Einladung zur Jahreshauptversammlung</h3>
             <p>Wir laden alle Mitglieder herzlich zur diesjährigen Versammlung ein.</p>
-            <a href="#" class="news-link">Weiterlesen</a>
+            
+            <a href="#" class="news-link" 
+               data-image="assets/images/news2.jpg"
+               data-date="05. September 2026"
+               data-category="Verein"
+               data-title="Einladung zur Jahreshauptversammlung"
+               data-description="Liebe Mitglieder,<br>am 20. September findet um 19:00 Uhr unsere Jahreshauptversammlung im Vereinsheim statt.<br><br><strong>Tagesordnung:</strong><br>1. Begrüßung<br>2. Bericht des Vorstands<br>3. Neuwahlen<br>4. Sonstiges<br><br>Wir bitten um zahlreiches Erscheinen. Für Getränke und Snacks ist gesorgt.">
+               Weiterlesen
+            </a>
           </div>
         </article>
 
         <!-- News 3 -->
         <article class="news-card">
           <div class="news-image">
-             <img src="assets/images/news3.jpg" alt="Yoga Kurs">
+             <img src="assets/images/news3.jpg" alt="Yoga">
              <span class="news-date">28. Aug</span>
           </div>
           <div class="news-body">
             <span class="news-category">Fitness</span>
             <h3>Neue Yoga-Kurse starten ab November</h3>
             <p>Melde dich jetzt an und sichere dir einen Platz im neuen Kurs.</p>
-            <a href="#" class="news-link">Weiterlesen</a>
-          </div>
-        </article>
-
-         <!-- News 4 -->
-         <article class="news-card">
-          <div class="news-image">
-             <img src="assets/images/news4.jpg" alt="Jugendcamp">
-             <span class="news-date">15. Aug</span>
-          </div>
-          <div class="news-body">
-            <span class="news-category">Jugend</span>
-            <h3>Sommercamp 2026: Anmeldung offen</h3>
-            <p>Für alle Kinder und Jugendlichen von 8 bis 14 Jahren.</p>
-            <a href="#" class="news-link">Weiterlesen</a>
+            
+            <a href="#" class="news-link" 
+               data-image="assets/images/news3.jpg"
+               data-date="28. August 2026"
+               data-category="Fitness"
+               data-title="Neue Yoga-Kurse starten"
+               data-description="Entspannung für Körper und Geist. Ab dem 1. November starten unsere neuen Kurse für Anfänger und Fortgeschrittene.<br><br>Wann: Immer Dienstags, 18:00 - 19:30 Uhr<br>Wo: Gymnastikhalle 2<br>Leitung: Anna Musterfrau<br><br>Anmeldung bitte per Mail an fitness@sv-gruen-weiss.de">
+               Weiterlesen
+            </a>
           </div>
         </article>
 
@@ -249,7 +258,28 @@
     </div>
   </footer>
 
+<!-- ================= NEWS MODAL (VERSTECKT) ================= -->
+  <div id="news-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Schließen">&times;</button>
+      
+      <div class="modal-header">
+        <img src="" alt="" id="modal-image" class="modal-img">
+        <span id="modal-date" class="modal-date-badge">Datum</span>
+      </div>
+      
+      <div class="modal-body">
+        <span id="modal-category" class="section-eyebrow">Kategorie</span>
+        <h3 id="modal-title">Überschrift</h3>
+        <div id="modal-text" class="modal-text-content">
+          <!-- Hier kommt der lange Text rein -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <!-- JS -->
   <script src="js/mobile-nav.js"></script>
+  <script src="js/news-modal.js"></script>
 </body>
 </html>

@@ -772,3 +772,114 @@ img {
   /* Sicherheitsabstand, falls es zu sehr am Rand klebt */
   margin-right: 0.5rem;
 }
+
+/* ===== NEWS MODAL (POPUP) ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7); /* Dunkler Hintergrund */
+  backdrop-filter: blur(5px);      /* Milchglas-Effekt */
+  z-index: 2000;                   /* Über allem anderen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  
+  /* Standardmäßig unsichtbar */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--white);
+  width: 100%;
+  max-width: 600px;
+  max-height: 85vh; /* Nicht höher als Bildschirm */
+  border-radius: 1.5rem;
+  overflow-y: auto; /* Scrollbar wenn Text zu lang */
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  transform: translateY(50px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.modal-close:hover {
+  background: var(--green-main);
+}
+
+.modal-header {
+  position: relative;
+  height: 250px;
+}
+
+.modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-date-badge {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: var(--white);
+  color: var(--green-dark);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-body h3 {
+  font-size: 1.8rem;
+  line-height: 1.2;
+  margin: 0.5rem 0 1.5rem;
+  color: var(--text-dark);
+}
+
+.modal-text-content {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Scrollbar im Modal hübsch machen */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
