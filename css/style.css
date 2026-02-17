@@ -789,6 +789,10 @@ img {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    /* Neuer Zusatz für iOS Performance: */
+  -webkit-overflow-scrolling: touch;
+  cursor: pointer; /* Hilft iOS zu verstehen, dass hier geklickt werden kann */
 }
 
 .modal-overlay.active {
@@ -882,4 +886,44 @@ img {
 .modal-content::-webkit-scrollbar-thumb {
   background-color: #ccc;
   border-radius: 4px;
+}
+
+/* ===== FOOTER UPDATE ===== */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.social-icon {
+  color: rgba(255,255,255,0.7);
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon:hover {
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+.footer-nav a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  margin: 0 0.8rem;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+  color: var(--white);
+  text-decoration: underline;
 }

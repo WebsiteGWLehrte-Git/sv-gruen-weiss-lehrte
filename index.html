@@ -5,7 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SV Grün-Weiß Lehrte 1946 e.V.</title>
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/images/logos/logo.svg">
+<!-- Fallback für uralte Browser (optional, falls du eine .ico hast) -->
+<link rel="alternate icon" href="favicon.ico">
+
 </head>
+
+
 <body>
   <!-- Mobile Menü Overlay -->
   <div class="menu-overlay"></div>
@@ -248,15 +256,29 @@
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="site-footer">
-    <div class="container footer-content" style="display:flex; flex-direction:column; align-items:center; gap:1rem;">
-      <p>© 2026 SV Grün-Weiß Lehrte 1946 e.V.</p>
-      <nav class="footer-nav">
-        <a href="pages/impressum.html" style="color:#fff; margin:0 10px; text-decoration:none; opacity:0.7;">Impressum</a>
-        <a href="pages/datenschutz.html" style="color:#fff; margin:0 10px; text-decoration:none; opacity:0.7;">Datenschutz</a>
-      </nav>
+<footer class="site-footer">
+  <div class="container footer-content">
+    
+    <!-- Social Media Icons (SVG direkt eingebettet für Performance) -->
+    <div class="social-links">
+      <!-- Instagram -->
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      </a>
+      <!-- Facebook -->
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+      </a>
     </div>
-  </footer>
+
+    <p>© 2026 SV Grün-Weiß Lehrte 1946 e.V.</p>
+    
+    <nav class="footer-nav">
+      <a href="pages/impressum.html">Impressum</a>
+      <a href="pages/datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
 
 <!-- ================= NEWS MODAL (VERSTECKT) ================= -->
   <div id="news-modal" class="modal-overlay">

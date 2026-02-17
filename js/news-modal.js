@@ -1,21 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('news-modal');
   const modalClose = document.querySelector('.modal-close');
-  const newsLinks = document.querySelectorAll('.news-link');
-
-  // Modal Elemente zum Befüllen
+  
+  // Elemente im Modal
   const modalImg = document.getElementById('modal-image');
   const modalDate = document.getElementById('modal-date');
   const modalCategory = document.getElementById('modal-category');
   const modalTitle = document.getElementById('modal-title');
   const modalText = document.getElementById('modal-text');
 
-  // Öffnen
-  newsLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault(); // Verhindert das Neuladen der Seite
+  // === ROBUSTE KLICK-ERKENNUNG (Event Delegation) ===
+  // Wir hören auf Klicks auf der GANZEN Seite. Das fixt das iPhone-Problem.
+  document.addEventListener('click', (e) => {
+    
+    // Prüfen: Wurde ein Element mit der Klasse "news-link" (oder dessen Kinder) geklickt?
+    const link = e.target.closest('.news-link');
 
-      // Daten aus den Attributen holen
+    if (link) {
+      e.preventDefault(); // Verhindert das Springen nach oben
+
+      // Daten auslesen
       const image = link.getAttribute('data-image');
       const date = link.getAttribute('data-date');
       const category = link.getAttribute('data-category');
@@ -23,38 +27,39 @@ document.addEventListener('DOMContentLoaded', () => {
       const description = link.getAttribute('data-description');
 
       // Modal befüllen
-      modalImg.src = image;
-      modalDate.textContent = date;
-      modalCategory.textContent = category;
-      modalTitle.textContent = title;
-      // innerHTML statt textContent, damit wir <br> nutzen können
-      modalText.innerHTML = description; 
+      if(modalImg) modalImg.src = image;
+      if(modalDate) modalDate.textContent = date;
+      if(modalCategory) modalCategory.textContent = category;
+      if(modalTitle) modalTitle.textContent = title;
+      if(modalText) modalText.innerHTML = description; 
 
-      // Modal anzeigen
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Scrollen im Hintergrund verhindern
-    });
+      // Modal öffnen
+      if(modal) modal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Scrollen der Seite sperren
+    }
   });
 
-  // Schließen Funktion
+  // === SCHLIEßEN LOGIK ===
   const closeModal = () => {
-    modal.classList.remove('active');
+    if(modal) modal.classList.remove('active');
     document.body.style.overflow = ''; // Scrollen wieder erlauben
   };
 
   // Klick auf X
-  modalClose.addEventListener('click', closeModal);
+  if(modalClose) modalClose.addEventListener('click', closeModal);
 
-  // Klick neben das Modal (auf den dunklen Hintergrund)
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
+  // Klick auf den Hintergrund (Overlay)
+  if(modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  }
 
-  // Schließen mit ESC-Taste
+  // ESC Taste
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
       closeModal();
     }
   });
