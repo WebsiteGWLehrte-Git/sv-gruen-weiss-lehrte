@@ -762,3 +762,13 @@ img {
 .sport-bg {
   background-color: var(--green-dark);
 }
+
+/* ===== LOGO ===== */
+.brand-logo {
+  /* Überschreibt den grauen Hintergrund */
+  background-color: transparent !important; 
+  /* Stellt sicher, dass die Proportionen stimmen */
+  object-fit: contain;
+  /* Sicherheitsabstand, falls es zu sehr am Rand klebt */
+  margin-right: 0.5rem;
+}
