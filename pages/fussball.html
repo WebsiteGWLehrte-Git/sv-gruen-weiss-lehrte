@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fußball – SV Grün-Weiß Lehrte</title>
+  
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- Sparten Styles -->
+  <link rel="stylesheet" href="../css/sparte.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logos/logo.svg">
+
+  <!-- FUSSBALL.DE WIDGET SCRIPT (Nur hier!) -->
+  <script type="text/javascript" src="https://www.fussball.de/widgets.js"></script>
+</head>
+<body>
+  <!-- Overlay für Mobile Menü -->
+  <div class="menu-overlay"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="../index.html" class="brand-link">
+          <img src="../assets/images/logos/logo.svg" alt="Logo" class="brand-logo">
+          <span class="brand-name">SV Grün-Weiß Lehrte</span>
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html">Startseite</a></li>
+          <li><a href="../index.html#sport">Zurück zum Sportangebot</a></li>
+          <li><a href="#teams">Teams</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Menü öffnen">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="sparte-hero">
+    <!-- Bild: Platzhalter Fußball -->
+    <img src="../assets/images/sport-fussball.jpg" alt="Fußball im SV GW Lehrte" class="hero-bg">
+    <div class="hero-overlay"></div>
+    
+    <div class="container hero-content reveal">
+      <span class="sparte-badge">Sparte Fußball</span>
+      <h1>Die Nummer 1<br>im Herzschlag.</h1>
+      <p>Von den Minikickern bis zu den Alten Herren – wir leben Fußball.</p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container intro-grid">
+      <div class="intro-text reveal">
+        <h2>Leidenschaft auf dem Platz.</h2>
+        <p>
+          Unsere Fußballsparte ist das Herzstück des Vereins. Mit über 15 Mannschaften
+          bieten wir fußballerische Heimat für jeden Anspruch – egal ob leistungsorientiert
+          in der 1. Herren oder spaßbetont im Jugendbereich.
+        </p>
+        <ul class="check-list">
+          <li>Modernes Kunstrasen-Kleinfeld</li>
+          <li>Zwei große Rasenplätze</li>
+          <li>Lizenziertes Trainerteam</li>
+        </ul>
+      </div>
+      <div class="intro-stat reveal reveal-delay">
+        <div class="stat-box">
+          <span class="stat-number">300+</span>
+          <span class="stat-label">Aktive Kicker</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">15</span>
+          <span class="stat-label">Teams</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANNSCHAFTEN (TEAMS) -->
+  <section id="teams" class="section section-light">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Unsere Kader</span>
+        <h2>Die Mannschaften</h2>
+      </div>
+
+      <div class="teams-grid">
+        
+        <!-- 1. Herren -->
+        <div class="team-card reveal">
+          <div class="team-image">
+            <img src="../assets/images/team-herren1.jpg" alt="1. Herren">
+            <span class="league-badge">Bezirksliga</span>
+          </div>
+          <div class="team-body">
+            <h3>1. Herren</h3>
+            <p>Ehrgeiziger Fußball mit klarem Ziel. Unser Aushängeschild am Sonntag.</p>
+            <div class="training-box">
+              <span class="training-label">Training:</span>
+              Di & Do | 19:00 - 20:30
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Herren -->
+        <div class="team-card reveal reveal-delay">
+          <div class="team-image">
+            <img src="../assets/images/team-herren2.jpg" alt="2. Herren">
+            <span class="league-badge">1. Kreisklasse</span>
+          </div>
+          <div class="team-body">
+            <h3>2. Herren</h3>
+            <p>Die perfekte Mischung aus sportlichem Ehrgeiz und starkem Teamgeist.</p>
+            <div class="training-box">
+              <span class="training-label">Training:</span>
+              Mi & Fr | 18:30 - 20:00
+            </div>
+          </div>
+        </div>
+
+        <!-- Damen -->
+        <div class="team-card reveal">
+          <div class="team-image">
+            <img src="../assets/images/team-damen.jpg" alt="Damen">
+            <span class="league-badge">Kreisliga</span>
+          </div>
+          <div class="team-body">
+            <h3>Damen</h3>
+            <p>Starke Leistung, starkes Team. Unsere Frauen spielen erfolgreich vorne mit.</p>
+            <div class="training-box">
+              <span class="training-label">Training:</span>
+              Mo & Mi | 19:00 - 20:30
+            </div>
+            
+            <!-- BUTTON LEISTE -->
+            <div class="team-actions">
+              <button class="btn-primary btn-sm" onclick="openWidgetModal()">
+                Nächstes Spiel
+              </button>
+              <button class="btn-secondary btn-sm" onclick="openTableModal()">
+                Tabelle
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alte Herren -->
+        <div class="team-card reveal reveal-delay">
+          <div class="team-image">
+            <img src="../assets/images/team-alteherren.jpg" alt="Alte Herren">
+            <span class="league-badge">Ü32 / Ü40</span>
+          </div>
+          <div class="team-body">
+            <h3>Alte Herren</h3>
+            <p>Erfahrung trifft Geselligkeit. Hier steht der Spaß im Fokus.</p>
+            <div class="training-box">
+              <span class="training-label">Training:</span>
+              Mi | 19:30 - 21:00
+            </div>
+          </div>
+        </div>
+
+        <!-- Jugend (Volle Breite) -->
+        <div class="team-card full-width reveal">
+          <div class="team-body">
+            <h3>Unsere Jugend</h3>
+            <p>
+              Unsere kleinsten Kicker ganz groß. Wir vermitteln Spaß am Ball, Teamgeist und Fairplay.<br>
+              Aktuell stellen wir Teams in der <strong>E-Jugend</strong>, <strong>F-Jugend</strong> und <strong>G-Jugend</strong> (Minis).
+            </p>
+            
+            <a href="https://jfv-haseluenne.de/" target="_blank" class="jfv-link">
+              Für ältere Jahrgänge kooperieren wir mit dem Jugendförderverein (JFV) Haselünne &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT / ANSPRECHPARTNER -->
+  <section id="kontakt" class="section">
+    <div class="container">
+      
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Kontaktdaten</span>
+        <h2>Unsere Ansprechpartner</h2>
+      </div>
+
+      <div class="contact-persons reveal">
+        
+        <!-- Person 1 -->
+        <div class="person-card">
+          <div class="person-avatar">
+            <img src="https://ui-avatars.com/api/?name=Max+Mustermann&background=0b6b3a&color=fff" alt="Spartenleiter">
+          </div>
+          <div class="person-info">
+            <h4>Max Mustermann</h4>
+            <span class="role">Spartenleiter</span>
+            <a href="mailto:fussball@sv-gruen-weiss.de" class="contact-link">fussball@sv-gruen-weiss.de</a>
+            <a href="tel:+49123456789" class="contact-link">0171 / 123 456 78</a>
+          </div>
+        </div>
+
+        <!-- Person 2 -->
+        <div class="person-card">
+          <div class="person-avatar">
+            <img src="https://ui-avatars.com/api/?name=Julia+Musterfrau&background=09522c&color=fff" alt="Jugendwartin">
+          </div>
+          <div class="person-info">
+            <h4>Julia Musterfrau</h4>
+            <span class="role">Jugendwartin</span>
+            <a href="mailto:jugend@sv-gruen-weiss.de" class="contact-link">jugend@sv-gruen-weiss.de</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© 2026 SV Grün-Weiß Lehrte 1946 e.V.</p>
+      <nav class="footer-nav">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ================= WIDGET MODAL (Nächstes Spiel) ================= -->
+  <div id="widget-modal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 500px; padding: 0;">
+      <button class="modal-close" onclick="closeWidgetModal()" style="top:10px; right:10px; z-index:100;">&times;</button>
+      
+      <div style="padding: 1.5rem; background:#f9f9f9; border-bottom:1px solid #eee;">
+        <h3 style="margin:0; font-size:1.2rem;">Damen: Nächstes Spiel</h3>
+      </div>
+
+      <div style="padding: 1rem; min-height: 250px;">
+        <div 
+          class="fussballde_widget"
+          data-id="3b337a9c-4e54-4169-a6d6-b91c47151036"
+          data-type="next-match"
+          style="width: 100%"
+        ></div>
+      </div>
+      
+      <div style="padding: 1rem; text-align:center; background:#f4f6f8;">
+        <a href="https://www.fussball.de/verein/gw-lehrte-niedersachsen/-/id/00ES8GN80K00001DVV0AG08LVUPGND5I#!/" target="_blank" style="font-size:0.8rem; color:#666;">
+          Datenquelle: FUSSBALL.DE
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TABELLEN MODAL ================= -->
+  <div id="table-modal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 800px; padding: 0;">
+      <button class="modal-close" onclick="closeTableModal()" style="top:10px; right:10px; z-index:100;">&times;</button>
+      
+      <div style="padding: 1.5rem; background:#f9f9f9; border-bottom:1px solid #eee;">
+        <h3 style="margin:0; font-size:1.2rem;">Damen: Aktuelle Tabelle</h3>
+      </div>
+
+      <div style="padding: 1rem; min-height: 300px; overflow-x: auto;">
+        <div 
+          class="fussballde_widget"
+          data-id="5677ef6f-af1d-46c7-b209-37146d68c009"
+          data-type="table"
+          style="width: 100%"
+        ></div>
+      </div>
+      
+      <div style="padding: 1rem; text-align:center; background:#f4f6f8;">
+        <a href="https://www.fussball.de/verein/gw-lehrte-niedersachsen/-/id/00ES8GN80K00001DVV0AG08LVUPGND5I#!/" target="_blank" style="font-size:0.8rem; color:#666;">
+          Datenquelle: FUSSBALL.DE
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS: Modal Logik -->
+  <script>
+    // Spiel Modal
+    function openWidgetModal() {
+      const modal = document.getElementById('widget-modal');
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeWidgetModal() {
+      const modal = document.getElementById('widget-modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Tabellen Modal
+    function openTableModal() {
+      const modal = document.getElementById('table-modal');
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeTableModal() {
+      const modal = document.getElementById('table-modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    // Klick auf Hintergrund schließt
+    ['widget-modal', 'table-modal'].forEach(id => {
+      const el = document.getElementById(id);
+      if(el) {
+        el.addEventListener('click', (e) => {
+          if(e.target === el) el.classList.remove('active'), document.body.style.overflow = '';
+        });
+      }
+    });
+  </script>
+
+  <!-- JS: Mobile Nav -->
+  <script src="../js/mobile-nav.js"></script>
+</body>
+</html>
