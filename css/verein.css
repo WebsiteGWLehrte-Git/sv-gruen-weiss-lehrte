@@ -1,0 +1,403 @@
+/* ===== VEREIN HERO ===== */
+.verein-hero {
+  position: relative;
+  height: 50vh; 
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  margin-top: -80px; 
+  padding-top: 80px;
+}
+
+.verein-hero .hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 120%; /* Parallax Reserve */
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Dunklerer Overlay für bessere Lesbarkeit */
+.verein-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.3) 0%,
+    rgba(11, 107, 58, 0.7) 100%
+  );
+  z-index: 2;
+}
+
+.verein-hero .hero-content {
+  position: relative;
+  z-index: 3;
+  color: var(--white);
+  max-width: 800px;
+  padding: 0 1.5rem;
+}
+
+.verein-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.sparte-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(5px);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* ===== INTRO SECTION ===== */
+.verein-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.verein-eyebrow {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--green-main);
+  margin-bottom: 1rem;
+}
+
+.verein-intro h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  font-weight: 800;
+}
+
+/* ===== TIMELINE ===== */
+.timeline-section {
+  position: relative;
+}
+
+.timeline-list {
+  position: relative;
+  max-width: 800px;
+  margin: 3rem auto 0;
+  padding: 0 1rem;
+}
+
+/* Linie */
+.timeline-list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #ddd;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 0 3rem;
+  margin-bottom: 4rem;
+  box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) { left: 0; text-align: right; }
+.timeline-item:nth-child(even) { left: 50%; text-align: left; }
+
+/* Punkt */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  background: var(--green-main);
+  border: 4px solid #fff;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 0 1px #ddd;
+}
+
+.timeline-item:nth-child(odd)::after { right: -10px; }
+.timeline-item:nth-child(even)::after { left: -10px; }
+
+.year {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--green-main);
+  margin-bottom: 0.2rem;
+}
+
+/* ===== STATS ===== */
+.stats-section {
+  background: var(--green-main);
+  color: var(--white);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stat .count {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* ===== VORSTAND (UNIFORM GRID) ===== */
+
+.board-team-grid {
+  display: grid;
+  /* Automatische Spalten: Mindestens 240px breit. 
+     Das sorgt dafür, dass auf Desktop 4 nebeneinander passen (ca. 1000px Container) */
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); 
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.board-member {
+  background: var(--white);
+  padding: 2rem 1rem; /* Mehr Padding oben/unten für Luft */
+  border-radius: 1rem;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alles zentriert */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.board-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-color: var(--green-light);
+}
+
+/* Runde Bilder */
+.member-img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.member-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--gray-light); /* Leichter Rahmen */
+  background-color: #f0f0f0;
+}
+
+/* Text */
+.member-info h3 {
+  font-size: 1.15rem;
+  margin: 0 0 0.3rem 0;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.member-role {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--green-main);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Kleiner Kontakt-Link/Button */
+.member-link {
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #666;
+  border: 1px solid #ddd;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  transition: all 0.2s ease;
+}
+
+.member-link:hover {
+  border-color: var(--green-main);
+  color: var(--green-main);
+  background-color: rgba(11, 107, 58, 0.05);
+}
+
+/* ===== DOWNLOADS (NEU) ===== */
+.downloads-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.doc-card {
+  display: flex;
+  align-items: center;
+  background: var(--gray-light);
+  padding: 1.2rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.doc-card:hover {
+  background: var(--white);
+  border-color: #ddd;
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-3px);
+}
+
+.doc-icon-box {
+  width: 48px;
+  height: 48px;
+  background: var(--white);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green-main);
+  margin-right: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.doc-icon-box svg {
+  width: 24px;
+  height: 24px;
+}
+
+.doc-content {
+  flex-grow: 1;
+}
+
+.doc-content h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.doc-content span {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.doc-action {
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.doc-card:hover .doc-action {
+  color: var(--green-main);
+}
+
+/* ===== KONTAKT (FIX) ===== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ===== MOBILE TWEAKS ===== */
+@media (max-width: 768px) {
+  .timeline-list::before { left: 20px; }
+  .timeline-item { width: 100%; text-align: left !important; padding-left: 3rem; left: 0 !important; }
+  .timeline-item::after { left: 11px !important; }
+}
+
+/* Fallback Bild */
+img { background-color: #eee; }
+
+/* ===== LIGHTBOX (BILD VERGRÖßERUNG) ===== */
+
+/* Zeig dem Nutzer, dass er klicken kann */
+.member-img img {
+  cursor: zoom-in;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.member-img img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Spezieller Container für das Bild (ohne weißen Kasten drumrum) */
+.modal-content-image {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Das große Bild */
+#lightbox-img {
+  max-width: 100%;
+  max-height: 80vh; /* Platz lassen für Beschriftung */
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  object-fit: contain;
+  background-color: transparent; /* Überschreibt den grauen Fallback */
+}
+
+/* Name unter dem Bild */
+#lightbox-caption {
+  color: var(--white);
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Weißes X zum Schließen */
+.modal-close-white {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.modal-close-white:hover {
+  opacity: 1;
+}
