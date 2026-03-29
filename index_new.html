@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SV Grün-Weiß Lehrte 1946 e.V.</title>
+  <meta
+    name="description"
+    content="Offizielle Website des SV Grün-Weiß Lehrte 1946 e.V. – Sport, Gemeinschaft und Vereinsleben in Lehrte."
+  />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/logos/logo.svg" />
+  <link rel="alternate icon" href="favicon.ico" />
+</head>
+
+<body>
+  <div class="menu-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" class="brand-link" aria-label="Startseite SV Grün-Weiß Lehrte">
+          <img
+            src="assets/images/logos/logo.svg"
+            alt="SV Grün-Weiß Lehrte Logo"
+            class="brand-logo"
+            decoding="async"
+          />
+          <span class="brand-name">SV Grün-Weiß Lehrte</span>
+        </a>
+      </div>
+
+      <nav class="main-nav" id="main-navigation" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="#verein">Verein</a></li>
+          <li><a href="#sport">Sportangebot</a></li>
+          <li><a href="#news">Aktuelles</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Menü öffnen"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Willkommen beim SV Grün-Weiß Lehrte">
+      <img
+        src="assets/images/hero.png"
+        alt=""
+        class="hero-bg"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <div class="container">
+        <h1 class="hero-title">
+          <span>SV Grün-Weiß Lehrte</span>
+          <span>1946 e.V.</span>
+        </h1>
+        <p class="hero-subline">
+          <span>Sport.</span>
+          <span>Gemeinschaft.</span>
+          <span>Leidenschaft seit 1946.</span>
+        </p>
+        <a href="#kontakt" class="btn-primary hero-cta">Mitglied werden</a>
+      </div>
+    </section>
+
+    <section id="verein" class="section section-light club">
+      <div class="container club-grid">
+        <div class="club-text reveal">
+          <span class="section-eyebrow">Wer wir sind</span>
+          <h2>Der Verein</h2>
+          <p class="club-lead">Tradition. Gemeinschaft. Bewegung.</p>
+          <p>
+            Seit 1946 steht der SV Grün-Weiß Lehrte für sportliche Vielfalt,
+            Gemeinschaft und Engagement in der Region. Unser Verein bietet
+            ein breites Sportangebot für alle Altersklassen.
+          </p>
+          <a href="pages/verein.html" class="btn-secondary">Mehr über den Verein</a>
+        </div>
+
+        <div class="club-image reveal reveal-delay">
+          <img
+            src="assets/images/verein.png"
+            alt="Mitglieder des SV Grün-Weiß Lehrte"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="sport" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Vielfalt bewegt</span>
+          <h2>Unser Sportangebot</h2>
+          <p>Egal ob Ausdauer, Kraft oder Entspannung – finde hier deine neue Leidenschaft.</p>
+        </div>
+
+        <div class="sports-grid">
+          <a href="pages/fussball.html" class="sport-card reveal">
+            <div class="sport-bg" style="background-image: url('assets/images/sport-fussball.png');"></div>
+            <div class="sport-overlay"></div>
+            <div class="sport-content">
+              <h3>Fußball</h3>
+              <span class="btn-text">Zur Sparte</span>
+            </div>
+          </a>
+
+          <a href="pages/radsport.html" class="sport-card reveal reveal-delay">
+            <div class="sport-bg" style="background-image: url('assets/images/sport-rad.png');"></div>
+            <div class="sport-overlay"></div>
+            <div class="sport-content">
+              <h3>Radsport</h3>
+              <span class="btn-text">Zur Sparte</span>
+            </div>
+          </a>
+
+          <a href="pages/yoga.html" class="sport-card reveal">
+            <div class="sport-bg" style="background-image: url('assets/images/sport-yoga.png');"></div>
+            <div class="sport-overlay"></div>
+            <div class="sport-content">
+              <h3>Yoga &amp; Fitness</h3>
+              <span class="btn-text">Zur Sparte</span>
+            </div>
+          </a>
+
+          <a href="pages/kinderturnen.html" class="sport-card reveal reveal-delay">
+            <div class="sport-bg" style="background-image: url('assets/images/sport-kinder.png');"></div>
+            <div class="sport-overlay"></div>
+            <div class="sport-content">
+              <h3>Kinderturnen</h3>
+              <span class="btn-text">Zur Sparte</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="news" class="section section-light">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Bleib informiert</span>
+          <h2>Aktuelles aus dem Verein</h2>
+        </div>
+
+        <div class="news-scroller reveal" aria-label="Aktuelle Vereinsnachrichten">
+          <article class="news-card">
+            <div class="news-image">
+              <img src="assets/images/news1.jpg" alt="Spielszene vom Herbstturnier" loading="lazy" decoding="async" />
+              <span class="news-date">12. Okt</span>
+            </div>
+            <div class="news-body">
+              <span class="news-category">Fußball</span>
+              <h3>Großer Erfolg beim Herbstturnier</h3>
+              <p>Unsere 1. Herren haben sich im spannenden Finale durchgesetzt...</p>
+              <a
+                href="#"
+                class="news-link"
+                data-image="assets/images/news1.jpg"
+                data-date="12. Oktober 2026"
+                data-category="Fußball"
+                data-title="Großer Erfolg beim Herbstturnier"
+                data-description="Es war ein Spiel für die Geschichtsbücher! Unsere 1. Herren haben sich im spannenden Finale gegen den TV Musterstadt mit 3:2 durchgesetzt. <br><br>Besonders hervorzuheben ist die Leistung unseres Torwarts, der in der letzten Minute einen Elfmeter hielt. Danke an alle Fans, die uns lautstark unterstützt haben! Das nächste Spiel findet am kommenden Sonntag statt."
+                aria-haspopup="dialog"
+              >
+                Weiterlesen
+              </a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-image">
+              <img src="assets/images/news2.jpg" alt="Einladung zur Jahreshauptversammlung" loading="lazy" decoding="async" />
+              <span class="news-date">05. Sep</span>
+            </div>
+            <div class="news-body">
+              <span class="news-category">Verein</span>
+              <h3>Einladung zur Jahreshauptversammlung</h3>
+              <p>Wir laden alle Mitglieder herzlich zur diesjährigen Versammlung ein.</p>
+              <a
+                href="#"
+                class="news-link"
+                data-image="assets/images/news2.jpg"
+                data-date="05. September 2026"
+                data-category="Verein"
+                data-title="Einladung zur Jahreshauptversammlung"
+                data-description="Liebe Mitglieder,<br>am 20. September findet um 19:00 Uhr unsere Jahreshauptversammlung im Vereinsheim statt.<br><br><strong>Tagesordnung:</strong><br>1. Begrüßung<br>2. Bericht des Vorstands<br>3. Neuwahlen<br>4. Sonstiges<br><br>Wir bitten um zahlreiches Erscheinen. Für Getränke und Snacks ist gesorgt."
+                aria-haspopup="dialog"
+              >
+                Weiterlesen
+              </a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-image">
+              <img src="assets/images/news3.jpg" alt="Yoga-Kurs im Verein" loading="lazy" decoding="async" />
+              <span class="news-date">28. Aug</span>
+            </div>
+            <div class="news-body">
+              <span class="news-category">Fitness</span>
+              <h3>Neue Yoga-Kurse starten ab November</h3>
+              <p>Melde dich jetzt an und sichere dir einen Platz im neuen Kurs.</p>
+              <a
+                href="#"
+                class="news-link"
+                data-image="assets/images/news3.jpg"
+                data-date="28. August 2026"
+                data-category="Fitness"
+                data-title="Neue Yoga-Kurse starten"
+                data-description="Entspannung für Körper und Geist. Ab dem 1. November starten unsere neuen Kurse für Anfänger und Fortgeschrittene.<br><br>Wann: Immer Dienstags, 18:00 - 19:30 Uhr<br>Wo: Gymnastikhalle 2<br>Leitung: Anna Musterfrau<br><br>Anmeldung bitte per Mail an fitness@sv-gruen-weiss.de"
+                aria-haspopup="dialog"
+              >
+                Weiterlesen
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="section">
+      <div class="container contact-grid">
+        <form class="contact-form reveal" action="https://formspree.io/f/xaqdoazq" method="POST">
+  <input type="hidden" name="_subject" value="Neue Kontaktanfrage über die Vereinswebsite" />
+
+  <h2>Kontakt</h2>
+  <p class="contact-intro">Du hast Fragen zur Mitgliedschaft oder zum Training? Schreib uns!</p>
+
+  <div class="form-row">
+    <input type="text" name="vorname" placeholder="Vorname *" required autocomplete="given-name" />
+    <input type="text" name="nachname" placeholder="Nachname *" required autocomplete="family-name" />
+  </div>
+
+  <input type="email" name="email" placeholder="E-Mail *" required autocomplete="email" />
+  <textarea name="nachricht" placeholder="Nachricht *" required></textarea>
+  <button type="submit" class="btn-primary">Absenden</button>
+</form>
+
+        <div class="contact-map reveal">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.057896000186!2d7.39958281592545!3d52.673576279020754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b79a556179cae5%3A0x1987748366647113!2sSV+Gr%C3%BCn-Weiß+Lehrte+1946+e.V.!5e0!3m2!1sde!2sde!4v1695654321012!5m2!1sde!2sde"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Standort des SV Grün-Weiß Lehrte auf Google Maps"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="social-links">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+      </div>
+
+      <p>© 2026 SV Grün-Weiß Lehrte 1946 e.V.</p>
+
+      <nav class="footer-nav" aria-label="Footer-Navigation">
+        <a href="pages/impressum.html">Impressum</a>
+        <a href="pages/datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div
+    id="news-modal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    aria-hidden="true"
+  >
+    <div class="modal-content" tabindex="-1">
+      <button class="modal-close" type="button" aria-label="Schließen">&times;</button>
+
+      <div class="modal-header">
+        <img src="" alt="" id="modal-image" class="modal-img" />
+        <span id="modal-date" class="modal-date-badge">Datum</span>
+      </div>
+
+      <div class="modal-body">
+        <span id="modal-category" class="section-eyebrow">Kategorie</span>
+        <h3 id="modal-title">Überschrift</h3>
+        <div id="modal-text" class="modal-text-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/mobile-nav.js"></script>
+  <script src="js/news-modal.js"></script>
+</body>
+</html>

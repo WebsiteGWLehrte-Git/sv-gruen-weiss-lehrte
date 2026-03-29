@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
 
   <script src="https://www.fussball.de/widgets.js"></script>
 </head>
+
 <body>
   <div class="menu-overlay" aria-hidden="true"></div>
 
@@ -33,13 +35,8 @@
         </ul>
       </nav>
 
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-label="Menü öffnen"
-        aria-expanded="false"
-        aria-controls="main-navigation"
-      >
+      <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false"
+        aria-controls="main-navigation">
         <span aria-hidden="true">☰</span>
       </button>
     </div>
@@ -47,11 +44,7 @@
 
   <main>
     <section class="sparte-hero">
-      <img
-        src="../assets/images/sport-fussball.png"
-        alt="Fußball im SV Grün-Weiß Lehrte"
-        class="hero-bg"
-      >
+      <img src="../assets/images/sport-fussball.png" alt="Fußball im SV Grün-Weiß Lehrte" class="hero-bg">
       <div class="hero-overlay"></div>
 
       <div class="container hero-content reveal">
@@ -100,90 +93,121 @@
         <div class="teams-grid">
           <div class="team-card reveal">
             <div class="team-image">
-              <img src="../assets/images/team-herren1.jpg" alt="1. Herren">
-              <span class="league-badge">Bezirksliga</span>
+              <img src="..\assets\images\fussball\1.Mannschaft.jpg" alt="1. Herren">
+              <span class="league-badge">1. Kreisklasse Emsland Mitte</span>
             </div>
             <div class="team-body">
               <h3>1. Herren</h3>
               <p>Ehrgeiziger Fußball mit klarem Ziel. Unser Aushängeschild am Sonntag.</p>
+
               <div class="training-box">
                 <span class="training-label">Training:</span>
                 Di &amp; Do | 19:00 - 20:30
+              </div>
+
+              <div class="team-actions team-actions--stacked">
+                <div class="team-actions-row">
+                  <button class="btn-primary btn-sm" type="button" data-modal-open="herren1-next-modal">
+                    Nächstes Spiel
+                  </button>
+
+                  <button class="btn-secondary btn-sm" type="button" data-modal-open="herren1-table-modal">
+                    Tabelle
+                  </button>
+                </div>
+
+                <button class="btn-ghost btn-sm btn-full" type="button" data-modal-open="herren1-squad-modal">
+                  Kader ansehen
+                </button>
               </div>
             </div>
           </div>
 
           <div class="team-card reveal reveal-delay">
             <div class="team-image">
-              <img src="../assets/images/team-herren2.jpg" alt="2. Herren">
-              <span class="league-badge">1. Kreisklasse</span>
+              <img src="..\assets\images\fussball\Mannschaft_Placeholder.png" alt="2. Herren">
+              <span class="league-badge">3. Kreisklasse Emsland Mitte</span>
             </div>
             <div class="team-body">
               <h3>2. Herren</h3>
               <p>Die perfekte Mischung aus sportlichem Ehrgeiz und starkem Teamgeist.</p>
+
               <div class="training-box">
                 <span class="training-label">Training:</span>
                 Mi &amp; Fr | 18:30 - 20:00
+              </div>
+
+              <div class="team-actions team-actions--stacked">
+                <div class="team-actions-row">
+                  <button class="btn-primary btn-sm" type="button" data-modal-open="herren2-next-modal">
+                    Nächstes Spiel
+                  </button>
+
+                  <button class="btn-secondary btn-sm" type="button" data-modal-open="herren2-table-modal">
+                    Tabelle
+                  </button>
+                </div>
+
+                <button class="btn-ghost btn-sm btn-full" type="button" data-modal-open="herren2-squad-modal">
+                  Kader ansehen
+                </button>
               </div>
             </div>
           </div>
 
           <div class="team-card reveal">
-  <div class="team-image">
-    <img src="../assets/images/team-damen.jpg" alt="Damenmannschaft">
-    <span class="league-badge">Kreisliga</span>
+            <div class="team-image">
+              <img src="..\assets\images\fussball\Damen-Mannschaft.jpg" alt="Damenmannschaft">
+              <span class="league-badge">1. Kreisklasse Emsland Mitte</span>
 
-    <a
-      href="https://www.instagram.com/sgschleperlehrtedamen/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="team-social-badge"
-      aria-label="Instagram-Profil der Damenmannschaft öffnen"
-      title="Instagram"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-      </svg>
-    </a>
-  </div>
+              <a href="https://www.instagram.com/sgschleperlehrtedamen/" target="_blank" rel="noopener noreferrer"
+                class="team-social-badge" aria-label="Instagram-Profil der Damenmannschaft öffnen" title="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+            </div>
 
-  <div class="team-body">
-    <h3>Damen</h3>
-    <p>Starke Leistung, starkes Team. Unsere Frauen spielen erfolgreich vorne mit.</p>
+            <div class="team-body">
+              <h3>Damen</h3>
+              <p>Starke Leistung, starkes Team. Unsere Frauen spielen erfolgreich vorne mit.</p>
 
-    <div class="training-box">
-      <span class="training-label">Training:</span>
-      Mo &amp; Mi | 19:00 - 20:30
-    </div>
+              <div class="training-box">
+                <span class="training-label">Training:</span>
+                Mo &amp; Mi | 19:00 - 20:30
+              </div>
 
-    <div class="team-actions team-actions--stacked">
-      <div class="team-actions-row">
-        <button class="btn-primary btn-sm" type="button" data-modal-open="widget-modal">
-          Nächstes Spiel
-        </button>
+              <div class="team-actions team-actions--stacked">
+                <div class="team-actions-row">
+                  <button class="btn-primary btn-sm" type="button" data-modal-open="widget-modal">
+                    Nächstes Spiel
+                  </button>
 
-        <button class="btn-secondary btn-sm" type="button" data-modal-open="table-modal">
-          Tabelle
-        </button>
-      </div>
+                  <button class="btn-secondary btn-sm" type="button" data-modal-open="table-modal">
+                    Tabelle
+                  </button>
+                </div>
 
-      <button class="btn-ghost btn-sm btn-full" type="button" data-modal-open="squad-modal">
-        Kader ansehen
-      </button>
-    </div>
-  </div>
-</div>
+                <button class="btn-ghost btn-sm btn-full" type="button" data-modal-open="squad-modal">
+                  Kader ansehen
+                </button>
+              </div>
+            </div>
+          </div>
 
           <div class="team-card reveal reveal-delay">
             <div class="team-image">
-              <img src="../assets/images/team-alteherren.jpg" alt="Alte Herren">
+              <img src="..\assets\images\fussball\Mannschaft_Placeholder.png" alt="Alte Herren">
               <span class="league-badge">Ü32 / Ü40</span>
             </div>
             <div class="team-body">
               <h3>Alte Herren</h3>
               <p>Erfahrung trifft Geselligkeit. Hier steht der Spaß im Fokus.</p>
+
               <div class="training-box">
                 <span class="training-label">Training:</span>
                 Mi | 19:30 - 21:00
@@ -196,14 +220,10 @@
               <h3>Unsere Jugend</h3>
               <p>
                 Unsere kleinsten Kicker ganz groß. Wir vermitteln Spaß am Ball, Teamgeist und Fairplay.<br>
-                Aktuell stellen wir Teams in der <strong>E-Jugend</strong>, <strong>F-Jugend</strong> und <strong>G-Jugend</strong> (Minis).
+                Aktuell stellen wir Teams in der <strong>E-Jugend</strong>, <strong>F-Jugend</strong> und
+                <strong>G-Jugend</strong> (Minis).
               </p>
-              <a
-                href="https://jfv-haseluenne.de/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="jfv-link"
-              >
+              <a href="https://jfv-haseluenne.de/" target="_blank" rel="noopener noreferrer" class="jfv-link">
                 Für ältere Jahrgänge kooperieren wir mit dem Jugendförderverein (JFV) Haselünne &rarr;
               </a>
             </div>
@@ -222,16 +242,31 @@
         <div class="contact-persons reveal">
           <div class="person-card">
             <div class="person-avatar">
-              <img src="https://ui-avatars.com/api/?name=Max+Mustermann&background=0b6b3a&color=fff" alt="Spartenleiter Max Mustermann">
+              <img src="..\assets\images\Vorstand\Thomas_Rolfers.jpeg"
+                alt="Fußballobmann Thomas Rolfers">
             </div>
             <div class="person-info">
-              <h4>Max Mustermann</h4>
-              <span class="role">Spartenleiter</span>
-              <a href="mailto:fussball@sv-gruen-weiss.de" class="contact-link">fussball@sv-gruen-weiss.de</a>
-              <a href="tel:+49123456789" class="contact-link">0171 / 123 456 78</a>
+              <h4>Thomas Rolfers</h4>
+              <span class="role">Fußballobmann</span>
+              <a href="mailto:rolfers@gw-lehrte.de" class="contact-link">rolfers@gw-lehrte.de</a>
             </div>
           </div>
         </div>
+
+                <div class="contact-persons reveal">
+          <div class="person-card">
+            <div class="person-avatar">
+              <img src="https://ui-avatars.com/api/?name=Philipp+R&background=eee&color=333"
+                alt="Jugendobmann Philipp Roloff">
+            </div>
+            <div class="person-info">
+              <h4>Philipp Roloff</h4>
+              <span class="role">Jugendobmann</span>
+              <a href="mailto:roloff@gw-lehrte.de" class="contact-link">roloff@gw-lehrte.de</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   </main>
@@ -246,71 +281,122 @@
     </div>
   </footer>
 
-  <div
-    id="widget-modal"
-    class="modal-overlay"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="widget-modal-title"
-    aria-hidden="true"
-  >
+  <!-- Damen -->
+  <div id="widget-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="widget-modal-title"
+    aria-hidden="true">
     <div class="modal-content widget-modal-content widget-modal-small" tabindex="-1">
       <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
       <div class="widget-modal-head">
         <h3 id="widget-modal-title">Damen: Nächstes Spiel</h3>
       </div>
       <div class="widget-modal-body widget-modal-body-small">
-        <div
-          class="fussballde_widget"
-          data-id="3b337a9c-4e54-4169-a6d6-b91c47151036"
-          data-type="next-match"
-        ></div>
+        <div class="fussballde_widget" data-id="3b337a9c-4e54-4169-a6d6-b91c47151036" data-type="next-match"></div>
       </div>
     </div>
   </div>
 
-  <div
-    id="table-modal"
-    class="modal-overlay"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="table-modal-title"
-    aria-hidden="true"
-  >
+  <div id="table-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="table-modal-title"
+    aria-hidden="true">
     <div class="modal-content widget-modal-content widget-modal-large" tabindex="-1">
       <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
       <div class="widget-modal-head">
         <h3 id="table-modal-title">Damen: Aktuelle Tabelle</h3>
       </div>
       <div class="widget-modal-body widget-modal-body-table">
-        <div
-          class="fussballde_widget"
-          data-id="5677ef6f-af1d-46c7-b209-37146d68c009"
-          data-type="table"
-        ></div>
+        <div class="fussballde_widget" data-id="5677ef6f-af1d-46c7-b209-37146d68c009" data-type="table"></div>
       </div>
     </div>
   </div>
 
-  <div
-    id="squad-modal"
-    class="modal-overlay"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="squad-modal-title"
-    aria-hidden="true"
-  >
+  <div id="squad-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="squad-modal-title"
+    aria-hidden="true">
     <div class="modal-content widget-modal-content widget-modal-large" tabindex="-1">
       <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
       <div class="widget-modal-head">
         <h3 id="squad-modal-title">Damen: Kader</h3>
       </div>
       <div class="widget-modal-body widget-modal-body-squad">
-        <div
-          class="fussballde_widget"
-          data-id="dfcc8566-039b-4c41-8622-c434c6b3acc5"
-          data-type="squad"
-        ></div>
+        <div class="fussballde_widget" data-id="dfcc8566-039b-4c41-8622-c434c6b3acc5" data-type="squad"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. Herren -->
+  <div id="herren1-next-modal" class="modal-overlay" role="dialog" aria-modal="true"
+    aria-labelledby="herren1-next-title" aria-hidden="true">
+    <div class="modal-content widget-modal-content widget-modal-small" tabindex="-1">
+      <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
+      <div class="widget-modal-head">
+        <h3 id="herren1-next-title">1. Herren: Nächstes Spiel</h3>
+      </div>
+      <div class="widget-modal-body widget-modal-body-small">
+        <div class="fussballde_widget" data-id="19a50656-bb5f-4d4a-97b0-3b605270e6b2" data-type="next-match"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="herren1-table-modal" class="modal-overlay" role="dialog" aria-modal="true"
+    aria-labelledby="herren1-table-title" aria-hidden="true">
+    <div class="modal-content widget-modal-content widget-modal-large" tabindex="-1">
+      <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
+      <div class="widget-modal-head">
+        <h3 id="herren1-table-title">1. Herren: Aktuelle Tabelle</h3>
+      </div>
+      <div class="widget-modal-body widget-modal-body-table">
+        <div class="fussballde_widget" data-id="26c7b3bc-dd52-4bac-97cf-2f792bf851ff" data-type="table"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="herren1-squad-modal" class="modal-overlay" role="dialog" aria-modal="true"
+    aria-labelledby="herren1-squad-title" aria-hidden="true">
+    <div class="modal-content widget-modal-content widget-modal-large" tabindex="-1">
+      <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
+      <div class="widget-modal-head">
+        <h3 id="herren1-squad-title">1. Herren: Kader</h3>
+      </div>
+      <div class="widget-modal-body widget-modal-body-squad">
+        <div class="fussballde_widget" data-id="f519ba5a-0a15-4b24-a641-4a723d97dbf6" data-type="squad"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Herren -->
+  <div id="herren2-next-modal" class="modal-overlay" role="dialog" aria-modal="true"
+    aria-labelledby="herren2-next-title" aria-hidden="true">
+    <div class="modal-content widget-modal-content widget-modal-small" tabindex="-1">
+      <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
+      <div class="widget-modal-head">
+        <h3 id="herren2-next-title">2. Herren: Nächstes Spiel</h3>
+      </div>
+      <div class="widget-modal-body widget-modal-body-small">
+        <div class="fussballde_widget" data-id="6706b890-acfa-47aa-8c00-561ab777e58e" data-type="next-match"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="herren2-table-modal" class="modal-overlay" role="dialog" aria-modal="true"
+    aria-labelledby="herren2-table-title" aria-hidden="true">
+    <div class="modal-content widget-modal-content widget-modal-large" tabindex="-1">
+      <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
+      <div class="widget-modal-head">
+        <h3 id="herren2-table-title">2. Herren: Aktuelle Tabelle</h3>
+      </div>
+      <div class="widget-modal-body widget-modal-body-table">
+        <div class="fussballde_widget" data-id="124c8fb8-77bc-422d-a403-119df7a2cd81" data-type="table"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="herren2-squad-modal" class="modal-overlay" role="dialog" aria-modal="true"
+    aria-labelledby="herren2-squad-title" aria-hidden="true">
+    <div class="modal-content widget-modal-content widget-modal-large" tabindex="-1">
+      <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
+      <div class="widget-modal-head">
+        <h3 id="herren2-squad-title">2. Herren: Kader</h3>
+      </div>
+      <div class="widget-modal-body widget-modal-body-squad">
+        <div class="fussballde_widget" data-id="2d0618ef-e7e9-43ce-8485-4d1129bc3d18" data-type="squad"></div>
       </div>
     </div>
   </div>
@@ -318,4 +404,5 @@
   <script src="../js/mobile-nav.js"></script>
   <script src="../js/fussball-modals.js"></script>
 </body>
+
 </html>

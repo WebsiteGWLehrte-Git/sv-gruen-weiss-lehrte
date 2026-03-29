@@ -1,0 +1,20 @@
+# System
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# OS
+*.tmp
+
+# PHP
+/vendor/
+
+# Node
+node_modules/
