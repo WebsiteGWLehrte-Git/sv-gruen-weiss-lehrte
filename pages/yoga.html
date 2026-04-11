@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yoga & Fitness – SV Grün-Weiß Lehrte</title>
+  <title>Yoga & Fitness in Lehrte – SV Grün-Weiß Lehrte Emsland</title>
   
   <!-- Global Styles -->
   <link rel="stylesheet" href="../css/style.css">
@@ -42,7 +42,6 @@
 
   <!-- HERO SECTION -->
   <section class="sparte-hero">
-    <!-- Bild: Platzhalter Yoga -->
     <img src="../assets/images/sport-yoga.png" alt="Yoga im SV GW Lehrte" class="hero-bg">
     <div class="hero-overlay"></div>
     
@@ -85,7 +84,7 @@
     </div>
   </section>
 
-  <!-- KURSE (Wir nutzen das Team-Grid Layout, nennen es aber Kurse) -->
+  <!-- KURSE -->
   <section id="kurse" class="section section-light">
     <div class="container">
       <div class="section-header reveal">
@@ -94,8 +93,6 @@
       </div>
 
       <div class="teams-grid">
-        
-        <!-- Kurs 1 -->
         <div class="team-card reveal">
           <div class="team-image">
             <img src="../assets/images/sport-yoga.jpg" alt="Yoga am Abend">
@@ -119,10 +116,9 @@
           </div>
         </div>
 
-        <!-- Kurs 2 -->
         <div class="team-card reveal reveal-delay">
           <div class="team-image">
-            <img src="../assets/images/sport-kinder.jpg" alt="Rückenfit"> <!-- Platzhalter Bild -->
+            <img src="../assets/images/sport-kinder.jpg" alt="Rückenfit">
             <span class="league-badge">Prävention</span>
           </div>
           <div class="team-body">
@@ -136,7 +132,7 @@
             </div>
             
             <div class="team-actions">
-               <a href="#kontakt" class="btn-primary btn-sm" style="text-decoration:none;">
+              <a href="#kontakt" class="btn-primary btn-sm" style="text-decoration:none;">
                 Schnuppern
               </a>
             </div>
@@ -157,8 +153,6 @@
       </div>
 
       <div class="contact-persons reveal">
-        
-        <!-- Person 1 -->
         <div class="person-card">
           <div class="person-avatar">
             <img src="https://ui-avatars.com/api/?name=Anna+Yogi&background=0b6b3a&color=fff" alt="Kursleiterin">
@@ -170,7 +164,6 @@
             <a href="tel:+49123456789" class="contact-link">0172 / 987 654 32</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -182,11 +175,48 @@
       <nav class="footer-nav">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
+        <a href="#" data-open-consent-settings>Datenschutzeinstellungen</a>
       </nav>
     </div>
   </footer>
 
+  <!-- CONSENT BANNER -->
+  <div id="consent-banner" class="consent-banner" hidden>
+    <div class="consent-box" role="dialog" aria-modal="true" aria-labelledby="consent-title">
+      <h2 id="consent-title">Datenschutzeinstellungen</h2>
+      <p>
+        Wir verwenden essenzielle Technologien für den Betrieb der Website.
+        Externe Inhalte wie Google Maps, fussball.de-Widgets oder künftig YouTube
+        laden wir nur mit deiner Einwilligung.
+      </p>
+
+      <div class="consent-options">
+        <label class="consent-option">
+          <input type="checkbox" checked disabled>
+          <span><strong>Essenziell</strong> – notwendig für den Betrieb der Website</span>
+        </label>
+
+        <label class="consent-option">
+          <input type="checkbox" id="consent-external">
+          <span><strong>Externe Inhalte</strong> – z. B. Google Maps, fussball.de, YouTube</span>
+        </label>
+      </div>
+
+      <div class="consent-actions">
+        <button type="button" class="btn-secondary" id="consent-reject">Alles ablehnen</button>
+        <button type="button" class="btn-secondary" id="consent-save">Auswahl speichern</button>
+        <button type="button" class="btn-primary" id="consent-accept">Alle akzeptieren</button>
+      </div>
+
+      <p class="consent-links">
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="impressum.html">Impressum</a>
+      </p>
+    </div>
+  </div>
+
   <!-- JS -->
   <script src="../js/mobile-nav.js"></script>
+  <script src="../js/consent.js"></script>
 </body>
 </html>

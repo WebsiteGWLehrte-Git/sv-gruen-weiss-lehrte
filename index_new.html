@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SV Grün-Weiß Lehrte 1946 e.V.</title>
-  <meta
-    name="description"
-    content="Offizielle Website des SV Grün-Weiß Lehrte 1946 e.V. – Sport, Gemeinschaft und Vereinsleben in Lehrte."
-  />
+  <title>SV Grün-Weiß Lehrte 1946 e.V. – Sportverein in Lehrte (Emsland)</title>
+  <meta name="description"
+    content="Offizielle Website des SV Grün-Weiß Lehrte 1946 e.V. – Sport, Gemeinschaft und Vereinsleben in Lehrte." />
+  <link rel="preload" as="image" href="assets/images/hero.png">
   <link rel="stylesheet" href="css/style.css" />
 
   <link rel="icon" type="image/svg+xml" href="assets/images/logos/logo.svg" />
   <link rel="alternate icon" href="favicon.ico" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "SV Grün-Weiß Lehrte 1946 e.V.",
+  "url": "https://www.gw-lehrte.de",
+  "logo": "https://www.sv-gruen-weiss-lehrte.de/assets/images/logos/logo.svg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Haselünne-Lehrte",
+    "addressRegion": "Niedersachsen",
+    "addressCountry": "DE"
+  },
+  "areaServed": "Emsland",
+  "sport": ["Fußball", "Turnen","Darts", "Yoga", "Radsport"]
+}
+</script>
+
 </head>
 
 <body>
@@ -21,12 +40,7 @@
     <div class="container header-inner">
       <div class="brand">
         <a href="index.html" class="brand-link" aria-label="Startseite SV Grün-Weiß Lehrte">
-          <img
-            src="assets/images/logos/logo.svg"
-            alt="SV Grün-Weiß Lehrte Logo"
-            class="brand-logo"
-            decoding="async"
-          />
+          <img src="assets/images/logos/logo.svg" alt="SV Grün-Weiß Lehrte Logo" class="brand-logo" decoding="async" />
           <span class="brand-name">SV Grün-Weiß Lehrte</span>
         </a>
       </div>
@@ -40,13 +54,8 @@
         </ul>
       </nav>
 
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-label="Menü öffnen"
-        aria-expanded="false"
-        aria-controls="main-navigation"
-      >
+      <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false"
+        aria-controls="main-navigation">
         <span aria-hidden="true">☰</span>
       </button>
     </div>
@@ -54,13 +63,8 @@
 
   <main>
     <section class="hero" aria-label="Willkommen beim SV Grün-Weiß Lehrte">
-      <img
-        src="assets/images/hero.png"
-        alt=""
-        class="hero-bg"
-        fetchpriority="high"
-        decoding="async"
-      />
+      <img src="assets/images/hero.png" alt="" class="hero-bg" fetchpriority="high" decoding="async" width="1920"
+        height="1080" />
       <div class="container">
         <h1 class="hero-title">
           <span>SV Grün-Weiß Lehrte</span>
@@ -80,22 +84,93 @@
         <div class="club-text reveal">
           <span class="section-eyebrow">Wer wir sind</span>
           <h2>Der Verein</h2>
-          <p class="club-lead">Tradition. Gemeinschaft. Bewegung.</p>
+          <p class="club-lead">Tradition. Ehrenamt. Bewegung.</p>
           <p>
             Seit 1946 steht der SV Grün-Weiß Lehrte für sportliche Vielfalt,
-            Gemeinschaft und Engagement in der Region. Unser Verein bietet
-            ein breites Sportangebot für alle Altersklassen.
+            Gemeinschaft und Engagement in unseren Dörfern. Unser Verein bietet
+            ein attraktives Sportangebot für alle Altersklassen.
           </p>
-          <a href="pages/verein.html" class="btn-secondary">Mehr über den Verein</a>
+          <a href="pages/verein.html" class="btn-secondary club-cta">Mehr über den Verein</a>
         </div>
 
         <div class="club-image reveal reveal-delay">
-          <img
-            src="assets/images/verein.png"
-            alt="Mitglieder des SV Grün-Weiß Lehrte"
-            loading="lazy"
-            decoding="async"
-          />
+          <img src="assets/images/verein.png" alt="Mitglieder des SV Grün-Weiß Lehrte" loading="lazy"
+            decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <section id="instagram" class="section instagram-spotlight">
+      <div class="container instagram-spotlight-grid">
+        <div class="instagram-spotlight-text reveal">
+          <span class="section-eyebrow">Social Media</span>
+          <h2>Vereinsleben in Echtzeit.</h2>
+          <p class="instagram-lead">
+            Auf Instagram zeigen wir euch, was den SV Grün-Weiß Lehrte ausmacht:
+            Spieltage, Mannschaften, Vereinsmomente und Eindrücke direkt vom Platz.
+          </p>
+          <p>
+            Folgt uns für aktuelle Bilder, Neuigkeiten und Einblicke aus dem Vereinsalltag.
+          </p>
+
+          <a href="https://www.instagram.com/svgwlehrte1946/" target="_blank" rel="noopener noreferrer"
+            class="btn-primary instagram-spotlight-cta">
+            @svgwlehrte1946 folgen
+          </a>
+        </div>
+
+        <div class="instagram-visual reveal reveal-delay">
+          <a href="https://www.instagram.com/svgwlehrte1946/" target="_blank" rel="noopener noreferrer"
+            class="instagram-preview-card" aria-label="Instagram-Profil des SV Grün-Weiß Lehrte öffnen">
+            <div class="instagram-preview-header">
+              <div class="instagram-preview-brand">
+                <div class="instagram-preview-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </div>
+
+                <div>
+                  <strong>SV Grün-Weiß Lehrte</strong>
+                  <span>@svgwlehrte1946</span>
+                </div>
+              </div>
+
+              <span class="instagram-preview-pill">Instagram</span>
+            </div>
+
+            <div class="instagram-preview-hero">
+              <img src="assets/images/Instagram/Instagram_Preview_2.jpg"
+                alt="Einblicke aus dem Vereinsleben auf Instagram" class="instagram-preview-hero-img" loading="lazy"
+                decoding="async" width="1200" height="750" />
+              <div class="instagram-preview-hero-overlay">
+                <span>Einblicke aus unserem Vereinsleben</span>
+              </div>
+            </div>
+
+            <div class="instagram-preview-grid" aria-hidden="true">
+              <div class="instagram-preview-tile">
+                <img src="assets/images/Instagram/Instagram_Preview_1.jpg" alt="" class="instagram-preview-tile-img"
+                  loading="lazy" decoding="async" width="600" height="600" />
+              </div>
+              <div class="instagram-preview-tile">
+                <img src="assets/images/Instagram/Instagram_Preview_3.jpg" alt="" class="instagram-preview-tile-img"
+                  loading="lazy" decoding="async" width="600" height="600" />
+              </div>
+              <div class="instagram-preview-tile">
+                <img src="assets/images/Instagram/Instagram_Preview_4.jpg" alt="" class="instagram-preview-tile-img"
+                  loading="lazy" decoding="async" width="600" height="600" />
+              </div>
+            </div>
+
+            <div class="instagram-preview-footer">
+              <span>Jetzt ansehen</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -105,12 +180,13 @@
         <div class="section-header reveal">
           <span class="section-eyebrow">Vielfalt bewegt</span>
           <h2>Unser Sportangebot</h2>
-          <p>Egal ob Ausdauer, Kraft oder Entspannung – finde hier deine neue Leidenschaft.</p>
+          <p>Egal ob Ausdauer, Kraft oder Entspannung – mach mit und finde deine Leidenschaft.</p>
         </div>
 
         <div class="sports-grid">
           <a href="pages/fussball.html" class="sport-card reveal">
-            <div class="sport-bg" style="background-image: url('assets/images/sport-fussball.png');"></div>
+            <img src="assets/images/sport-fussball.png" alt="Fußball beim SV Grün-Weiß Lehrte" class="sport-bg-img"
+              loading="lazy" decoding="async" width="800" height="600" />
             <div class="sport-overlay"></div>
             <div class="sport-content">
               <h3>Fußball</h3>
@@ -118,8 +194,9 @@
             </div>
           </a>
 
-          <a href="pages/radsport.html" class="sport-card reveal reveal-delay">
-            <div class="sport-bg" style="background-image: url('assets/images/sport-rad.png');"></div>
+          <a href="pages/radsport.html" class="sport-card reveal">
+            <img src="assets/images/sport-rad.png" alt="Radsport beim SV Grün-Weiß Lehrte" class="sport-bg-img"
+              loading="lazy" decoding="async" width="800" height="600" />
             <div class="sport-overlay"></div>
             <div class="sport-content">
               <h3>Radsport</h3>
@@ -128,7 +205,8 @@
           </a>
 
           <a href="pages/yoga.html" class="sport-card reveal">
-            <div class="sport-bg" style="background-image: url('assets/images/sport-yoga.png');"></div>
+            <img src="assets/images/sport-yoga.png" alt="Radsport beim SV Grün-Weiß Lehrte" class="sport-bg-img"
+              loading="lazy" decoding="async" width="800" height="600" />
             <div class="sport-overlay"></div>
             <div class="sport-content">
               <h3>Yoga &amp; Fitness</h3>
@@ -137,10 +215,11 @@
           </a>
 
           <a href="pages/kinderturnen.html" class="sport-card reveal reveal-delay">
-            <div class="sport-bg" style="background-image: url('assets/images/sport-kinder.png');"></div>
+            <img src="assets/images/sport-kinder.png" alt="Radsport beim SV Grün-Weiß Lehrte" class="sport-bg-img"
+              loading="lazy" decoding="async" width="800" height="600" />
             <div class="sport-overlay"></div>
             <div class="sport-content">
-              <h3>Kinderturnen</h3>
+              <h3>Kinderturnen &amp; Fitness</h3>
               <span class="btn-text">Zur Sparte</span>
             </div>
           </a>
@@ -158,23 +237,44 @@
         <div class="news-scroller reveal" aria-label="Aktuelle Vereinsnachrichten">
           <article class="news-card">
             <div class="news-image">
-              <img src="assets/images/news1.jpg" alt="Spielszene vom Herbstturnier" loading="lazy" decoding="async" />
-              <span class="news-date">12. Okt</span>
+              <img src="assets/images/Instagram/Instagram_Preview_1.jpg"
+                alt="Abnahme der neuen Sanitäranlagen durch den Bürgermeister" loading="lazy" decoding="async" />
+              <span class="news-date">24. März 26</span>
+            </div>
+            <div class="news-body">
+              <span class="news-category">Vereinsleben</span>
+              <h3>Abnahme der neuen Sanitäranlagen</h3>
+              <p>Die Winterpause haben wir sinnvoll genutzt und wichtige Sanierungsarbeiten...</p>
+              <a href="#" class="news-link" data-image="assets/images/Instagram/Instagram_Preview_1.jpg"
+                data-date="24. März 2026" data-category="Vereinsleben" data-title="Abnahme der neuen Sanitäranlagen"
+                data-description="Die Winterpause haben wir sinnvoll genutzt und wichtige Sanierungsarbeiten in unserem Gebäudetrakt durchgeführt. Im Fokus standen dabei die Herren-WCs sowie die alte Schiedsrichterkabine, die nach über 40 Jahren dringend erneuert werden mussten.
+                                  <br><br>Die Bereiche wurden grundlegend modernisiert und präsentieren sich nun in einem zeitgemäßen Zustand, sodass sich Spieler, Gäste und vor allem unser „12. Mann“ wieder rundum wohlfühlen können. <br> <br> Ein solches Projekt ist nur durch gemeinschaftlichen Einsatz möglich. Daher gilt unser besonderer Dank den zahlreichen ehrenamtlichen Helferinnen und Helfern, die mit großem Engagement und viel Herzblut angepackt haben. Ohne eure Unterstützung wäre diese Umsetzung in dieser Form nicht denkbar gewesen.
+                                  <br> <br> Ebenso möchten wir uns herzlich bei der Stadt Haselünne bedanken, die uns bei diesem Vorhaben finanziell unterstützt und damit den wesentlichen Beitrag zur Realisierung geleistet hat. <br> <br> Auch den beteiligten Firmen aus der Region möchten wir Danke sagen. <br> Im Vorfeld der Einwohnerversammlung im Gasthof Vennemann nutzten zudem einige Vertreter aus Politik und Verwaltung die Gelegenheit, sich persönlich ein Bild von den abgeschlossenen Arbeiten zu machen. Vor Ort waren das Stadtrats- und Kreistagsmitglied Berthold Markus, Bürgermeister Werner Schräer, der Vorsitzende Christoph Gerdelmann sowie Ortsvorsteher Berthold Bange.
+                                  <br> <br>Wir freuen uns, unseren Mitgliedern und Gästen nun eine modernisierte Anlage präsentieren zu können und hoffen, dass sich alle Besucher bei uns weiterhin wohlfühlen."
+                aria-haspopup="dialog">
+                Weiterlesen
+              </a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-image">
+              <img src="assets/images/news/neuer_cheftrainer.JPG" alt="Neuer Cheftrainer für die 1. Herren"
+                loading="lazy" decoding="async" />
+              <span class="news-date">25. Jan 26</span>
             </div>
             <div class="news-body">
               <span class="news-category">Fußball</span>
-              <h3>Großer Erfolg beim Herbstturnier</h3>
-              <p>Unsere 1. Herren haben sich im spannenden Finale durchgesetzt...</p>
-              <a
-                href="#"
-                class="news-link"
-                data-image="assets/images/news1.jpg"
-                data-date="12. Oktober 2026"
-                data-category="Fußball"
-                data-title="Großer Erfolg beim Herbstturnier"
-                data-description="Es war ein Spiel für die Geschichtsbücher! Unsere 1. Herren haben sich im spannenden Finale gegen den TV Musterstadt mit 3:2 durchgesetzt. <br><br>Besonders hervorzuheben ist die Leistung unseres Torwarts, der in der letzten Minute einen Elfmeter hielt. Danke an alle Fans, die uns lautstark unterstützt haben! Das nächste Spiel findet am kommenden Sonntag statt."
-                aria-haspopup="dialog"
-              >
+              <h3>Neuer Cheftrainer für die 1. Herren</h3>
+              <p>Die SG Schleper / Lehrte verpflichtet neuen Cheftrainer.</p>
+              <a href="#" class="news-link" data-image="assets/images/news/neuer_cheftrainer.JPG"
+                data-date="25. Januar 2026" data-category="Fußball" data-title="Neuer Cheftrainer für die 1. Herren"
+                data-description="Die SG Schleper / Lehrte stellt die Weichen für die kommende Saison und kann die Verpflichtung eines neuen Cheftrainers bekanntgeben: Ab Sommer übernimmt Patrick Pöppelmeyer (37) die sportliche Verantwortung bei der Spielgemeinschaft.
+                                  <br><br>Patrick Pöppelmeyer war zuletzt als Trainer beim TuS Badbergen tätig und bringt sowohl Erfahrung an der Seitenlinie als auch eine lange aktive Laufbahn im Fußball mit. Besonders als Torhüter war er über viele Jahre selbst auf dem Platz aktiv und kennt die Anforderungen des Spiels aus erster Hand.<br> <br>
+                                  Zur neuen Saison wird er das bisherige Trainerteam um Johannes Strotmann und Patrick Hanneken beerben, denen die Verantwortlichen bereits jetzt für ihre geleistete Arbeit danken.<br> <br>
+                                  Die Vorstände von Grün-Weiß Lehrte und Concordia Schleper sind überzeugt, mit Patrick Pöppelmeyer die richtige Wahl getroffen zu haben. Sie trauen ihm zu, die Mannschaft sportlich wie auch menschlich weiterzuentwickeln und die positive Entwicklung der SG nachhaltig fortzuführen.<br> <br>
+                                  Die SG Schleper / Lehrte freut sich auf die Zusammenarbeit und heißt Patrick Pöppelmeyer herzlich willkommen. <br> <br>Das Bild zeigt (v. l. n. r.) Christoph Gerdelmann (1. Vorsitzender Grün-Weiß Lehrte), Jürgen Struckmann (Fußballobmann Concordia Schleper), den neuen Trainer Patrick Pöppelmeyer, Thomas Rolfers (Fußballobmann Grün-Weiß Lehrte) und Jens Kluge (1. Vorsitzender Concordia Schleper)."
+                aria-haspopup="dialog">
                 Weiterlesen
               </a>
             </div>
@@ -182,23 +282,22 @@
 
           <article class="news-card">
             <div class="news-image">
-              <img src="assets/images/news2.jpg" alt="Einladung zur Jahreshauptversammlung" loading="lazy" decoding="async" />
-              <span class="news-date">05. Sep</span>
+              <img src="assets/images/news/engagementfreundlicher_verein.JPG"
+                alt="Zertifizierung als Engangementfreundlicher Verein" loading="lazy" decoding="async" />
+              <span class="news-date">19. Aug 25</span>
             </div>
             <div class="news-body">
-              <span class="news-category">Verein</span>
-              <h3>Einladung zur Jahreshauptversammlung</h3>
-              <p>Wir laden alle Mitglieder herzlich zur diesjährigen Versammlung ein.</p>
-              <a
-                href="#"
-                class="news-link"
-                data-image="assets/images/news2.jpg"
-                data-date="05. September 2026"
-                data-category="Verein"
-                data-title="Einladung zur Jahreshauptversammlung"
-                data-description="Liebe Mitglieder,<br>am 20. September findet um 19:00 Uhr unsere Jahreshauptversammlung im Vereinsheim statt.<br><br><strong>Tagesordnung:</strong><br>1. Begrüßung<br>2. Bericht des Vorstands<br>3. Neuwahlen<br>4. Sonstiges<br><br>Wir bitten um zahlreiches Erscheinen. Für Getränke und Snacks ist gesorgt."
-                aria-haspopup="dialog"
-              >
+              <span class="news-category">Vereinsleben</span>
+              <h3>Unser Sportverein erhält Gold-Zertifizierung als „Engagementfreundlicher Verein“!</h3>
+              <p>Große Freude in unserem Verein: Unser Sportverein wurde vom Landessportbund Niedersachsen mit der
+                Gold-Zertifizierung als „Engagementfreundlicher Verein“ ausgezeichnet!</p>
+              <a href="#" class="news-link" data-image="assets/images/news/engagementfreundlicher_verein.JPG"
+                data-date="19. August 2025" data-category="Vereinsleben"
+                data-title="Zertifizierung als Engangementfreundlicher Verein"
+                data-description="Große Freude in unserem Verein: Unser Sportverein wurde vom Landessportbund Niedersachsen mit der Gold-Zertifizierung als „Engagementfreundlicher Verein“ ausgezeichnet! Diese besondere Auszeichnung würdigt Vereine, die herausragende Rahmenbedingungen für ehrenamtliches Engagement schaffen und aktiv fördern.<br><br>Die Zertifizierung erfolgte nach einem erfolgreich bestandenen Audit mit beeindruckenden 199 von 229 möglichen Punkten - ein starkes Zeichen für unsere gelebte Vereinskultur.<br> <br>
+                                 Als Anerkennung für diese Leistung erhält unser Verein nicht nur das begehrte Gold-Siegel, sondern auch eine Förderung in Höhe von 2.000€, das direkt wieder in die Vereinsarbeit und die Unterstützung der Engagierten fließt.<br> <br> Ein herzlicher Dank gilt den zahlreichen Ehrenamtlichen, die sich tagtäglich mit Herzblut und Zeit für unseren Verein einsetzen - ob als Trainer, Organisator, Helfer bei Veranstaltungen oder in Verwaltungsangelegenheiten. Ohne euch wäre diese Auszeichnung nicht möglich gewesen! <br> <br>
+                                 Diese Zertifizierung ist nicht nur eine Ehrung, sondern auch ein Ansporn, unseren Weg als engagierter, offener und gemeinschaftsstarker Verein weiterzugehen.<br> <br>Wir sagen DANKE - und freuen uns auf viele weitere Jahre voller Engagement, Gemeinschaft und Sport! "
+                aria-haspopup="dialog">
                 Weiterlesen
               </a>
             </div>
@@ -206,23 +305,19 @@
 
           <article class="news-card">
             <div class="news-image">
-              <img src="assets/images/news3.jpg" alt="Yoga-Kurs im Verein" loading="lazy" decoding="async" />
-              <span class="news-date">28. Aug</span>
+              <img src="assets/images/news/fitnesstrainer_gesucht.JPG"
+                alt="Fitnesstrainer gesucht" loading="lazy" decoding="async" />
+              <span class="news-date">2025</span>
             </div>
             <div class="news-body">
-              <span class="news-category">Fitness</span>
-              <h3>Neue Yoga-Kurse starten ab November</h3>
-              <p>Melde dich jetzt an und sichere dir einen Platz im neuen Kurs.</p>
-              <a
-                href="#"
-                class="news-link"
-                data-image="assets/images/news3.jpg"
-                data-date="28. August 2026"
-                data-category="Fitness"
-                data-title="Neue Yoga-Kurse starten"
-                data-description="Entspannung für Körper und Geist. Ab dem 1. November starten unsere neuen Kurse für Anfänger und Fortgeschrittene.<br><br>Wann: Immer Dienstags, 18:00 - 19:30 Uhr<br>Wo: Gymnastikhalle 2<br>Leitung: Anna Musterfrau<br><br>Anmeldung bitte per Mail an fitness@sv-gruen-weiss.de"
-                aria-haspopup="dialog"
-              >
+              <span class="news-category">Yoga / Fitness</span>
+              <h3>Grün-Weiß sucht neue/n Übungsleiter/in für Aerobic / Yoga oder Muskelaufbau </h3>
+              <p>Sport ist deine Leidenschaft?</p>
+              <a href="#" class="news-link" data-image="assets/images/news/fitnesstrainer_gesucht.JPG"
+                data-date="19. August 2025" data-category="Vereinsleben"
+                data-title="Grün-Weiß sucht neue/n Übungsleiter/in für Aerobic / Yoga oder Muskelaufbau"
+                data-description="Sport ist deine Leidenschaft? <br> <br> Du bewegst dich gerne und möchtest anderen dabei helfen? <br> <br> Wir suchen Übungsleiter für Sportgruppen wie Aerobic, Yoga, Rückenfit und Muskelaufbau! <br> <br> Bei Interesse melde dich gerne unter info@gw-lehrte.de!"
+                aria-haspopup="dialog">
                 Weiterlesen
               </a>
             </div>
@@ -234,32 +329,30 @@
     <section id="kontakt" class="section">
       <div class="container contact-grid">
         <form class="contact-form reveal" action="https://formspree.io/f/xaqdoazq" method="POST">
-  <input type="hidden" name="_subject" value="Neue Kontaktanfrage über die Vereinswebsite" />
+          <input type="hidden" name="_subject" value="Neue Kontaktanfrage über die Vereinswebsite" />
 
-  <h2>Kontakt</h2>
-  <p class="contact-intro">Du hast Fragen zur Mitgliedschaft oder zum Training? Schreib uns!</p>
+          <h2>Kontakt</h2>
+          <p class="contact-intro">Du hast Fragen zur Mitgliedschaft oder zum Training? Schreib uns!</p>
 
-  <div class="form-row">
-    <input type="text" name="vorname" placeholder="Vorname *" required autocomplete="given-name" />
-    <input type="text" name="nachname" placeholder="Nachname *" required autocomplete="family-name" />
-  </div>
+          <div class="form-row">
+            <input type="text" name="vorname" placeholder="Vorname *" required autocomplete="given-name" />
+            <input type="text" name="nachname" placeholder="Nachname *" required autocomplete="family-name" />
+          </div>
 
-  <input type="email" name="email" placeholder="E-Mail *" required autocomplete="email" />
-  <textarea name="nachricht" placeholder="Nachricht *" required></textarea>
-  <button type="submit" class="btn-primary">Absenden</button>
-</form>
+          <input type="email" name="email" placeholder="E-Mail *" required autocomplete="email" />
+          <textarea name="nachricht" placeholder="Nachricht *" required></textarea>
+          <button type="submit" class="btn-primary">Absenden</button>
+        </form>
 
         <div class="contact-map reveal">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.057896000186!2d7.39958281592545!3d52.673576279020754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b79a556179cae5%3A0x1987748366647113!2sSV+Gr%C3%BCn-Weiß+Lehrte+1946+e.V.!5e0!3m2!1sde!2sde!4v1695654321012!5m2!1sde!2sde"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Standort des SV Grün-Weiß Lehrte auf Google Maps"
-          ></iframe>
+          <div class="consent-embed" data-consent-category="external"
+            data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.057896000186!2d7.39958281592545!3d52.673576279020754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b79a556179cae5%3A0x1987748366647113!2sSV+Gr%C3%BCn-Weiß+Lehrte+1946+e.V.!5e0!3m2!1sde!2sde!4v1695654321012!5m2!1sde!2sde">
+            <div class="consent-placeholder">
+              <h3>Google Maps</h3>
+              <p>Die Karte wird erst nach deiner Einwilligung zu externen Inhalten geladen.</p>
+              <button type="button" class="btn-primary consent-load-external">Karte laden</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -268,31 +361,41 @@
   <footer class="site-footer">
     <div class="container footer-content">
       <div class="social-links">
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        <a href="https://www.instagram.com/svgwlehrte1946/" target="_blank" rel="noopener noreferrer"
+          aria-label="Instagram" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
         </a>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        <a href="https://www.facebook.com/gwlehrte/?locale=de_DE" target="_blank" rel="noopener noreferrer"
+          aria-label="Facebook" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
         </a>
       </div>
-
-      <p>© 2026 SV Grün-Weiß Lehrte 1946 e.V.</p>
 
       <nav class="footer-nav" aria-label="Footer-Navigation">
         <a href="pages/impressum.html">Impressum</a>
         <a href="pages/datenschutz.html">Datenschutz</a>
+        <a href="#" data-open-consent-settings>Datenschutzeinstellungen</a>
       </nav>
+
+            <p>© 2026 SV Grün-Weiß Lehrte 1946 e.V.</p>
+      <p style="max-width:600px; text-align:center;">
+        SV Grün-Weiß Lehrte 1946 e.V. ist ein Sportverein im Emsland mit
+        Fußball, Kinderturnen, Yoga und Radsport. Der Sportverein aus Lehrte
+        bei Haselünne bietet Sport für Kinder, Jugendliche und Erwachsene.
+      </p>
     </div>
   </footer>
 
-  <div
-    id="news-modal"
-    class="modal-overlay"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="modal-title"
-    aria-hidden="true"
-  >
+  <div id="news-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title"
+    aria-hidden="true">
     <div class="modal-content" tabindex="-1">
       <button class="modal-close" type="button" aria-label="Schließen">&times;</button>
 
@@ -309,7 +412,43 @@
     </div>
   </div>
 
-  <script src="js/mobile-nav.js"></script>
-  <script src="js/news-modal.js"></script>
+  <div id="consent-banner" class="consent-banner" hidden>
+    <div class="consent-box" role="dialog" aria-modal="true" aria-labelledby="consent-title">
+      <h2 id="consent-title">Datenschutzeinstellungen</h2>
+      <p>
+        Wir verwenden essenzielle Technologien für den Betrieb der Website.
+        Externe Inhalte wie Google Maps, fussball.de-Widgets oder künftig YouTube
+        laden wir nur mit deiner Einwilligung.
+      </p>
+
+      <div class="consent-options">
+        <label class="consent-option">
+          <input type="checkbox" checked disabled>
+          <span><strong>Essenziell</strong> – notwendig für den Betrieb der Website</span>
+        </label>
+
+        <label class="consent-option">
+          <input type="checkbox" id="consent-external">
+          <span><strong>Externe Inhalte</strong> – z. B. Google Maps, fussball.de, YouTube</span>
+        </label>
+      </div>
+
+      <div class="consent-actions">
+        <button type="button" class="btn-secondary" id="consent-reject">Alles ablehnen</button>
+        <button type="button" class="btn-secondary" id="consent-save">Auswahl speichern</button>
+        <button type="button" class="btn-primary" id="consent-accept">Alle akzeptieren</button>
+      </div>
+
+      <p class="consent-links">
+        <a href="pages/datenschutz.html">Datenschutz</a>
+        <a href="pages/impressum.html">Impressum</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="js/mobile-nav.js" defer></script>
+  <script src="js/news-modal.js" defer></script>
+  <script src="js/consent.js" defer></script>
 </body>
+
 </html>

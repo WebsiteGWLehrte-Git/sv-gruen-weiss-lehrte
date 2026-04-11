@@ -21,8 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const description = link.getAttribute('data-description') || '';
 
     if (modalImg) {
-      modalImg.src = image;
+      const normalizedImage = image.replace(/\\/g, '/');
+      modalImg.src = normalizedImage;
       modalImg.alt = title ? `Beitragsbild zu ${title}` : '';
+
+      modalImg.onerror = () => {
+        modalImg.src = 'assets/images/fallback-news.jpg';
+        modalImg.alt = 'Kein Bild verfügbar';
+      };
     }
 
     if (modalDate) modalDate.textContent = date;

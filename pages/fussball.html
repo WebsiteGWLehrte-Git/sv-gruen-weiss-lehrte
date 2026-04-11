@@ -4,14 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fußball – SV Grün-Weiß Lehrte</title>
+  <title>Fußball in Lehrte – SV Grün-Weiß Lehrte Emsland</title>
 
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/sparte.css">
 
   <link rel="icon" type="image/svg+xml" href="../assets/images/logos/logo.svg">
-
-  <script src="https://www.fussball.de/widgets.js"></script>
 </head>
 
 <body>
@@ -93,17 +91,13 @@
         <div class="teams-grid">
           <div class="team-card reveal">
             <div class="team-image">
-              <img src="..\assets\images\fussball\1.Mannschaft.jpg" alt="1. Herren">
+              <img src="../assets/images/fussball/1.Mannschaft.jpg"
+                data-image-preview="../assets/images/fussball/1.Mannschaft.jpg" alt="1. Herren">
               <span class="league-badge">1. Kreisklasse Emsland Mitte</span>
             </div>
             <div class="team-body">
               <h3>1. Herren</h3>
               <p>Ehrgeiziger Fußball mit klarem Ziel. Unser Aushängeschild am Sonntag.</p>
-
-              <div class="training-box">
-                <span class="training-label">Training:</span>
-                Di &amp; Do | 19:00 - 20:30
-              </div>
 
               <div class="team-actions team-actions--stacked">
                 <div class="team-actions-row">
@@ -125,17 +119,13 @@
 
           <div class="team-card reveal reveal-delay">
             <div class="team-image">
-              <img src="..\assets\images\fussball\Mannschaft_Placeholder.png" alt="2. Herren">
+              <img src="../assets/images/fussball/Mannschaft_Placeholder.png"
+                data-image-preview="../assets/images/fussball/Mannschaft_Placeholder.png" alt="2. Herren">
               <span class="league-badge">3. Kreisklasse Emsland Mitte</span>
             </div>
             <div class="team-body">
               <h3>2. Herren</h3>
               <p>Die perfekte Mischung aus sportlichem Ehrgeiz und starkem Teamgeist.</p>
-
-              <div class="training-box">
-                <span class="training-label">Training:</span>
-                Mi &amp; Fr | 18:30 - 20:00
-              </div>
 
               <div class="team-actions team-actions--stacked">
                 <div class="team-actions-row">
@@ -157,7 +147,8 @@
 
           <div class="team-card reveal">
             <div class="team-image">
-              <img src="..\assets\images\fussball\Damen-Mannschaft.jpg" alt="Damenmannschaft">
+              <img src="../assets/images/fussball/Damen-Mannschaft.jpg" alt="Damenmannschaft"
+                data-image-preview="../assets/images/fussball/Damen-Mannschaft.jpg">
               <span class="league-badge">1. Kreisklasse Emsland Mitte</span>
 
               <a href="https://www.instagram.com/sgschleperlehrtedamen/" target="_blank" rel="noopener noreferrer"
@@ -175,11 +166,6 @@
             <div class="team-body">
               <h3>Damen</h3>
               <p>Starke Leistung, starkes Team. Unsere Frauen spielen erfolgreich vorne mit.</p>
-
-              <div class="training-box">
-                <span class="training-label">Training:</span>
-                Mo &amp; Mi | 19:00 - 20:30
-              </div>
 
               <div class="team-actions team-actions--stacked">
                 <div class="team-actions-row">
@@ -201,7 +187,7 @@
 
           <div class="team-card reveal reveal-delay">
             <div class="team-image">
-              <img src="..\assets\images\fussball\Mannschaft_Placeholder.png" alt="Alte Herren">
+              <img src="../assets/images/fussball/Mannschaft_Placeholder.png" alt="Alte Herren">
               <span class="league-badge">Ü32 / Ü40</span>
             </div>
             <div class="team-body">
@@ -242,8 +228,7 @@
         <div class="contact-persons reveal">
           <div class="person-card">
             <div class="person-avatar">
-              <img src="..\assets\images\Vorstand\Thomas_Rolfers.jpeg"
-                alt="Fußballobmann Thomas Rolfers">
+              <img src="../assets/images/Vorstand/Thomas_Rolfers.jpeg" alt="Fußballobmann Thomas Rolfers">
             </div>
             <div class="person-info">
               <h4>Thomas Rolfers</h4>
@@ -251,9 +236,7 @@
               <a href="mailto:rolfers@gw-lehrte.de" class="contact-link">rolfers@gw-lehrte.de</a>
             </div>
           </div>
-        </div>
 
-                <div class="contact-persons reveal">
           <div class="person-card">
             <div class="person-avatar">
               <img src="https://ui-avatars.com/api/?name=Philipp+R&background=eee&color=333"
@@ -266,7 +249,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
   </main>
@@ -277,6 +259,7 @@
       <nav class="footer-nav" aria-label="Footer-Navigation">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
+        <a href="#" data-open-consent-settings>Datenschutzeinstellungen</a>
       </nav>
     </div>
   </footer>
@@ -401,8 +384,59 @@
     </div>
   </div>
 
+  <div id="image-lightbox" class="image-lightbox" aria-hidden="true">
+    <div class="image-lightbox-backdrop" data-lightbox-close></div>
+
+    <div class="image-lightbox-content" role="dialog" aria-modal="true" aria-label="Bildansicht">
+      <button class="image-lightbox-close" type="button" data-lightbox-close aria-label="Bild schließen">
+        &times;
+      </button>
+
+      <img id="image-lightbox-preview" src="" alt="">
+    </div>
+  </div>
+
+  <div id="fussballde-loader" data-consent-category="external" data-script-src="https://www.fussball.de/widgets.js">
+  </div>
+
+  <div id="consent-banner" class="consent-banner" hidden>
+    <div class="consent-box" role="dialog" aria-modal="true" aria-labelledby="consent-title">
+      <h2 id="consent-title">Datenschutzeinstellungen</h2>
+      <p>
+        Wir verwenden essenzielle Technologien für den Betrieb der Website.
+        Externe Inhalte wie Google Maps, fussball.de-Widgets oder künftig YouTube
+        laden wir nur mit deiner Einwilligung.
+      </p>
+
+      <div class="consent-options">
+        <label class="consent-option">
+          <input type="checkbox" checked disabled>
+          <span><strong>Essenziell</strong> – notwendig für den Betrieb der Website</span>
+        </label>
+
+        <label class="consent-option">
+          <input type="checkbox" id="consent-external">
+          <span><strong>Externe Inhalte</strong> – z. B. Google Maps, fussball.de, YouTube</span>
+        </label>
+      </div>
+
+      <div class="consent-actions">
+        <button type="button" class="btn-secondary" id="consent-reject">Alles ablehnen</button>
+        <button type="button" class="btn-secondary" id="consent-save">Auswahl speichern</button>
+        <button type="button" class="btn-primary" id="consent-accept">Alle akzeptieren</button>
+      </div>
+
+      <p class="consent-links">
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="impressum.html">Impressum</a>
+      </p>
+    </div>
+  </div>
+
   <script src="../js/mobile-nav.js"></script>
   <script src="../js/fussball-modals.js"></script>
+  <script src="../js/team-image-lightbox.js"></script>
+  <script src="../js/consent.js"></script>
 </body>
 
 </html>

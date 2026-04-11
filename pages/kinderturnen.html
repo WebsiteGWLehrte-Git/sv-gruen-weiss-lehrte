@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kinderturnen – SV Grün-Weiß Lehrte</title>
+  <title>Kinderturnen Lehrte – SV Grün-Weiß Lehrte Emsland</title>
   
   <!-- Global Styles -->
   <link rel="stylesheet" href="../css/style.css">
@@ -14,7 +14,7 @@
   <link rel="icon" type="image/svg+xml" href="../assets/images/logos/logo.svg">
 </head>
 <body>
-  <!-- Overlay für Mobile Menü (WICHTIG!) -->
+  <!-- Overlay für Mobile Menü -->
   <div class="menu-overlay"></div>
 
   <!-- HEADER -->
@@ -42,7 +42,6 @@
 
   <!-- HERO SECTION -->
   <section class="sparte-hero">
-    <!-- Bild: Platzhalter Kinderturnen -->
     <img src="../assets/images/sport-kinder.png" alt="Kinderturnen SV GW Lehrte" class="hero-bg">
     <div class="hero-overlay"></div>
     
@@ -93,8 +92,6 @@
       </div>
 
       <div class="teams-grid">
-        
-        <!-- Gruppe 1: Eltern-Kind -->
         <div class="team-card reveal">
           <div class="team-image">
             <img src="../assets/images/sport-kinder.jpg" alt="Eltern-Kind-Turnen">
@@ -121,10 +118,9 @@
           </div>
         </div>
 
-        <!-- Gruppe 2: Vorschul-Turnen -->
         <div class="team-card reveal reveal-delay">
           <div class="team-image">
-            <img src="../assets/images/sport-kinder.jpg" alt="Kinderturnen"> <!-- Platzhalter -->
+            <img src="../assets/images/sport-kinder.jpg" alt="Kinderturnen">
             <span class="league-badge">4 - 6 Jahre</span>
           </div>
           <div class="team-body">
@@ -141,7 +137,7 @@
             </div>
             
             <div class="team-actions">
-               <a href="#kontakt" class="btn-primary btn-sm" style="text-decoration:none;">
+              <a href="#kontakt" class="btn-primary btn-sm" style="text-decoration:none;">
                 Schnuppern
               </a>
             </div>
@@ -162,8 +158,6 @@
       </div>
 
       <div class="contact-persons reveal">
-        
-        <!-- Person 1 -->
         <div class="person-card">
           <div class="person-avatar">
             <img src="https://ui-avatars.com/api/?name=Sabine+Turnen&background=0b6b3a&color=fff" alt="Übungsleiterin">
@@ -175,7 +169,6 @@
             <a href="tel:+49123456789" class="contact-link">0171 / 11 22 33</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -187,11 +180,48 @@
       <nav class="footer-nav">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
+        <a href="#" data-open-consent-settings>Datenschutzeinstellungen</a>
       </nav>
     </div>
   </footer>
 
+  <!-- CONSENT BANNER -->
+  <div id="consent-banner" class="consent-banner" hidden>
+    <div class="consent-box" role="dialog" aria-modal="true" aria-labelledby="consent-title">
+      <h2 id="consent-title">Datenschutzeinstellungen</h2>
+      <p>
+        Wir verwenden essenzielle Technologien für den Betrieb der Website.
+        Externe Inhalte wie Google Maps, fussball.de-Widgets oder künftig YouTube
+        laden wir nur mit deiner Einwilligung.
+      </p>
+
+      <div class="consent-options">
+        <label class="consent-option">
+          <input type="checkbox" checked disabled>
+          <span><strong>Essenziell</strong> – notwendig für den Betrieb der Website</span>
+        </label>
+
+        <label class="consent-option">
+          <input type="checkbox" id="consent-external">
+          <span><strong>Externe Inhalte</strong> – z. B. Google Maps, fussball.de, YouTube</span>
+        </label>
+      </div>
+
+      <div class="consent-actions">
+        <button type="button" class="btn-secondary" id="consent-reject">Alles ablehnen</button>
+        <button type="button" class="btn-secondary" id="consent-save">Auswahl speichern</button>
+        <button type="button" class="btn-primary" id="consent-accept">Alle akzeptieren</button>
+      </div>
+
+      <p class="consent-links">
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="impressum.html">Impressum</a>
+      </p>
+    </div>
+  </div>
+
   <!-- JS -->
   <script src="../js/mobile-nav.js"></script>
+  <script src="../js/consent.js"></script>
 </body>
 </html>

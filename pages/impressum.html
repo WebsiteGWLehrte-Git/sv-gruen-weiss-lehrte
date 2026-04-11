@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impressum – SV Grün-Weiß Lehrte</title>
+  <title>Impressum – SV Grün-Weiß Lehrte 1946 e.V.</title>
+
   <link rel="stylesheet" href="../css/style.css">
-
-  <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="assets/images/logos/logo.svg">
-<!-- Fallback für uralte Browser (optional, falls du eine .ico hast) -->
-<link rel="alternate icon" href="favicon.ico">
-
-
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logos/logo.svg">
 </head>
 
 <body>
 
-  <!-- Kleiner Header für Unterseiten -->
+  <div class="menu-overlay"></div>
+
+  <!-- HEADER -->
   <header class="site-header" style="position:relative; background:#fff;">
     <div class="header-inner container">
       <div class="brand">
         <a href="../index.html" class="brand-link">
-          <!-- Falls Logo hier zu groß wirkt, CSS anpassen oder weglassen -->
           <span class="brand-name">SV Grün-Weiß Lehrte</span>
         </a>
       </div>
@@ -33,52 +30,129 @@
     </div>
   </header>
 
+  <!-- CONTENT -->
   <section class="section">
-    <div class="container" style="max-width: 800px;">
+    <div class="container" style="max-width: 900px;">
       <h1>Impressum</h1>
-      <p>Angaben gemäß § 5 TMG</p>
 
-      <h3>Vereinsanschrift</h3>
+      <h2>Angaben gemäß § 5 TMG</h2>
       <p>
         <strong>SV Grün-Weiß Lehrte 1946 e.V.</strong><br>
-        Schulstraße <br>
-        49740 Haselünne-Lehrte
+        Kreyenborg 13<br>
+        49740 Haselünne-Lehrte<br>
+        Deutschland
       </p>
 
-      <h3>Vertreten durch</h3>
+      <h2>Vertreten durch den Vorstand</h2>
       <p>
-        1. Vorsitzender: ???<br>
-        2. Vorsitzender: ???<br>
-        Kassenwärtin: ???<br>
-        Schriftführer: 
+        1. Vorsitzender: Christoph Gerdelmann<br>
+        2. Vorsitzender: Kai Vennemann<br>
+        Kassenwartin: Maria Rumpke<br>
+        Schriftführer: Stephan Menke
       </p>
 
-      <h3>Kontakt</h3>
+      <h2>Kontakt</h2>
       <p>
-        E-Mail: info@sv-gruen-weiss-lehrte.de
+        E-Mail: info@gw-lehrte.de<br>
+        Website: www.gw-lehrte.de
       </p>
 
-      <h3>Registereintrag</h3>
+      <h2>Registereintrag</h2>
       <p>
         Eintragung im Vereinsregister.<br>
-        Registergericht: Amtsgericht ???<br>
-        Registernummer: VR ???
+        Registergericht: Amtsgericht [ORT]<br>
+        Registernummer: VR [NUMMER]
       </p>
 
-      <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+      <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
       <p>
-        Max Mustermann<br>
-        Musterstraße 123<br>
-        49740 Haselünne-Lehrte
+        SV Grün-Weiß Lehrte 1946 e.V.<br>
+        admin@gw-lehrte.de<br>
+        
       </p>
+
+      <h2>Haftung für Inhalte</h2>
+      <p>
+        Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit,
+        Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+        Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten
+        nach den allgemeinen Gesetzen verantwortlich.
+      </p>
+
+      <h2>Haftung für Links</h2>
+      <p>
+        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
+        Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
+        Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der
+        Seiten verantwortlich.
+      </p>
+
+      <h2>Urheberrecht</h2>
+      <p>
+        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen
+        dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art
+        der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen
+        Zustimmung des jeweiligen Autors bzw. Erstellers.
+      </p>
+
+      <h2>Bildnachweise</h2>
+      <p>
+        Die auf dieser Website verwendeten Bilder stammen – sofern nicht anders angegeben –
+        vom SV Grün-Weiß Lehrte 1946 e.V. oder wurden mit Genehmigung der abgebildeten Personen
+        veröffentlicht.
+      </p>
+
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container">
+    <div class="container footer-content">
       <p>© 2026 SV Grün-Weiß Lehrte 1946 e.V.</p>
+
+      <nav class="footer-nav">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="#" data-open-consent-settings>Datenschutzeinstellungen</a>
+      </nav>
     </div>
   </footer>
 
+  <div id="consent-banner" class="consent-banner" hidden>
+  <div class="consent-box" role="dialog" aria-modal="true" aria-labelledby="consent-title">
+    <h2 id="consent-title">Datenschutzeinstellungen</h2>
+    <p>
+      Wir verwenden essenzielle Technologien für den Betrieb der Website.
+      Externe Inhalte wie Google Maps, fussball.de-Widgets oder künftig YouTube
+      laden wir nur mit deiner Einwilligung.
+    </p>
+
+    <div class="consent-options">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><strong>Essenziell</strong> – notwendig für den Betrieb der Website</span>
+      </label>
+
+      <label class="consent-option">
+        <input type="checkbox" id="consent-external">
+        <span><strong>Externe Inhalte</strong> – z. B. Google Maps, fussball.de, YouTube</span>
+      </label>
+    </div>
+
+    <div class="consent-actions">
+      <button type="button" class="btn-secondary" id="consent-reject">Alles ablehnen</button>
+      <button type="button" class="btn-secondary" id="consent-save">Auswahl speichern</button>
+      <button type="button" class="btn-primary" id="consent-accept">Alle akzeptieren</button>
+    </div>
+
+    <p class="consent-links">
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+    </p>
+  </div>
+</div>
+
+  <script src="../js/consent.js"></script>
 </body>
+
 </html>

@@ -1,12 +1,12 @@
 :root {
   --green-main: #0b6b3a;
   --green-dark: #09522c;
-  --green-light: rgba(11,107,58,0.35);
+  --green-light: rgba(11, 107, 58, 0.35);
   --white: #ffffff;
   --gray-light: #f4f6f8;
   --text-dark: #1f2933;
-  --shadow-soft: 0 4px 12px rgba(0,0,0,0.18);
-  --shadow-strong: 0 10px 26px rgba(0,0,0,0.28);
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.18);
+  --shadow-strong: 0 10px 26px rgba(0, 0, 0, 0.28);
   --focus-ring: 0 0 0 3px rgba(11, 107, 58, 0.22);
 }
 
@@ -43,7 +43,11 @@ a,
 button,
 input,
 textarea {
-  transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 a:focus-visible,
@@ -86,7 +90,7 @@ h3 {
   z-index: 100;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .header-inner {
@@ -179,7 +183,6 @@ h3 {
   height: 120%;
   object-fit: cover;
   z-index: 1;
-  will-change: transform;
   background-color: var(--green-dark);
 }
 
@@ -187,7 +190,7 @@ h3 {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(11,107,58,0.4), rgba(9,82,44,0.7));
+  background: linear-gradient(to bottom, rgba(11, 107, 58, 0.4), rgba(9, 82, 44, 0.7));
   z-index: 2;
 }
 
@@ -203,13 +206,13 @@ h3 {
 .hero h1 {
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 800;
-  text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subline {
   font-size: clamp(1.1rem, 2vw, 1.5rem);
   font-weight: 500;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-title span,
@@ -220,11 +223,25 @@ h3 {
   animation: heroLineIn 0.8s forwards;
 }
 
-.hero-title span:nth-child(1) { animation-delay: 0.2s; }
-.hero-title span:nth-child(2) { animation-delay: 0.4s; }
-.hero-subline span:nth-child(1) { animation-delay: 0.6s; }
-.hero-subline span:nth-child(2) { animation-delay: 0.8s; }
-.hero-subline span:nth-child(3) { animation-delay: 1s; }
+.hero-title span:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.hero-title span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.hero-subline span:nth-child(1) {
+  animation-delay: 0.6s;
+}
+
+.hero-subline span:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+.hero-subline span:nth-child(3) {
+  animation-delay: 1s;
+}
 
 @keyframes heroLineIn {
   to {
@@ -363,6 +380,11 @@ h3 {
   margin-bottom: 0.75rem;
 }
 
+.club-cta {
+  margin-top: 1.5rem;
+  display: inline-flex;
+}
+
 /* Reveal */
 .reveal {
   opacity: 0;
@@ -377,6 +399,213 @@ h3 {
 
 .reveal-delay {
   transition-delay: 0.15s;
+}
+
+/* Instagram Spotlight */
+.instagram-spotlight {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(11, 107, 58, 0.12), transparent 35%),
+    linear-gradient(135deg, #f7fbf8 0%, #eef6f1 45%, #e3f0e8 100%);
+}
+
+.instagram-spotlight::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(11, 107, 58, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.instagram-spotlight-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.instagram-spotlight-text {
+  max-width: 580px;
+}
+
+.instagram-spotlight-text h2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.08;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.instagram-lead {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 1rem;
+}
+
+.instagram-spotlight-text p+p {
+  margin-top: 0.75rem;
+}
+
+.instagram-spotlight-cta {
+  margin-top: 1.75rem;
+  display: inline-flex;
+}
+
+.instagram-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.instagram-preview-card {
+  width: 100%;
+  max-width: 470px;
+  text-decoration: none;
+  color: inherit;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  box-shadow: 0 18px 45px rgba(9, 82, 44, 0.14);
+  border: 1px solid rgba(11, 107, 58, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instagram-preview-card:hover,
+.instagram-preview-card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 55px rgba(9, 82, 44, 0.18);
+}
+
+.instagram-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.instagram-preview-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.instagram-preview-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 10px 22px rgba(11, 107, 58, 0.22);
+}
+
+.instagram-preview-brand strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.instagram-preview-brand span {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.92rem;
+  color: #67736d;
+}
+
+.instagram-preview-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(11, 107, 58, 0.08);
+  color: var(--green-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.instagram-preview-hero {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  margin-bottom: 0.9rem;
+  background: linear-gradient(135deg, rgba(11, 107, 58, 0.15), rgba(9, 82, 44, 0.45));
+}
+
+.instagram-preview-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.instagram-preview-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: end;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.05));
+}
+
+.instagram-preview-hero-overlay span {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.3;
+  max-width: 240px;
+}
+
+.instagram-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.instagram-preview-tile {
+  aspect-ratio: 1 / 1;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, rgba(11, 107, 58, 0.14), rgba(11, 107, 58, 0.28));
+}
+
+.instagram-preview-tile-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.instagram-preview-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.02));
+}
+
+.instagram-preview-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--green-main);
+  font-weight: 700;
+  font-size: 0.95rem;
 }
 
 /* Sport */
@@ -395,11 +624,12 @@ h3 {
   isolation: isolate;
 }
 
-.sport-bg {
+.sport-bg-img {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   background-color: var(--green-dark);
   transition: transform 0.6s ease;
 }
@@ -408,7 +638,10 @@ h3 {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(to bottom, rgba(11,107,58,0.2) 0%, rgba(9,82,44,0.8) 60%, rgba(9,82,44,0.95) 100%);
+  background: linear-gradient(to bottom,
+      rgba(11, 107, 58, 0.2) 0%,
+      rgba(9, 82, 44, 0.8) 60%,
+      rgba(9, 82, 44, 0.95) 100%);
   transition: background 0.3s ease;
 }
 
@@ -428,7 +661,7 @@ h3 {
 .sport-card h3 {
   font-size: 2rem;
   font-weight: 800;
-  text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   margin-bottom: 0;
   transform: translateY(10px);
   transition: transform 0.3s ease;
@@ -439,7 +672,7 @@ h3 {
   padding: 0.5rem 1.2rem;
   border-radius: 20px;
   font-size: 0.85rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .sport-card:hover,
@@ -448,14 +681,14 @@ h3 {
   box-shadow: var(--shadow-strong);
 }
 
-.sport-card:hover .sport-bg,
-.sport-card:focus-visible .sport-bg {
+.sport-card:hover .sport-bg-img,
+.sport-card:focus-visible .sport-bg-img {
   transform: scale(1.08);
 }
 
 .sport-card:hover .sport-overlay,
 .sport-card:focus-visible .sport-overlay {
-  background: linear-gradient(to top, rgba(9,82,44,0.95) 0%, rgba(9,82,44,0.6) 100%);
+  background: linear-gradient(to top, rgba(9, 82, 44, 0.95) 0%, rgba(9, 82, 44, 0.6) 100%);
 }
 
 .sport-card:hover h3,
@@ -603,14 +836,173 @@ h3 {
 }
 
 .contact-map {
+  position: relative;
   width: 100%;
-  min-height: 350px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .contact-map iframe {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+/* ===== CONSENT BANNER ===== */
+.consent-banner {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: grid;
+  place-items: end center;
+  z-index: 5000;
+  padding: 1rem;
+}
+
+.consent-box {
+  width: min(100%, 760px);
+  background: #fff;
+  color: var(--text-dark);
+  border-radius: 16px;
+  box-shadow: var(--shadow-strong);
+  padding: 1.25rem;
+}
+
+.consent-box h2 {
+  margin-bottom: 0.75rem;
+}
+
+.consent-options {
+  display: grid;
+  gap: 0.9rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.consent-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid #d7dde3;
+  border-radius: 10px;
+  background: #f9fbfc;
+}
+
+.consent-option input {
+  margin-top: 0.2rem;
+}
+
+.consent-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.btn-secondary {
+  border: 1px solid var(--green-main);
+  background: #fff;
+  color: var(--green-main);
+  padding: 0.85rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.consent-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+/* ===== CONSENT BANNER ===== */
+.consent-banner {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+  padding: 1rem;
+}
+
+.consent-banner[hidden] {
+  display: none !important;
+}
+
+.consent-box {
+  width: min(100%, 760px);
+  max-height: min(90vh, 720px);
+  overflow-y: auto;
+  background: #fff;
+  color: var(--text-dark);
+  border-radius: 16px;
+  box-shadow: var(--shadow-strong);
+  padding: 1.5rem;
+}
+
+.consent-box h2 {
+  margin-bottom: 0.75rem;
+}
+
+.consent-options {
+  display: grid;
+  gap: 0.9rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.consent-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid #d7dde3;
+  border-radius: 10px;
+  background: #f9fbfc;
+}
+
+.consent-option input {
+  margin-top: 0.2rem;
+}
+
+.consent-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.consent-actions .btn-primary,
+.consent-actions .btn-secondary {
+  appearance: none;
+  border-radius: 10px;
+  padding: 0.85rem 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.consent-actions .btn-secondary {
+  border: 1px solid var(--green-main);
+  background: #fff;
+  color: var(--green-main);
+}
+
+.consent-actions .btn-primary {
+  border: none;
+  background: var(--green-main);
+  color: var(--white);
+}
+
+.consent-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
 }
 
 /* Footer */
@@ -634,7 +1026,7 @@ h3 {
 }
 
 .social-icon {
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -647,7 +1039,7 @@ h3 {
 }
 
 .footer-nav a {
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   margin: 0 0.8rem;
   font-size: 0.95rem;
@@ -702,7 +1094,7 @@ h3 {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0, 0, 0, 0.55);
   color: #fff;
   border: none;
   width: 36px;
@@ -721,13 +1113,21 @@ h3 {
 
 .modal-header {
   position: relative;
-  height: 250px;
+  min-height: 250px;
+  max-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f6f8;
+  padding: 1rem;
 }
 
 .modal-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-height: calc(60vh - 2rem);
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .modal-date-badge {
@@ -796,6 +1196,11 @@ h3 {
   .contact-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .instagram-spotlight-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 3rem;
+  }
 }
 
 @media (min-width: 1100px) {
@@ -817,7 +1222,7 @@ h3 {
     width: min(80%, 300px);
     background: var(--white);
     padding: 6rem 2rem 2rem;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 99;
@@ -840,7 +1245,7 @@ h3 {
   .menu-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 90;
     opacity: 0;
     pointer-events: none;
@@ -850,6 +1255,15 @@ h3 {
   .menu-overlay.active {
     opacity: 1;
     pointer-events: auto;
+  }
+
+  .instagram-preview-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .instagram-preview-pill {
+    align-self: flex-start;
   }
 }
 
@@ -877,37 +1291,13 @@ h3 {
     transform: none;
   }
 
-  .team-actions--stacked {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.team-actions-row {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.team-actions-row .btn-sm {
-  flex: 1 1 140px;
-}
-
-.btn-full {
-  width: 100%;
-}
-
-.btn-ghost.btn-sm {
-  background: var(--gray-light);
-  color: var(--green-dark);
-  border: 2px solid transparent;
-}
-
-.btn-ghost.btn-sm:hover,
-.btn-ghost.btn-sm:focus-visible {
-  background: rgba(11, 107, 58, 0.1);
-  color: var(--green-main);
-  transform: translateY(-2px);
-}
+  #verein,
+  #instagram,
+  #sport,
+  #news,
+  #kontakt,
+  .site-footer {
+    content-visibility: auto;
+    contain-intrinsic-size: 800px;
+  }
 }
