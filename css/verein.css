@@ -15,18 +15,23 @@
 .verein-hero .hero-bg {
   position: absolute;
   inset: 0;
+  z-index: 1;
   width: 100%;
   height: 120%;
   object-fit: cover;
-  z-index: 1;
 }
 
 .verein-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.32) 0%, rgba(11, 107, 58, 0.72) 100%);
   z-index: 2;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.32) 0%,
+      rgba(11, 107, 58, 0.72) 100%
+    );
 }
 
 .verein-hero .hero-content {
@@ -126,7 +131,13 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.03) 38%, rgba(0, 0, 0, 0) 100%);
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.12) 0%,
+      rgba(0, 0, 0, 0.03) 38%,
+      rgba(0, 0, 0, 0) 100%
+    );
   pointer-events: none;
 }
 
@@ -155,7 +166,12 @@
   margin-top: 1.5rem;
 }
 
-/* ===== HISTORIE ===== */
+/*
+===== HISTORY-KOMPONENTE TEMPORÄR DEAKTIVIERT =====
+
+Die Styles bleiben für die spätere Weiterentwicklung erhalten
+und werden aktuell nicht angewendet.
+
 .history-section {
   position: relative;
 }
@@ -177,7 +193,9 @@
   font-size: 0.92rem;
   font-weight: 700;
   text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .history-jump-nav a:hover,
@@ -192,17 +210,18 @@
 }
 
 .history-chapter {
+  overflow: hidden;
   border: 1px solid rgba(11, 107, 58, 0.08);
   border-radius: 1.25rem;
   background: var(--white);
   box-shadow: var(--shadow-soft);
-  overflow: hidden;
 }
 
 .history-chapter-summary {
+  position: relative;
   display: grid;
   gap: 0.55rem;
-  padding: 1.2rem;
+  padding: 1.2rem 3.5rem 1.2rem 1.2rem;
   cursor: pointer;
   list-style: none;
 }
@@ -214,8 +233,8 @@
 .history-chapter-summary::after {
   content: "+";
   position: absolute;
-  right: 1.25rem;
   top: 1.15rem;
+  right: 1.25rem;
   color: var(--green-main);
   font-size: 1.65rem;
   line-height: 1;
@@ -223,11 +242,6 @@
 
 .history-chapter[open] .history-chapter-summary::after {
   content: "–";
-}
-
-.history-chapter-summary {
-  position: relative;
-  padding-right: 3.5rem;
 }
 
 .history-group-label {
@@ -288,8 +302,8 @@
 .history-item::before {
   content: "";
   position: absolute;
-  left: -0.88rem;
   top: 1.2rem;
+  left: -0.88rem;
   width: 0.95rem;
   height: 0.95rem;
   border-radius: 50%;
@@ -361,7 +375,8 @@
   line-height: 1;
 }
 
-.history-item[open]:not(.history-item--static) .history-summary-text::after {
+.history-item[open]:not(.history-item--static)
+  .history-summary-text::after {
   content: "–";
 }
 
@@ -387,7 +402,9 @@
   background: #eef1f2;
   box-shadow: var(--shadow-soft);
   cursor: zoom-in;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .history-media img:hover,
@@ -402,6 +419,7 @@
   font-size: 0.9rem;
   line-height: 1.45;
 }
+*/
 
 /* ===== STATS ===== */
 .stats-section {
@@ -445,7 +463,10 @@
   background: var(--white);
   box-shadow: var(--shadow-soft);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .board-member:hover {
@@ -472,7 +493,9 @@
   border-radius: 50%;
   background: #f0f0f0;
   cursor: zoom-in;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
 }
 
 .member-img:hover img,
@@ -514,7 +537,10 @@
   color: #666;
   font-size: 0.85rem;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .member-link:hover,
@@ -541,7 +567,11 @@
   border-radius: 1rem;
   background: var(--gray-light);
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .doc-card:hover,
@@ -725,13 +755,16 @@ img {
   .club-gallery-card-large {
     grid-column: span 1;
     grid-row: span 2;
-    aspect-ratio: auto;
     min-height: 100%;
+    aspect-ratio: auto;
   }
 
   .club-gallery-card {
     min-height: 220px;
   }
+
+  /*
+  HISTORY-KOMPONENTE TEMPORÄR DEAKTIVIERT.
 
   .history-chapter-summary {
     padding: 1.5rem 4.25rem 1.5rem 1.5rem;
@@ -744,7 +777,7 @@ img {
   .history-item summary,
   .history-item-row {
     grid-template-columns: 90px 1fr;
-    padding: 1.1rem 1.2rem 1.1rem 1.2rem;
+    padding: 1.1rem 1.2rem;
   }
 
   .history-year {
@@ -759,6 +792,7 @@ img {
   .history-media img {
     max-width: 620px;
   }
+  */
 }
 
 @media (min-width: 900px) {
@@ -776,15 +810,17 @@ img {
     border-radius: 1.2rem;
   }
 
+  /*
+  HISTORY-KOMPONENTE TEMPORÄR DEAKTIVIERT.
+
   .history-chapters {
     gap: 1.25rem;
   }
+  */
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .history-jump-nav a,
   .club-gallery-card img,
-  .history-media img,
   .member-img img,
   .board-member,
   .doc-card {

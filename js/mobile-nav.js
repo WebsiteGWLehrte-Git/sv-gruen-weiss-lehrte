@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function toggleMenu() {
     const isOpen = mainNav.classList.contains('active');
+
     if (isOpen) {
       closeMenu();
     } else {
@@ -56,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mainNav.classList.contains('active')) {
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && mainNav.classList.contains('active')) {
         closeMenu();
       }
     });
@@ -67,7 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateParallax() {
     if (!heroBg) return;
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
 
     if (reduceMotion || window.innerWidth < 768) {
       heroBg.style.transform = 'translate3d(0, 0, 0)';
@@ -81,35 +85,46 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function requestParallaxUpdate() {
-    if (!ticking) {
-      window.requestAnimationFrame(updateParallax);
-      ticking = true;
-    }
+    if (ticking) return;
+
+    window.requestAnimationFrame(updateParallax);
+    ticking = true;
   }
 
   if (heroBg) {
-    window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+    window.addEventListener('scroll', requestParallaxUpdate, {
+      passive: true
+    });
+
     window.addEventListener('resize', requestParallaxUpdate);
+
     updateParallax();
   }
 
   const revealElements = document.querySelectorAll('.reveal');
 
   if ('IntersectionObserver' in window && revealElements.length) {
-    const observer = new IntersectionObserver((entries, observerInstance) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+    const observer = new IntersectionObserver(
+      (entries, observerInstance) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
           entry.target.classList.add('visible');
           observerInstance.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -50px 0px'
-    });
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
 
-    revealElements.forEach((el) => observer.observe(el));
+    revealElements.forEach((element) => {
+      observer.observe(element);
+    });
   } else {
-    revealElements.forEach((el) => el.classList.add('visible'));
+    revealElements.forEach((element) => {
+      element.classList.add('visible');
+    });
   }
 });

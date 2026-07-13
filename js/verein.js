@@ -1,44 +1,77 @@
-document.addEventListener("DOMContentLoaded", () => {
-  
-  // HINWEIS: Die Reveal-Animation wird global über mobile-nav.js gesteuert.
-  // Hier kümmern wir uns nur um die spezifischen Zahlen-Animationen.
+document.addEventListener('DOMContentLoaded', () => {
+  // Die Reveal-Animation wird global über mobile-nav.js gesteuert.
+  // Dieses Skript enthält ausschließlich die Zahlenanimation der Statistiken.
 
-  // ===== STATS COUNTER ANIMATION =====
   const counters = document.querySelectorAll('.count');
-  
-  // Wir nutzen einen Observer, damit die Animation erst startet, wenn sichtbar
-  const counterObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
+
+  if (!counters.length) {
+    return;
+  }
+
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
+  function setFinalCounterValue(counter) {
+    const target = Number(counter.dataset.target);
+    const hasPlus = counter.dataset.plus === 'true';
+
+    if (!Number.isFinite(target)) {
+      return;
+    }
+
+    counter.textContent = `${target}${hasPlus ? '+' : ''}`;
+  }
+
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    counters.forEach(setFinalCounterValue);
+    return;
+  }
+
+  const counterObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
         const counter = entry.target;
-        
-        // Werte auslesen
-        const target = +counter.getAttribute('data-target'); // "+" wandelt string in nummer
-        const hasPlus = counter.getAttribute('data-plus') === "true";
-        
-        const duration = 2000; // 2 Sekunden Animationsdauer
-        const increment = target / (duration / 16); // 60 FPS
+        const target = Number(counter.dataset.target);
+        const hasPlus = counter.dataset.plus === 'true';
 
-        let currentCount = 0;
+        if (!Number.isFinite(target)) {
+          observer.unobserve(counter);
+          return;
+        }
 
-        const updateCounter = () => {
-          currentCount += increment;
+        const duration = 2000;
+        const startTime = performance.now();
 
-          if (currentCount < target) {
-            // Zahl runden für saubere Anzeige
-            counter.innerText = Math.ceil(currentCount);
-            requestAnimationFrame(updateCounter);
-          } else {
-            // Ziel erreicht -> Finalen Wert setzen + optionales Plus
-            counter.innerText = target + (hasPlus ? "+" : "");
+        function updateCounter(currentTime) {
+          const elapsedTime = currentTime - startTime;
+          const progress = Math.min(elapsedTime / duration, 1);
+          const currentValue = Math.round(target * progress);
+
+          counter.textContent = String(currentValue);
+
+          if (progress < 1) {
+            window.requestAnimationFrame(updateCounter);
+            return;
           }
-        };
 
-        updateCounter();
-        observer.unobserve(counter); // Nur einmal animieren
-      }
-    });
-  }, { threshold: 0.5 }); // Startet, wenn 50% sichtbar
+          counter.textContent = `${target}${hasPlus ? '+' : ''}`;
+        }
 
-  counters.forEach(c => counterObserver.observe(c));
+        window.requestAnimationFrame(updateCounter);
+        observer.unobserve(counter);
+      });
+    },
+    {
+      threshold: 0.5
+    }
+  );
+
+  counters.forEach((counter) => {
+    counterObserver.observe(counter);
+  });
 });

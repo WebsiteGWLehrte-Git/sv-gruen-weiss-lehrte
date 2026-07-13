@@ -4,7 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Fußball in Lehrte – SV Grün-Weiß Lehrte Emsland</title>
+
+  <meta name="description"
+    content="Fußball beim SV Grün-Weiß Lehrte im Emsland: Herren-, Damen-, Jugend- und Alte-Herren-Mannschaften, Ansprechpartner, Tabellen, Kader und nächste Spiele.">
 
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/sparte.css">
@@ -18,13 +22,23 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <a href="../index.html" class="brand-link" aria-label="Zur Startseite des SV Grün-Weiß Lehrte">
-          <img src="../assets/images/logos/logo.svg" alt="SV Grün-Weiß Lehrte Logo" class="brand-logo">
+        <a href="../index.html"
+          class="brand-link"
+          aria-label="Zur Startseite des SV Grün-Weiß Lehrte">
+
+          <img src="../assets/images/logos/logo.svg"
+            alt="SV Grün-Weiß Lehrte Logo"
+            class="brand-logo"
+            decoding="async">
+
           <span class="brand-name">SV Grün-Weiß Lehrte</span>
         </a>
       </div>
 
-      <nav class="main-nav" id="main-navigation" aria-label="Hauptnavigation">
+      <nav class="main-nav"
+        id="main-navigation"
+        aria-label="Hauptnavigation">
+
         <ul>
           <li><a href="../index.html">Startseite</a></li>
           <li><a href="../index.html#sport">Zurück zum Sportangebot</a></li>
@@ -33,22 +47,42 @@
         </ul>
       </nav>
 
-      <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false"
+      <button class="nav-toggle"
+        type="button"
+        aria-label="Menü öffnen"
+        aria-expanded="false"
         aria-controls="main-navigation">
+
         <span aria-hidden="true">☰</span>
       </button>
     </div>
   </header>
 
   <main>
-    <section class="sparte-hero">
-      <img src="../assets/images/sport-fussball.png" alt="Fußball im SV Grün-Weiß Lehrte" class="hero-bg">
+    <section class="sparte-hero"
+      aria-labelledby="football-page-title">
+
+      <img src="../assets/images/sport-fussball.png"
+        alt=""
+        class="hero-bg"
+        fetchpriority="high"
+        decoding="async"
+        width="1920"
+        height="1080">
+
       <div class="hero-overlay"></div>
 
       <div class="container hero-content reveal">
         <span class="sparte-badge">Sparte Fußball</span>
-        <h1>Die Nummer 1<br>im Herzschlag.</h1>
-        <p>Von den Minikickern bis zu den Alten Herren – wir leben Fußball.</p>
+
+        <h1 id="football-page-title">
+          Die Nummer 1<br>
+          im Herzschlag.
+        </h1>
+
+        <p>
+          Von den Minikickern bis zu den Alten Herren – wir leben Fußball.
+        </p>
       </div>
     </section>
 
@@ -56,198 +90,351 @@
       <div class="container intro-grid">
         <div class="intro-text reveal">
           <h2>Leidenschaft auf dem Platz.</h2>
+
           <p>
-            Unsere Fußballsparte ist das Herzstück des Vereins. Mit über 15 Mannschaften
-            bieten wir fußballerische Heimat für jeden Anspruch – egal ob leistungsorientiert
-            in der 1. Herren oder spaßbetont im Jugendbereich.
+            Unsere Fußballsparte ist das Herzstück des Vereins. Mit vielen
+            Mannschaften im Jugend- und Herrenbereich bieten wir fußballerische
+            Heimat für jeden Anspruch – egal ob leistungsorientiert in der
+            1. Herren oder spaßbetont im Jugendbereich.
           </p>
+
           <ul class="check-list">
-            <li>Modernes Kunstrasen-Kleinfeld</li>
+            <li>Saubere, gepflegte Sportanlage</li>
             <li>Zwei große Rasenplätze</li>
-            <li>Lizenziertes Trainerteam</li>
+            <li>Lizenzierte und ehrenamtliche Trainer und Betreuer</li>
           </ul>
         </div>
 
         <div class="intro-stat reveal reveal-delay">
           <div class="stat-box">
-            <span class="stat-number">300+</span>
+            <span class="stat-number">100+</span>
             <span class="stat-label">Aktive Kicker</span>
           </div>
+
           <div class="stat-box">
-            <span class="stat-number">15</span>
-            <span class="stat-label">Teams</span>
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Trainer &amp; Betreuer</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="teams" class="section section-light">
+    <section id="teams"
+      class="section section-light"
+      aria-labelledby="teams-title">
+
       <div class="container">
         <div class="section-header reveal">
           <span class="section-eyebrow">Unsere Kader</span>
-          <h2>Die Mannschaften</h2>
+          <h2 id="teams-title">Die Mannschaften</h2>
         </div>
 
         <div class="teams-grid">
-          <div class="team-card reveal">
+          <article class="team-card reveal">
             <div class="team-image">
               <img src="../assets/images/fussball/1.Mannschaft.jpg"
-                data-image-preview="../assets/images/fussball/1.Mannschaft.jpg" alt="1. Herren">
-              <span class="league-badge">1. Kreisklasse Emsland Mitte</span>
+                data-image-preview="../assets/images/fussball/1.Mannschaft.jpg"
+                alt="Mannschaftsfoto der 1. Herren"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="800">
+
+              <span class="league-badge">
+                1. Kreisklasse Emsland Mitte
+              </span>
             </div>
+
             <div class="team-body">
               <h3>1. Herren</h3>
-              <p>Ehrgeiziger Fußball mit klarem Ziel. Unser Aushängeschild am Sonntag.</p>
+
+              <p>
+                Ehrgeiziger Fußball mit klarem Ziel. Unser Aushängeschild am Sonntag.
+              </p>
 
               <div class="team-actions team-actions--stacked">
                 <div class="team-actions-row">
-                  <button class="btn-primary btn-sm" type="button" data-modal-open="herren1-next-modal">
+                  <button class="btn-primary btn-sm"
+                    type="button"
+                    data-modal-open="herren1-next-modal"
+                    aria-haspopup="dialog"
+                    aria-controls="herren1-next-modal">
+
                     Nächstes Spiel
                   </button>
 
-                  <button class="btn-secondary btn-sm" type="button" data-modal-open="herren1-table-modal">
+                  <button class="btn-secondary btn-sm"
+                    type="button"
+                    data-modal-open="herren1-table-modal"
+                    aria-haspopup="dialog"
+                    aria-controls="herren1-table-modal">
+
                     Tabelle
                   </button>
                 </div>
 
-                <button class="btn-ghost btn-sm btn-full" type="button" data-modal-open="herren1-squad-modal">
+                <button class="btn-ghost btn-sm btn-full"
+                  type="button"
+                  data-modal-open="herren1-squad-modal"
+                  aria-haspopup="dialog"
+                  aria-controls="herren1-squad-modal">
+
                   Kader ansehen
                 </button>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="team-card reveal reveal-delay">
+          <article class="team-card reveal reveal-delay">
             <div class="team-image">
               <img src="../assets/images/fussball/Mannschaft_Placeholder.png"
-                data-image-preview="../assets/images/fussball/Mannschaft_Placeholder.png" alt="2. Herren">
-              <span class="league-badge">3. Kreisklasse Emsland Mitte</span>
+                data-image-preview="../assets/images/fussball/Mannschaft_Placeholder.png"
+                alt="Mannschaftsfoto der 2. Herren"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="800">
+
+              <span class="league-badge">
+                3. Kreisklasse Emsland Mitte
+              </span>
             </div>
+
             <div class="team-body">
               <h3>2. Herren</h3>
-              <p>Die perfekte Mischung aus sportlichem Ehrgeiz und starkem Teamgeist.</p>
+
+              <p>
+                Die perfekte Mischung aus sportlichem Ehrgeiz und starkem Teamgeist.
+              </p>
 
               <div class="team-actions team-actions--stacked">
                 <div class="team-actions-row">
-                  <button class="btn-primary btn-sm" type="button" data-modal-open="herren2-next-modal">
+                  <button class="btn-primary btn-sm"
+                    type="button"
+                    data-modal-open="herren2-next-modal"
+                    aria-haspopup="dialog"
+                    aria-controls="herren2-next-modal">
+
                     Nächstes Spiel
                   </button>
 
-                  <button class="btn-secondary btn-sm" type="button" data-modal-open="herren2-table-modal">
+                  <button class="btn-secondary btn-sm"
+                    type="button"
+                    data-modal-open="herren2-table-modal"
+                    aria-haspopup="dialog"
+                    aria-controls="herren2-table-modal">
+
                     Tabelle
                   </button>
                 </div>
 
-                <button class="btn-ghost btn-sm btn-full" type="button" data-modal-open="herren2-squad-modal">
+                <button class="btn-ghost btn-sm btn-full"
+                  type="button"
+                  data-modal-open="herren2-squad-modal"
+                  aria-haspopup="dialog"
+                  aria-controls="herren2-squad-modal">
+
                   Kader ansehen
                 </button>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="team-card reveal">
+          <article class="team-card reveal">
             <div class="team-image">
-              <img src="../assets/images/fussball/Damen-Mannschaft.jpg" alt="Damenmannschaft"
-                data-image-preview="../assets/images/fussball/Damen-Mannschaft.jpg">
-              <span class="league-badge">1. Kreisklasse Emsland Mitte</span>
+              <img src="../assets/images/fussball/Damen-Mannschaft.jpg"
+                data-image-preview="../assets/images/fussball/Damen-Mannschaft.jpg"
+                alt="Mannschaftsfoto der Damenmannschaft"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="800">
 
-              <a href="https://www.instagram.com/sgschleperlehrtedamen/" target="_blank" rel="noopener noreferrer"
-                class="team-social-badge" aria-label="Instagram-Profil der Damenmannschaft öffnen" title="Instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              <span class="league-badge">
+                1. Kreisklasse Emsland Mitte
+              </span>
+
+              <a href="https://www.instagram.com/sgschleperlehrtedamen/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="team-social-badge"
+                aria-label="Instagram-Profil der Damenmannschaft öffnen"
+                title="Instagram">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                   aria-hidden="true">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+
+                  <rect x="2"
+                    y="2"
+                    width="20"
+                    height="20"
+                    rx="5"
+                    ry="5">
+                  </rect>
+
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z">
+                  </path>
+
+                  <line x1="17.5"
+                    y1="6.5"
+                    x2="17.51"
+                    y2="6.5">
+                  </line>
                 </svg>
               </a>
             </div>
 
             <div class="team-body">
               <h3>Damen</h3>
-              <p>Starke Leistung, starkes Team. Unsere Frauen spielen erfolgreich vorne mit.</p>
+
+              <p>
+                Starke Leistung, starkes Team. Unsere Frauen spielen erfolgreich vorne mit.
+              </p>
 
               <div class="team-actions team-actions--stacked">
                 <div class="team-actions-row">
-                  <button class="btn-primary btn-sm" type="button" data-modal-open="widget-modal">
+                  <button class="btn-primary btn-sm"
+                    type="button"
+                    data-modal-open="widget-modal"
+                    aria-haspopup="dialog"
+                    aria-controls="widget-modal">
+
                     Nächstes Spiel
                   </button>
 
-                  <button class="btn-secondary btn-sm" type="button" data-modal-open="table-modal">
+                  <button class="btn-secondary btn-sm"
+                    type="button"
+                    data-modal-open="table-modal"
+                    aria-haspopup="dialog"
+                    aria-controls="table-modal">
+
                     Tabelle
                   </button>
                 </div>
 
-                <button class="btn-ghost btn-sm btn-full" type="button" data-modal-open="squad-modal">
+                <button class="btn-ghost btn-sm btn-full"
+                  type="button"
+                  data-modal-open="squad-modal"
+                  aria-haspopup="dialog"
+                  aria-controls="squad-modal">
+
                   Kader ansehen
                 </button>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="team-card reveal reveal-delay">
+          <article class="team-card reveal reveal-delay">
             <div class="team-image">
-              <img src="../assets/images/fussball/Mannschaft_Placeholder.png" alt="Alte Herren">
+              <img src="../assets/images/fussball/Mannschaft_Placeholder.png"
+                alt="Mannschaft der Alten Herren"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="800">
+
               <span class="league-badge">Ü32 / Ü40</span>
             </div>
+
             <div class="team-body">
               <h3>Alte Herren</h3>
-              <p>Erfahrung trifft Geselligkeit. Hier steht der Spaß im Fokus.</p>
+
+              <p>
+                Erfahrung trifft Geselligkeit. Hier steht der Spaß im Fokus.
+              </p>
 
               <div class="training-box">
                 <span class="training-label">Training:</span>
-                Mi | 19:30 - 21:00
+                Mi | 19:30–21:00 Uhr
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="team-card full-width reveal">
+          <article class="team-card full-width reveal">
             <div class="team-body">
               <h3>Unsere Jugend</h3>
+
               <p>
-                Unsere kleinsten Kicker ganz groß. Wir vermitteln Spaß am Ball, Teamgeist und Fairplay.<br>
-                Aktuell stellen wir Teams in der <strong>E-Jugend</strong>, <strong>F-Jugend</strong> und
-                <strong>G-Jugend</strong> (Minis).
+                Unsere kleinsten Kicker ganz groß. Wir vermitteln Spaß am Ball,
+                Teamgeist und Fairplay.<br>
+                Aktuell stellen wir Teams in der <strong>E-Jugend</strong>,
+                <strong>F-Jugend</strong> und <strong>G-Jugend</strong> (Minis).
               </p>
-              <a href="https://jfv-haseluenne.de/" target="_blank" rel="noopener noreferrer" class="jfv-link">
-                Für ältere Jahrgänge kooperieren wir mit dem Jugendförderverein (JFV) Haselünne &rarr;
+
+              <a href="https://jfv-haseluenne.de/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="jfv-link">
+
+                Für ältere Jahrgänge kooperieren wir mit dem
+                Jugendförderverein (JFV) Haselünne &rarr;
               </a>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="kontakt" class="section">
+    <section id="kontakt"
+      class="section"
+      aria-labelledby="contact-title">
+
       <div class="container">
         <div class="section-header reveal">
           <span class="section-eyebrow">Kontaktdaten</span>
-          <h2>Unsere Ansprechpartner</h2>
+          <h2 id="contact-title">Unsere Ansprechpartner</h2>
         </div>
 
         <div class="contact-persons reveal">
-          <div class="person-card">
+          <article class="person-card">
             <div class="person-avatar">
-              <img src="../assets/images/Vorstand/Thomas_Rolfers.jpeg" alt="Fußballobmann Thomas Rolfers">
+              <img src="../assets/images/Vorstand/Thomas_Rolfers.jpeg"
+                alt="Fußballobmann Thomas Rolfers"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="600">
             </div>
-            <div class="person-info">
-              <h4>Thomas Rolfers</h4>
-              <span class="role">Fußballobmann</span>
-              <a href="mailto:rolfers@gw-lehrte.de" class="contact-link">rolfers@gw-lehrte.de</a>
-            </div>
-          </div>
 
-          <div class="person-card">
+            <div class="person-info">
+              <h3>Thomas Rolfers</h3>
+              <span class="role">Fußballobmann</span>
+
+              <a href="mailto:rolfers@gw-lehrte.de"
+                class="contact-link">
+                rolfers@gw-lehrte.de
+              </a>
+            </div>
+          </article>
+
+          <article class="person-card">
             <div class="person-avatar">
               <img src="https://ui-avatars.com/api/?name=Philipp+R&background=eee&color=333"
-                alt="Jugendobmann Philipp Roloff">
+                alt="Jugendobmann Philipp Roloff"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="600">
             </div>
+
             <div class="person-info">
-              <h4>Philipp Roloff</h4>
+              <h3>Philipp Roloff</h3>
               <span class="role">Jugendobmann</span>
-              <a href="mailto:roloff@gw-lehrte.de" class="contact-link">roloff@gw-lehrte.de</a>
+
+              <a href="mailto:info@gw-lehrte.de"
+                class="contact-link">
+                info@gw-lehrte.de
+              </a>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -256,174 +443,394 @@
   <footer class="site-footer">
     <div class="container footer-content">
       <p>© 2026 SV Grün-Weiß Lehrte 1946 e.V.</p>
-      <nav class="footer-nav" aria-label="Footer-Navigation">
+
+      <nav class="footer-nav"
+        aria-label="Footer-Navigation">
+
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
-        <a href="#" data-open-consent-settings>Datenschutzeinstellungen</a>
+
+        <a href="#"
+          data-open-consent-settings>
+          Datenschutzeinstellungen
+        </a>
       </nav>
     </div>
   </footer>
 
-  <!-- Damen -->
-  <div id="widget-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="widget-modal-title"
+  <!-- Damen: nächstes Spiel -->
+  <div id="widget-modal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="widget-modal-title"
     aria-hidden="true">
-    <div class="modal-content widget-modal-content widget-modal-small" tabindex="-1">
-      <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
-      <div class="widget-modal-head">
-        <h3 id="widget-modal-title">Damen: Nächstes Spiel</h3>
-      </div>
-      <div class="widget-modal-body widget-modal-body-small">
-        <div class="fussballde_widget" data-id="3b337a9c-4e54-4169-a6d6-b91c47151036" data-type="next-match"></div>
-      </div>
-    </div>
-  </div>
 
-  <div id="table-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="table-modal-title"
-    aria-hidden="true">
-    <div class="modal-content widget-modal-content widget-modal-large" tabindex="-1">
-      <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
-      <div class="widget-modal-head">
-        <h3 id="table-modal-title">Damen: Aktuelle Tabelle</h3>
-      </div>
-      <div class="widget-modal-body widget-modal-body-table">
-        <div class="fussballde_widget" data-id="5677ef6f-af1d-46c7-b209-37146d68c009" data-type="table"></div>
-      </div>
-    </div>
-  </div>
+    <div class="modal-content widget-modal-content widget-modal-small"
+      tabindex="-1">
 
-  <div id="squad-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="squad-modal-title"
-    aria-hidden="true">
-    <div class="modal-content widget-modal-content widget-modal-large" tabindex="-1">
-      <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
-      <div class="widget-modal-head">
-        <h3 id="squad-modal-title">Damen: Kader</h3>
-      </div>
-      <div class="widget-modal-body widget-modal-body-squad">
-        <div class="fussballde_widget" data-id="dfcc8566-039b-4c41-8622-c434c6b3acc5" data-type="squad"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 1. Herren -->
-  <div id="herren1-next-modal" class="modal-overlay" role="dialog" aria-modal="true"
-    aria-labelledby="herren1-next-title" aria-hidden="true">
-    <div class="modal-content widget-modal-content widget-modal-small" tabindex="-1">
-      <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
-      <div class="widget-modal-head">
-        <h3 id="herren1-next-title">1. Herren: Nächstes Spiel</h3>
-      </div>
-      <div class="widget-modal-body widget-modal-body-small">
-        <div class="fussballde_widget" data-id="19a50656-bb5f-4d4a-97b0-3b605270e6b2" data-type="next-match"></div>
-      </div>
-    </div>
-  </div>
-
-  <div id="herren1-table-modal" class="modal-overlay" role="dialog" aria-modal="true"
-    aria-labelledby="herren1-table-title" aria-hidden="true">
-    <div class="modal-content widget-modal-content widget-modal-large" tabindex="-1">
-      <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
-      <div class="widget-modal-head">
-        <h3 id="herren1-table-title">1. Herren: Aktuelle Tabelle</h3>
-      </div>
-      <div class="widget-modal-body widget-modal-body-table">
-        <div class="fussballde_widget" data-id="26c7b3bc-dd52-4bac-97cf-2f792bf851ff" data-type="table"></div>
-      </div>
-    </div>
-  </div>
-
-  <div id="herren1-squad-modal" class="modal-overlay" role="dialog" aria-modal="true"
-    aria-labelledby="herren1-squad-title" aria-hidden="true">
-    <div class="modal-content widget-modal-content widget-modal-large" tabindex="-1">
-      <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
-      <div class="widget-modal-head">
-        <h3 id="herren1-squad-title">1. Herren: Kader</h3>
-      </div>
-      <div class="widget-modal-body widget-modal-body-squad">
-        <div class="fussballde_widget" data-id="f519ba5a-0a15-4b24-a641-4a723d97dbf6" data-type="squad"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. Herren -->
-  <div id="herren2-next-modal" class="modal-overlay" role="dialog" aria-modal="true"
-    aria-labelledby="herren2-next-title" aria-hidden="true">
-    <div class="modal-content widget-modal-content widget-modal-small" tabindex="-1">
-      <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
-      <div class="widget-modal-head">
-        <h3 id="herren2-next-title">2. Herren: Nächstes Spiel</h3>
-      </div>
-      <div class="widget-modal-body widget-modal-body-small">
-        <div class="fussballde_widget" data-id="6706b890-acfa-47aa-8c00-561ab777e58e" data-type="next-match"></div>
-      </div>
-    </div>
-  </div>
-
-  <div id="herren2-table-modal" class="modal-overlay" role="dialog" aria-modal="true"
-    aria-labelledby="herren2-table-title" aria-hidden="true">
-    <div class="modal-content widget-modal-content widget-modal-large" tabindex="-1">
-      <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
-      <div class="widget-modal-head">
-        <h3 id="herren2-table-title">2. Herren: Aktuelle Tabelle</h3>
-      </div>
-      <div class="widget-modal-body widget-modal-body-table">
-        <div class="fussballde_widget" data-id="124c8fb8-77bc-422d-a403-119df7a2cd81" data-type="table"></div>
-      </div>
-    </div>
-  </div>
-
-  <div id="herren2-squad-modal" class="modal-overlay" role="dialog" aria-modal="true"
-    aria-labelledby="herren2-squad-title" aria-hidden="true">
-    <div class="modal-content widget-modal-content widget-modal-large" tabindex="-1">
-      <button class="modal-close" type="button" data-modal-close aria-label="Modal schließen">&times;</button>
-      <div class="widget-modal-head">
-        <h3 id="herren2-squad-title">2. Herren: Kader</h3>
-      </div>
-      <div class="widget-modal-body widget-modal-body-squad">
-        <div class="fussballde_widget" data-id="2d0618ef-e7e9-43ce-8485-4d1129bc3d18" data-type="squad"></div>
-      </div>
-    </div>
-  </div>
-
-  <div id="image-lightbox" class="image-lightbox" aria-hidden="true">
-    <div class="image-lightbox-backdrop" data-lightbox-close></div>
-
-    <div class="image-lightbox-content" role="dialog" aria-modal="true" aria-label="Bildansicht">
-      <button class="image-lightbox-close" type="button" data-lightbox-close aria-label="Bild schließen">
+      <button class="modal-close"
+        type="button"
+        data-modal-close
+        aria-label="Dialog schließen">
         &times;
       </button>
 
-      <img id="image-lightbox-preview" src="" alt="">
+      <div class="widget-modal-head">
+        <h2 id="widget-modal-title">Damen: Nächstes Spiel</h2>
+      </div>
+
+      <div class="widget-modal-body widget-modal-body-small">
+        <div class="fussballde_widget"
+          data-id="3b337a9c-4e54-4169-a6d6-b91c47151036"
+          data-type="next-match">
+        </div>
+      </div>
     </div>
   </div>
 
-  <div id="fussballde-loader" data-consent-category="external" data-script-src="https://www.fussball.de/widgets.js">
+  <!-- Damen: Tabelle -->
+  <div id="table-modal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="table-modal-title"
+    aria-hidden="true">
+
+    <div class="modal-content widget-modal-content widget-modal-large"
+      tabindex="-1">
+
+      <button class="modal-close"
+        type="button"
+        data-modal-close
+        aria-label="Dialog schließen">
+        &times;
+      </button>
+
+      <div class="widget-modal-head">
+        <h2 id="table-modal-title">Damen: Aktuelle Tabelle</h2>
+      </div>
+
+      <div class="widget-modal-body widget-modal-body-table">
+        <div class="fussballde_widget"
+          data-id="5677ef6f-af1d-46c7-b209-37146d68c009"
+          data-type="table">
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div id="consent-banner" class="consent-banner" hidden>
-    <div class="consent-box" role="dialog" aria-modal="true" aria-labelledby="consent-title">
+  <!-- Damen: Kader -->
+  <div id="squad-modal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="squad-modal-title"
+    aria-hidden="true">
+
+    <div class="modal-content widget-modal-content widget-modal-large"
+      tabindex="-1">
+
+      <button class="modal-close"
+        type="button"
+        data-modal-close
+        aria-label="Dialog schließen">
+        &times;
+      </button>
+
+      <div class="widget-modal-head">
+        <h2 id="squad-modal-title">Damen: Kader</h2>
+      </div>
+
+      <div class="widget-modal-body widget-modal-body-squad">
+        <div class="fussballde_widget"
+          data-id="dfcc8566-039b-4c41-8622-c434c6b3acc5"
+          data-type="squad">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. Herren: nächstes Spiel -->
+  <div id="herren1-next-modal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="herren1-next-title"
+    aria-hidden="true">
+
+    <div class="modal-content widget-modal-content widget-modal-small"
+      tabindex="-1">
+
+      <button class="modal-close"
+        type="button"
+        data-modal-close
+        aria-label="Dialog schließen">
+        &times;
+      </button>
+
+      <div class="widget-modal-head">
+        <h2 id="herren1-next-title">1. Herren: Nächstes Spiel</h2>
+      </div>
+
+      <div class="widget-modal-body widget-modal-body-small">
+        <div class="fussballde_widget"
+          data-id="19a50656-bb5f-4d4a-97b0-3b605270e6b2"
+          data-type="next-match">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. Herren: Tabelle -->
+  <div id="herren1-table-modal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="herren1-table-title"
+    aria-hidden="true">
+
+    <div class="modal-content widget-modal-content widget-modal-large"
+      tabindex="-1">
+
+      <button class="modal-close"
+        type="button"
+        data-modal-close
+        aria-label="Dialog schließen">
+        &times;
+      </button>
+
+      <div class="widget-modal-head">
+        <h2 id="herren1-table-title">1. Herren: Aktuelle Tabelle</h2>
+      </div>
+
+      <div class="widget-modal-body widget-modal-body-table">
+        <div class="fussballde_widget"
+          data-id="26c7b3bc-dd52-4bac-97cf-2f792bf851ff"
+          data-type="table">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. Herren: Kader -->
+  <div id="herren1-squad-modal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="herren1-squad-title"
+    aria-hidden="true">
+
+    <div class="modal-content widget-modal-content widget-modal-large"
+      tabindex="-1">
+
+      <button class="modal-close"
+        type="button"
+        data-modal-close
+        aria-label="Dialog schließen">
+        &times;
+      </button>
+
+      <div class="widget-modal-head">
+        <h2 id="herren1-squad-title">1. Herren: Kader</h2>
+      </div>
+
+      <div class="widget-modal-body widget-modal-body-squad">
+        <div class="fussballde_widget"
+          data-id="f519ba5a-0a15-4b24-a641-4a723d97dbf6"
+          data-type="squad">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Herren: nächstes Spiel -->
+  <div id="herren2-next-modal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="herren2-next-title"
+    aria-hidden="true">
+
+    <div class="modal-content widget-modal-content widget-modal-small"
+      tabindex="-1">
+
+      <button class="modal-close"
+        type="button"
+        data-modal-close
+        aria-label="Dialog schließen">
+        &times;
+      </button>
+
+      <div class="widget-modal-head">
+        <h2 id="herren2-next-title">2. Herren: Nächstes Spiel</h2>
+      </div>
+
+      <div class="widget-modal-body widget-modal-body-small">
+        <div class="fussballde_widget"
+          data-id="6706b890-acfa-47aa-8c00-561ab777e58e"
+          data-type="next-match">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Herren: Tabelle -->
+  <div id="herren2-table-modal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="herren2-table-title"
+    aria-hidden="true">
+
+    <div class="modal-content widget-modal-content widget-modal-large"
+      tabindex="-1">
+
+      <button class="modal-close"
+        type="button"
+        data-modal-close
+        aria-label="Dialog schließen">
+        &times;
+      </button>
+
+      <div class="widget-modal-head">
+        <h2 id="herren2-table-title">2. Herren: Aktuelle Tabelle</h2>
+      </div>
+
+      <div class="widget-modal-body widget-modal-body-table">
+        <div class="fussballde_widget"
+          data-id="124c8fb8-77bc-422d-a403-119df7a2cd81"
+          data-type="table">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Herren: Kader -->
+  <div id="herren2-squad-modal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="herren2-squad-title"
+    aria-hidden="true">
+
+    <div class="modal-content widget-modal-content widget-modal-large"
+      tabindex="-1">
+
+      <button class="modal-close"
+        type="button"
+        data-modal-close
+        aria-label="Dialog schließen">
+        &times;
+      </button>
+
+      <div class="widget-modal-head">
+        <h2 id="herren2-squad-title">2. Herren: Kader</h2>
+      </div>
+
+      <div class="widget-modal-body widget-modal-body-squad">
+        <div class="fussballde_widget"
+          data-id="2d0618ef-e7e9-43ce-8485-4d1129bc3d18"
+          data-type="squad">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bilder-Lightbox -->
+  <div id="image-lightbox"
+    class="image-lightbox"
+    aria-hidden="true">
+
+    <div class="image-lightbox-backdrop"
+      data-lightbox-close>
+    </div>
+
+    <div class="image-lightbox-content"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Vergrößerte Bildansicht">
+
+      <button class="image-lightbox-close"
+        type="button"
+        data-lightbox-close
+        aria-label="Bildansicht schließen">
+
+        &times;
+      </button>
+
+      <img id="image-lightbox-preview"
+        src=""
+        alt="">
+    </div>
+  </div>
+
+  <!-- Wird erst durch die Consent-Verwaltung geladen -->
+  <div id="fussballde-loader"
+    data-consent-category="external"
+    data-script-src="https://www.fussball.de/widgets.js">
+  </div>
+
+  <div id="consent-banner"
+    class="consent-banner"
+    hidden>
+
+    <div class="consent-box"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="consent-title">
+
       <h2 id="consent-title">Datenschutzeinstellungen</h2>
+
       <p>
         Wir verwenden essenzielle Technologien für den Betrieb der Website.
-        Externe Inhalte wie Google Maps, fussball.de-Widgets oder künftig YouTube
-        laden wir nur mit deiner Einwilligung.
+        Externe Inhalte wie Google Maps, fussball.de-Widgets oder künftig
+        YouTube laden wir nur mit deiner Einwilligung.
       </p>
 
       <div class="consent-options">
         <label class="consent-option">
-          <input type="checkbox" checked disabled>
-          <span><strong>Essenziell</strong> – notwendig für den Betrieb der Website</span>
+          <input type="checkbox"
+            checked
+            disabled>
+
+          <span>
+            <strong>Essenziell</strong> – notwendig für den Betrieb der Website
+          </span>
         </label>
 
         <label class="consent-option">
-          <input type="checkbox" id="consent-external">
-          <span><strong>Externe Inhalte</strong> – z. B. Google Maps, fussball.de, YouTube</span>
+          <input type="checkbox"
+            id="consent-external">
+
+          <span>
+            <strong>Externe Inhalte</strong> – z. B. Google Maps,
+            fussball.de und YouTube
+          </span>
         </label>
       </div>
 
       <div class="consent-actions">
-        <button type="button" class="btn-secondary" id="consent-reject">Alles ablehnen</button>
-        <button type="button" class="btn-secondary" id="consent-save">Auswahl speichern</button>
-        <button type="button" class="btn-primary" id="consent-accept">Alle akzeptieren</button>
+        <button type="button"
+          class="btn-secondary"
+          id="consent-reject">
+
+          Alles ablehnen
+        </button>
+
+        <button type="button"
+          class="btn-secondary"
+          id="consent-save">
+
+          Auswahl speichern
+        </button>
+
+        <button type="button"
+          class="btn-primary"
+          id="consent-accept">
+
+          Alle akzeptieren
+        </button>
       </div>
 
       <p class="consent-links">
@@ -433,10 +840,10 @@
     </div>
   </div>
 
-  <script src="../js/mobile-nav.js"></script>
-  <script src="../js/fussball-modals.js"></script>
-  <script src="../js/team-image-lightbox.js"></script>
-  <script src="../js/consent.js"></script>
+  <script src="../js/mobile-nav.js" defer></script>
+  <script src="../js/fussball-modals.js" defer></script>
+  <script src="../js/team-image-lightbox.js" defer></script>
+  <script src="../js/consent.js" defer></script>
 </body>
 
 </html>

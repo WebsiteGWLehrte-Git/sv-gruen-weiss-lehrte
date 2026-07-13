@@ -82,6 +82,19 @@ h3 {
   line-height: 1.2;
 }
 
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 /* Header */
 .site-header {
   position: sticky;
@@ -311,9 +324,7 @@ h3 {
 
 .club-image,
 .contact-map,
-.news-card,
-.sport-card,
-.modal-content {
+.sport-card {
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: var(--shadow-soft);
@@ -406,18 +417,19 @@ h3 {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at top left, rgba(11, 107, 58, 0.12), transparent 35%),
-    linear-gradient(135deg, #f7fbf8 0%, #eef6f1 45%, #e3f0e8 100%);
+    radial-gradient(circle at 10% 20%, rgba(11, 107, 58, 0.1), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #f4f9f6 100%);
 }
 
 .instagram-spotlight::before {
   content: "";
   position: absolute;
-  top: -120px;
-  right: -120px;
-  width: 280px;
-  height: 280px;
-  background: radial-gradient(circle, rgba(11, 107, 58, 0.12), transparent 70%);
+  top: -8rem;
+  right: -8rem;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  background: rgba(11, 107, 58, 0.08);
   pointer-events: none;
 }
 
@@ -425,187 +437,136 @@ h3 {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 2.5rem;
   align-items: center;
 }
 
 .instagram-spotlight-text {
-  max-width: 580px;
+  max-width: 620px;
 }
 
 .instagram-spotlight-text h2 {
+  margin-bottom: 1.25rem;
+  color: var(--text-dark);
   font-size: clamp(2rem, 4vw, 3.25rem);
   line-height: 1.08;
-  margin-bottom: 1rem;
-  color: var(--text-dark);
+}
+
+.instagram-spotlight-text p {
+  color: #5f6b65;
+}
+
+.instagram-spotlight-text p + p {
+  margin-top: 0.85rem;
 }
 
 .instagram-lead {
-  font-size: 1.15rem;
+  color: var(--green-dark) !important;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: var(--green-dark);
-  margin-bottom: 1rem;
-}
-
-.instagram-spotlight-text p+p {
-  margin-top: 0.75rem;
 }
 
 .instagram-spotlight-cta {
-  margin-top: 1.75rem;
   display: inline-flex;
-}
-
-.instagram-visual {
-  display: flex;
+  align-items: center;
   justify-content: center;
+  margin-top: 1.75rem;
 }
 
-.instagram-preview-card {
+.instagram-feed-card {
   width: 100%;
-  max-width: 470px;
-  text-decoration: none;
-  color: inherit;
-  background: #ffffff;
-  border-radius: 1.5rem;
-  padding: 1.25rem;
-  box-shadow: 0 18px 45px rgba(9, 82, 44, 0.14);
-  border: 1px solid rgba(11, 107, 58, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 1rem;
+  border: 1px solid rgba(11, 107, 58, 0.1);
+  border-radius: 1.25rem;
+  background: var(--white);
+  box-shadow: 0 18px 45px rgba(9, 82, 44, 0.1), 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
-.instagram-preview-card:hover,
-.instagram-preview-card:focus-visible {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 55px rgba(9, 82, 44, 0.18);
-}
-
-.instagram-preview-header {
+.instagram-feed-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1rem;
+  padding: 0.25rem 0.25rem 1rem;
 }
 
-.instagram-preview-brand {
+.instagram-feed-card-brand {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 0.8rem;
   min-width: 0;
 }
 
-.instagram-preview-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 1rem;
-  background: linear-gradient(135deg, var(--green-main), var(--green-dark));
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 10px 22px rgba(11, 107, 58, 0.22);
-}
-
-.instagram-preview-brand strong {
-  display: block;
-  font-size: 1rem;
-  color: var(--text-dark);
-  line-height: 1.2;
-}
-
-.instagram-preview-brand span {
-  display: block;
-  margin-top: 0.2rem;
-  font-size: 0.92rem;
-  color: #67736d;
-}
-
-.instagram-preview-pill {
+.instagram-feed-card-icon {
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  padding: 0.4rem 0.75rem;
-  border-radius: 999px;
-  background: rgba(11, 107, 58, 0.08);
-  color: var(--green-dark);
-  font-size: 0.78rem;
-  font-weight: 700;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--green-main), #198754);
+  box-shadow: 0 8px 18px rgba(11, 107, 58, 0.2);
+}
+
+.instagram-feed-card-brand div {
+  display: grid;
+  min-width: 0;
+}
+
+.instagram-feed-card-brand strong {
+  overflow: hidden;
+  color: var(--text-dark);
+  font-size: 1rem;
+  line-height: 1.3;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.instagram-preview-hero {
-  position: relative;
-  aspect-ratio: 16 / 10;
-  border-radius: 1.2rem;
-  overflow: hidden;
-  margin-bottom: 0.9rem;
-  background: linear-gradient(135deg, rgba(11, 107, 58, 0.15), rgba(9, 82, 44, 0.45));
+.instagram-feed-card-brand span {
+  color: #68756e;
+  font-size: 0.88rem;
 }
 
-.instagram-preview-hero-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.instagram-preview-hero-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: end;
-  padding: 1rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.05));
-}
-
-.instagram-preview-hero-overlay span {
-  color: var(--white);
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.3;
-  max-width: 240px;
-}
-
-.instagram-preview-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.instagram-preview-tile {
-  aspect-ratio: 1 / 1;
-  border-radius: 1rem;
-  overflow: hidden;
-  position: relative;
-  background: linear-gradient(135deg, rgba(11, 107, 58, 0.14), rgba(11, 107, 58, 0.28));
-}
-
-.instagram-preview-tile-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.instagram-preview-tile::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.02));
-}
-
-.instagram-preview-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.instagram-feed-card-label {
+  flex: 0 0 auto;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(11, 107, 58, 0.12);
+  border-radius: 999px;
   color: var(--green-main);
-  font-weight: 700;
-  font-size: 0.95rem;
+  background: rgba(11, 107, 58, 0.08);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.instagram-feed-wrapper {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 0.9rem;
+  background: #f4f7f5;
+}
+
+.instagram-feed-wrapper > div,
+.instagram-feed-wrapper iframe,
+.instagram-feed-wrapper .eapps-instagram-feed,
+.elfsight-app-28ddb90d-cb8f-48b9-b3f1-92f35820b28e {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.instagram-feed-wrapper iframe {
+  display: block;
+  border: 0;
 }
 
 /* Sport */
@@ -702,7 +663,9 @@ h3 {
   color: var(--green-main);
 }
 
-/* News */
+/* NEWS-KOMPONENTE: TEMPORÄR DEAKTIVIERT
+   Gemeinsam mit der News-Section, dem News-Modal und news-modal.js reaktivieren.
+
 .news-scroller {
   display: flex;
   gap: 1.5rem;
@@ -801,6 +764,8 @@ h3 {
   text-decoration: underline;
 }
 
+ENDE NEWS-KOMPONENTE */
+
 /* Contact */
 .contact-form {
   display: grid;
@@ -817,6 +782,10 @@ h3 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+}
+
+.form-field {
+  min-width: 0;
 }
 
 .contact-form input,
@@ -849,74 +818,6 @@ h3 {
   width: 100%;
   height: 100%;
   border: 0;
-}
-
-/* ===== CONSENT BANNER ===== */
-.consent-banner {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  display: grid;
-  place-items: end center;
-  z-index: 5000;
-  padding: 1rem;
-}
-
-.consent-box {
-  width: min(100%, 760px);
-  background: #fff;
-  color: var(--text-dark);
-  border-radius: 16px;
-  box-shadow: var(--shadow-strong);
-  padding: 1.25rem;
-}
-
-.consent-box h2 {
-  margin-bottom: 0.75rem;
-}
-
-.consent-options {
-  display: grid;
-  gap: 0.9rem;
-  margin: 1rem 0 1.25rem;
-}
-
-.consent-option {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  padding: 0.85rem 1rem;
-  border: 1px solid #d7dde3;
-  border-radius: 10px;
-  background: #f9fbfc;
-}
-
-.consent-option input {
-  margin-top: 0.2rem;
-}
-
-.consent-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.btn-secondary {
-  border: 1px solid var(--green-main);
-  background: #fff;
-  color: var(--green-main);
-  padding: 0.85rem 1.2rem;
-  border-radius: 10px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.consent-links {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  font-size: 0.95rem;
 }
 
 /* ===== CONSENT BANNER ===== */
@@ -1051,7 +952,15 @@ h3 {
   text-decoration: underline;
 }
 
-/* Modal */
+.footer-seo-text {
+  max-width: 600px;
+  color: rgba(255, 255, 255, 0.72);
+  text-align: center;
+}
+
+/* NEWS-MODAL: TEMPORÄR DEAKTIVIERT
+   Gemeinsam mit der News-Section, dem News-CSS und news-modal.js reaktivieren.
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1167,6 +1076,8 @@ h3 {
   border-radius: 4px;
 }
 
+ENDE NEWS-MODAL */
+
 /* Responsive */
 @media (min-width: 600px) {
   .sports-grid {
@@ -1198,8 +1109,13 @@ h3 {
   }
 
   .instagram-spotlight-grid {
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 3rem;
+    grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(2.5rem, 5vw, 5rem);
+  }
+
+  .instagram-feed-card {
+    padding: 1.25rem;
+    border-radius: 1.5rem;
   }
 }
 
@@ -1257,13 +1173,44 @@ h3 {
     pointer-events: auto;
   }
 
-  .instagram-preview-header {
-    align-items: flex-start;
-    flex-direction: column;
+}
+
+
+@media (max-width: 599px) {
+  .instagram-feed-card {
+    padding: 0.75rem;
+    border-radius: 1rem;
   }
 
-  .instagram-preview-pill {
-    align-self: flex-start;
+  .instagram-feed-card-header {
+    padding: 0.15rem 0.15rem 0.85rem;
+  }
+
+  .instagram-feed-card-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .instagram-feed-card-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .instagram-feed-card-brand strong {
+    font-size: 0.92rem;
+  }
+
+  .instagram-feed-card-brand span {
+    font-size: 0.8rem;
+  }
+
+  .instagram-feed-card-label {
+    padding: 0.38rem 0.6rem;
+    font-size: 0.68rem;
+  }
+
+  .instagram-spotlight-cta {
+    width: 100%;
   }
 }
 
@@ -1294,7 +1241,6 @@ h3 {
   #verein,
   #instagram,
   #sport,
-  #news,
   #kontakt,
   .site-footer {
     content-visibility: auto;
