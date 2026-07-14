@@ -324,7 +324,9 @@ h3 {
 
 .club-image,
 .contact-map,
-.sport-card {
+.news-card,
+.sport-card,
+.modal-content {
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: var(--shadow-soft);
@@ -663,9 +665,7 @@ h3 {
   color: var(--green-main);
 }
 
-/* NEWS-KOMPONENTE: TEMPORÄR DEAKTIVIERT
-   Gemeinsam mit der News-Section, dem News-Modal und news-modal.js reaktivieren.
-
+/* News */
 .news-scroller {
   display: flex;
   gap: 1.5rem;
@@ -763,8 +763,6 @@ h3 {
 .news-link:focus-visible {
   text-decoration: underline;
 }
-
-ENDE NEWS-KOMPONENTE */
 
 /* Contact */
 .contact-form {
@@ -958,9 +956,7 @@ ENDE NEWS-KOMPONENTE */
   text-align: center;
 }
 
-/* NEWS-MODAL: TEMPORÄR DEAKTIVIERT
-   Gemeinsam mit der News-Section, dem News-CSS und news-modal.js reaktivieren.
-
+/* Modal */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1075,8 +1071,6 @@ ENDE NEWS-KOMPONENTE */
   background-color: #ccc;
   border-radius: 4px;
 }
-
-ENDE NEWS-MODAL */
 
 /* Responsive */
 @media (min-width: 600px) {
@@ -1241,9 +1235,299 @@ ENDE NEWS-MODAL */
   #verein,
   #instagram,
   #sport,
+  #news,
   #kontakt,
   .site-footer {
     content-visibility: auto;
     contain-intrinsic-size: 800px;
+  }
+}
+
+/* =========================================================
+   VISITOR COUNTER – MITTIG, BREIT UND OHNE ÄUSSERE STAUCHUNG
+   ========================================================= */
+
+.visitor-counter-section {
+  position: relative;
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: #ffffff;
+}
+
+.visitor-counter-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(90%, 1100px);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(11, 107, 58, 0.18),
+    transparent
+  );
+  transform: translateX(-50%);
+}
+
+.visitor-counter-shell {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid rgba(11, 107, 58, 0.12);
+  border-radius: 1.5rem;
+  background: #ffffff;
+  box-shadow:
+    0 18px 50px rgba(9, 82, 44, 0.08),
+    0 4px 14px rgba(0, 0, 0, 0.035);
+}
+
+.visitor-counter-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 720px;
+  margin: 0 auto 1.75rem;
+  text-align: center;
+}
+
+.visitor-counter-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.85rem;
+  border-radius: 50%;
+  background: rgba(11, 107, 58, 0.09);
+  color: var(--green-main);
+}
+
+.visitor-counter-icon svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.visitor-counter-intro .section-eyebrow {
+  margin-bottom: 0.45rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+}
+
+.visitor-counter-intro h2 {
+  margin: 0 0 0.55rem;
+  color: var(--text-dark);
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  line-height: 1.12;
+}
+
+.visitor-counter-intro p {
+  margin: 0;
+  color: #65706a;
+  font-size: clamp(0.92rem, 2vw, 1.05rem);
+  line-height: 1.6;
+}
+
+/*
+ * Der äußere Bereich stellt dem Elfsight-Widget die komplette
+ * Containerbreite bereit. Keine feste Höhe und kein Scroll-Container.
+ */
+.visitor-counter-widget {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: clamp(0.55rem, 1.5vw, 0.9rem);
+  border-radius: 1rem;
+  background: #f4f8f6;
+  overflow: visible;
+}
+
+.visitor-counter-widget > div,
+.visitor-counter-widget .elfsight-app-ebef2a8c-e3a3-41bb-b5ab-54986f63f31a {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Elfsight kann einen eigenen iframe erzeugen. Dieser erhält volle Breite. */
+.visitor-counter-widget iframe {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  border: 0 !important;
+}
+
+.visitor-counter-noscript {
+  margin: 0.75rem 0 0;
+  color: #68736d;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.visitor-counter-section.has-load-error .visitor-counter-widget {
+  min-height: 0;
+}
+
+.visitor-counter-section.has-load-error .visitor-counter-widget::after {
+  content: "Der Besucherzähler konnte nicht geladen werden.";
+  display: block;
+  padding: 1rem;
+  color: #68736d;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* =========================================================
+   SAUBERER FOOTER
+   ========================================================= */
+
+.site-footer {
+  padding: 2.25rem 0;
+  background: var(--text-dark);
+  color: var(--white);
+  text-align: center;
+}
+
+.site-footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-footer .social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.site-footer .social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.055);
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.site-footer .social-icon:hover,
+.site-footer .social-icon:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.11);
+  color: #ffffff;
+}
+
+.site-footer .footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+}
+
+.site-footer .footer-nav a {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.site-footer .footer-nav a:hover,
+.site-footer .footer-nav a:focus-visible {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.site-footer .footer-copyright {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.8rem;
+}
+
+.site-footer .footer-seo-text {
+  max-width: 680px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.68rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .visitor-counter-section {
+    padding: 2.75rem 0;
+  }
+
+  .visitor-counter-shell {
+    padding: 1.15rem;
+    border-radius: 1.1rem;
+  }
+
+  .visitor-counter-intro {
+    margin-bottom: 1.25rem;
+  }
+
+  .visitor-counter-icon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 0.7rem;
+  }
+
+  .visitor-counter-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .visitor-counter-intro h2 {
+    font-size: 1.55rem;
+  }
+
+  .visitor-counter-widget {
+    padding: 0.4rem;
+    border-radius: 0.8rem;
+  }
+
+  .site-footer {
+    padding: 1.8rem 0;
+  }
+
+  .site-footer .footer-content {
+    gap: 0.9rem;
+  }
+
+  .site-footer .footer-nav {
+    gap: 0.55rem 0.85rem;
+  }
+
+  .site-footer .footer-nav a {
+    font-size: 0.76rem;
+  }
+
+  .site-footer .footer-seo-text {
+    font-size: 0.63rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer .social-icon {
+    transition: none;
+  }
+
+  .site-footer .social-icon:hover,
+  .site-footer .social-icon:focus-visible {
+    transform: none;
   }
 }

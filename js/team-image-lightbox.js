@@ -1,31 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const previewImages = document.querySelectorAll(
-    '[data-image-preview]'
-  );
-
+  const previewImages = document.querySelectorAll('[data-image-preview]');
   const lightbox = document.getElementById('image-lightbox');
-  const lightboxPreview = document.getElementById(
-    'image-lightbox-preview'
-  );
+  const lightboxPreview = document.getElementById('image-lightbox-preview');
 
-  if (
-    !previewImages.length ||
-    !lightbox ||
-    !lightboxPreview
-  ) {
+  if (!previewImages.length || !lightbox || !lightboxPreview) {
     return;
   }
 
-  const closeTriggers = lightbox.querySelectorAll(
-    '[data-lightbox-close]'
-  );
-
-  const closeButton = lightbox.querySelector(
-    '.image-lightbox-close'
-  );
+  const closeTriggers = lightbox.querySelectorAll('[data-lightbox-close]');
+  const closeButton = lightbox.querySelector('.image-lightbox-close');
 
   let lastFocusedElement = null;
   let previousBodyOverflow = '';
+
+  function getFocusableElements() {
+    return Array.from(
+      lightbox.querySelectorAll(
+        'button:not([disabled]), [href], [tabindex]:not([tabindex="-1"])'
+      )
+    ).filter((element) => !element.hasAttribute('hidden'));
+  }
 
   function openLightbox(src, alt) {
     if (!src) {
@@ -76,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     image.setAttribute('role', 'button');
     image.setAttribute(
       'aria-label',
-      `${image.alt || 'Mannschaftsbild'} vergrößern`
+      `${image.alt || 'Bild'} vergrößern`
     );
 
     image.addEventListener('click', () => {
@@ -87,10 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     image.addEventListener('keydown', (event) => {
-      if (
-        event.key !== 'Enter' &&
-        event.key !== ' '
-      ) {
+      if (event.key !== 'Enter' && event.key !== ' ') {
         return;
       }
 
@@ -108,12 +99,42 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('keydown', (event) => {
-    if (
-      event.key === 'Escape' &&
-      lightbox.classList.contains('is-open')
-    ) {
+    if (!lightbox.classList.contains('is-open')) {
+      return;
+    }
+
+    if (event.key === 'Escape') {
       event.preventDefault();
       closeLightbox();
+      return;
+    }
+
+    if (event.key !== 'Tab') {
+      return;
+    }
+
+    const focusableElements = getFocusableElements();
+
+    if (!focusableElements.length) {
+      event.preventDefault();
+      return;
+    }
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (
+      event.shiftKey &&
+      document.activeElement === firstElement
+    ) {
+      event.preventDefault();
+      lastElement.focus();
+    } else if (
+      !event.shiftKey &&
+      document.activeElement === lastElement
+    ) {
+      event.preventDefault();
+      firstElement.focus();
     }
   });
 });

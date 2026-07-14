@@ -145,19 +145,18 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   background: #eef1f2;
-  transition: transform 0.45s ease;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition:
+    transform 0.45s ease,
+    filter 0.25s ease;
 }
 
 .club-gallery-card:hover img,
-.club-gallery-card:focus-visible img {
+.club-gallery-card:focus-within img {
   transform: scale(1.035);
-}
-
-.club-gallery-card:hover,
-.club-gallery-card:focus-visible {
-  box-shadow: 0 16px 34px rgba(9, 82, 44, 0.12);
+  filter: brightness(1.03);
 }
 
 .club-gallery-actions {
@@ -166,262 +165,7 @@
   margin-top: 1.5rem;
 }
 
-/*
-===== HISTORY-KOMPONENTE TEMPORÄR DEAKTIVIERT =====
-
-Die Styles bleiben für die spätere Weiterentwicklung erhalten
-und werden aktuell nicht angewendet.
-
-.history-section {
-  position: relative;
-}
-
-.history-jump-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.65rem;
-  margin: 1.5rem 0 2.25rem;
-}
-
-.history-jump-nav a {
-  padding: 0.7rem 1rem;
-  border: 1px solid rgba(11, 107, 58, 0.12);
-  border-radius: 999px;
-  background: rgba(11, 107, 58, 0.08);
-  color: var(--green-main);
-  font-size: 0.92rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.history-jump-nav a:hover,
-.history-jump-nav a:focus-visible {
-  background: rgba(11, 107, 58, 0.14);
-  transform: translateY(-1px);
-}
-
-.history-chapters {
-  display: grid;
-  gap: 1rem;
-}
-
-.history-chapter {
-  overflow: hidden;
-  border: 1px solid rgba(11, 107, 58, 0.08);
-  border-radius: 1.25rem;
-  background: var(--white);
-  box-shadow: var(--shadow-soft);
-}
-
-.history-chapter-summary {
-  position: relative;
-  display: grid;
-  gap: 0.55rem;
-  padding: 1.2rem 3.5rem 1.2rem 1.2rem;
-  cursor: pointer;
-  list-style: none;
-}
-
-.history-chapter-summary::-webkit-details-marker {
-  display: none;
-}
-
-.history-chapter-summary::after {
-  content: "+";
-  position: absolute;
-  top: 1.15rem;
-  right: 1.25rem;
-  color: var(--green-main);
-  font-size: 1.65rem;
-  line-height: 1;
-}
-
-.history-chapter[open] .history-chapter-summary::after {
-  content: "–";
-}
-
-.history-group-label {
-  display: inline-block;
-  width: fit-content;
-  margin-bottom: 0.1rem;
-  color: var(--green-main);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.history-chapter-title-wrap {
-  display: grid;
-  gap: 0.35rem;
-}
-
-.history-chapter-title {
-  color: var(--text-dark);
-  font-size: 1.45rem;
-  font-weight: 800;
-}
-
-.history-chapter-text {
-  color: #5e6a64;
-}
-
-.history-chapter > .history-items {
-  padding: 0 1.2rem 1.2rem;
-}
-
-.history-items {
-  position: relative;
-  display: grid;
-  gap: 0.9rem;
-  padding-left: 1rem;
-}
-
-.history-items::before {
-  content: "";
-  position: absolute;
-  top: 0.45rem;
-  bottom: 0.45rem;
-  left: 0.3rem;
-  width: 2px;
-  background: rgba(11, 107, 58, 0.18);
-}
-
-.history-item {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(11, 107, 58, 0.08);
-  border-radius: 1rem;
-  background: #fbfcfb;
-}
-
-.history-item::before {
-  content: "";
-  position: absolute;
-  top: 1.2rem;
-  left: -0.88rem;
-  width: 0.95rem;
-  height: 0.95rem;
-  border-radius: 50%;
-  background: var(--green-main);
-  box-shadow: 0 0 0 5px #e9f4ed;
-}
-
-.history-item summary,
-.history-item-row {
-  display: grid;
-  grid-template-columns: 74px 1fr;
-  align-items: start;
-  gap: 0.9rem;
-  padding: 1rem 1rem 1rem 1.1rem;
-}
-
-.history-item summary {
-  cursor: pointer;
-  list-style: none;
-}
-
-.history-item summary::-webkit-details-marker {
-  display: none;
-}
-
-.history-year {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.6rem;
-  padding: 0.35rem 0.55rem;
-  border-radius: 0.8rem;
-  background: rgba(11, 107, 58, 0.1);
-  color: var(--green-main);
-  font-size: 0.95rem;
-  font-weight: 800;
-  text-align: center;
-}
-
-.history-summary-text {
-  position: relative;
-  display: grid;
-  gap: 0.2rem;
-  min-width: 0;
-}
-
-.history-summary-text strong {
-  color: var(--text-dark);
-  font-size: 1rem;
-}
-
-.history-summary-text small {
-  color: #63716b;
-  font-size: 0.9rem;
-}
-
-.history-item:not(.history-item--static) .history-summary-text {
-  padding-right: 1.8rem;
-}
-
-.history-item:not(.history-item--static) .history-summary-text::after {
-  content: "+";
-  position: absolute;
-  top: -0.1rem;
-  right: 0;
-  color: var(--green-main);
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 1;
-}
-
-.history-item[open]:not(.history-item--static)
-  .history-summary-text::after {
-  content: "–";
-}
-
-.history-content {
-  padding: 0 1rem 1rem 5rem;
-  color: #44514b;
-}
-
-.history-content p + p {
-  margin-top: 0.85rem;
-}
-
-.history-media {
-  margin-top: 1rem;
-}
-
-.history-media img {
-  display: block;
-  width: 100%;
-  max-width: 520px;
-  height: auto;
-  border-radius: 0.9rem;
-  background: #eef1f2;
-  box-shadow: var(--shadow-soft);
-  cursor: zoom-in;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.history-media img:hover,
-.history-media img:focus-visible {
-  transform: scale(1.015);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
-}
-
-.history-media figcaption {
-  margin-top: 0.55rem;
-  color: #63716b;
-  font-size: 0.9rem;
-  line-height: 1.45;
-}
-*/
-
-/* ===== STATS ===== */
+/* ===== STATISTIKEN ===== */
 .stats-section {
   padding: 4rem 0;
   background: var(--green-main);
@@ -437,6 +181,10 @@ und werden aktuell nicht angewendet.
   margin: 0 auto;
 }
 
+.stat {
+  min-width: 0;
+}
+
 .stat .count {
   display: block;
   font-size: 3.5rem;
@@ -444,11 +192,16 @@ und werden aktuell nicht angewendet.
   line-height: 1;
 }
 
+.stat p {
+  margin-top: 0.75rem;
+}
+
 /* ===== VORSTAND ===== */
 .board-team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.5rem;
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -457,6 +210,8 @@ und werden aktuell nicht angewendet.
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  min-width: 0;
   padding: 2rem 1rem;
   border: 1px solid transparent;
   border-radius: 1rem;
@@ -478,20 +233,23 @@ und werden aktuell nicht angewendet.
 .member-img {
   position: relative;
   display: block;
+  flex: 0 0 100px;
   width: 100px;
   height: 100px;
   margin-bottom: 1rem;
   overflow: hidden;
   border-radius: 50%;
+  background: #f0f0f0;
 }
 
 .member-img img {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   border: 3px solid var(--gray-light);
   border-radius: 50%;
   background: #f0f0f0;
+  object-fit: cover;
   cursor: zoom-in;
   transition:
     transform 0.2s ease,
@@ -499,9 +257,14 @@ und werden aktuell nicht angewendet.
 }
 
 .member-img:hover img,
-.member-img:focus-visible img {
+.member-img:focus-within img {
   transform: scale(1.05);
   filter: brightness(1.08);
+}
+
+.member-info {
+  width: 100%;
+  min-width: 0;
 }
 
 .member-info h3 {
@@ -509,6 +272,7 @@ und werden aktuell nicht angewendet.
   color: var(--text-dark);
   font-size: 1.15rem;
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .member-role {
@@ -523,7 +287,7 @@ und werden aktuell nicht angewendet.
 
 .member-note {
   display: block;
-  color: #999;
+  color: #777;
   font-size: 0.8rem;
 }
 
@@ -531,6 +295,7 @@ und werden aktuell nicht angewendet.
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 40px;
   padding: 0.4rem 1rem;
   border: 1px solid #ddd;
   border-radius: 999px;
@@ -548,13 +313,15 @@ und werden aktuell nicht angewendet.
   border-color: var(--green-main);
   background: rgba(11, 107, 58, 0.05);
   color: var(--green-main);
+  outline: none;
 }
 
 /* ===== DOWNLOADS ===== */
 .downloads-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.5rem;
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -562,6 +329,8 @@ und werden aktuell nicht angewendet.
 .doc-card {
   display: flex;
   align-items: center;
+  width: 100%;
+  min-width: 0;
   padding: 1.2rem;
   border: 1px solid transparent;
   border-radius: 1rem;
@@ -580,13 +349,14 @@ und werden aktuell nicht angewendet.
   border-color: #ddd;
   background: var(--white);
   box-shadow: var(--shadow-soft);
+  outline: none;
 }
 
 .doc-icon-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  flex: 0 0 48px;
   width: 48px;
   height: 48px;
   margin-right: 1rem;
@@ -603,6 +373,7 @@ und werden aktuell nicht angewendet.
 
 .doc-content {
   flex: 1;
+  min-width: 0;
 }
 
 .doc-content h3 {
@@ -617,7 +388,9 @@ und werden aktuell nicht angewendet.
 }
 
 .doc-action {
-  color: #ccc;
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+  color: #aaa;
   transition: color 0.2s ease;
 }
 
@@ -631,8 +404,14 @@ und werden aktuell nicht angewendet.
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
+}
+
+.contact-form,
+.contact-map {
+  min-width: 0;
 }
 
 .contact-intro {
@@ -647,6 +426,7 @@ und werden aktuell nicht angewendet.
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 12px;
+  background: var(--gray-light);
 }
 
 .contact-map .consent-embed,
@@ -663,6 +443,14 @@ und werden aktuell nicht angewendet.
   text-align: center;
 }
 
+.contact-map .consent-placeholder > div {
+  max-width: 460px;
+}
+
+.contact-map .consent-placeholder p {
+  margin: 0.75rem 0 1.25rem;
+}
+
 .contact-map iframe {
   position: absolute;
   inset: 0;
@@ -671,14 +459,16 @@ und werden aktuell nicht angewendet.
   border: 0;
 }
 
+/* ===== FOOTER ===== */
 .footer-content--stacked {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  text-align: center;
 }
 
-/* ===== LIGHTBOX ===== */
+/* ===== BILD-LIGHTBOX ===== */
 .image-lightbox {
   position: fixed;
   inset: 0;
@@ -705,7 +495,7 @@ und werden aktuell nicht angewendet.
   align-items: center;
   justify-content: center;
   width: min(92vw, 1100px);
-  max-height: 90vh;
+  height: 90vh;
   margin: 5vh auto;
   padding: 1rem;
 }
@@ -723,8 +513,12 @@ und werden aktuell nicht angewendet.
 
 .image-lightbox-close {
   position: absolute;
-  top: -0.5rem;
+  top: 0;
   right: 0.25rem;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
   border: 0;
@@ -735,17 +529,31 @@ und werden aktuell nicht angewendet.
   line-height: 1;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .image-lightbox-close:hover,
 .image-lightbox-close:focus-visible {
   transform: scale(1.05);
+  background: #fff;
+  outline: 3px solid rgba(255, 255, 255, 0.35);
+  outline-offset: 3px;
 }
 
-img {
-  background-color: #eee;
+/* ===== TABLET ===== */
+@media (min-width: 600px) {
+  .board-team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .downloads-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 
+/* ===== DESKTOP ===== */
 @media (min-width: 768px) {
   .club-gallery-grid {
     grid-template-columns: 1.3fr 1fr 1fr;
@@ -763,41 +571,24 @@ img {
     min-height: 220px;
   }
 
-  /*
-  HISTORY-KOMPONENTE TEMPORÄR DEAKTIVIERT.
-
-  .history-chapter-summary {
-    padding: 1.5rem 4.25rem 1.5rem 1.5rem;
+  .board-team-grid {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(230px, 1fr)
+    );
   }
-
-  .history-chapter > .history-items {
-    padding: 0 1.5rem 1.5rem;
-  }
-
-  .history-item summary,
-  .history-item-row {
-    grid-template-columns: 90px 1fr;
-    padding: 1.1rem 1.2rem;
-  }
-
-  .history-year {
-    min-height: 2.8rem;
-    font-size: 1rem;
-  }
-
-  .history-content {
-    padding: 0 1.2rem 1.1rem 6.3rem;
-  }
-
-  .history-media img {
-    max-width: 620px;
-  }
-  */
 }
 
 @media (min-width: 900px) {
   .contact-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .contact-map {
+    height: 100%;
+    min-height: 430px;
+    aspect-ratio: auto;
   }
 }
 
@@ -809,21 +600,66 @@ img {
   .club-gallery-card {
     border-radius: 1.2rem;
   }
-
-  /*
-  HISTORY-KOMPONENTE TEMPORÄR DEAKTIVIERT.
-
-  .history-chapters {
-    gap: 1.25rem;
-  }
-  */
 }
 
+/* ===== KLEINE MOBILGERÄTE ===== */
+@media (max-width: 480px) {
+  .verein-hero {
+    min-height: 360px;
+  }
+
+  .verein-hero .hero-content {
+    padding-inline: 1rem;
+  }
+
+  .board-member {
+    padding: 1.5rem 1rem;
+  }
+
+  .member-img {
+    flex-basis: 96px;
+    width: 96px;
+    height: 96px;
+  }
+
+  .doc-card {
+    align-items: flex-start;
+  }
+
+  .doc-action {
+    margin-top: 0.75rem;
+  }
+
+  .contact-map {
+    min-height: 280px;
+  }
+
+  .image-lightbox-content {
+    width: 96vw;
+    padding: 0.75rem;
+  }
+
+  .image-lightbox-close {
+    top: 0.25rem;
+    right: 0.5rem;
+  }
+}
+
+/* ===== REDUZIERTE BEWEGUNG ===== */
 @media (prefers-reduced-motion: reduce) {
   .club-gallery-card img,
   .member-img img,
   .board-member,
-  .doc-card {
+  .doc-card,
+  .image-lightbox-close {
     transition: none;
+  }
+
+  .board-member:hover,
+  .doc-card:hover,
+  .doc-card:focus-visible,
+  .image-lightbox-close:hover,
+  .image-lightbox-close:focus-visible {
+    transform: none;
   }
 }

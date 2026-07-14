@@ -8,28 +8,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const isMobileView = () => window.innerWidth <= 768;
 
   function openMenu() {
-    if (!navToggle || !mainNav || !overlay) return;
+    if (!navToggle || !mainNav || !overlay) {
+      return;
+    }
 
     mainNav.classList.add('active');
     overlay.classList.add('active');
+
     navToggle.setAttribute('aria-expanded', 'true');
     navToggle.setAttribute('aria-label', 'Menü schließen');
     navToggle.innerHTML = '<span aria-hidden="true">✕</span>';
+
     document.body.style.overflow = 'hidden';
   }
 
   function closeMenu() {
-    if (!navToggle || !mainNav || !overlay) return;
+    if (!navToggle || !mainNav || !overlay) {
+      return;
+    }
 
     mainNav.classList.remove('active');
     overlay.classList.remove('active');
+
     navToggle.setAttribute('aria-expanded', 'false');
     navToggle.setAttribute('aria-label', 'Menü öffnen');
     navToggle.innerHTML = '<span aria-hidden="true">☰</span>';
+
     document.body.style.overflow = '';
   }
 
   function toggleMenu() {
+    if (!mainNav) {
+      return;
+    }
+
     const isOpen = mainNav.classList.contains('active');
 
     if (isOpen) {
@@ -45,7 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     navLinks.forEach((link) => {
       link.addEventListener('click', () => {
-        if (isMobileView() && mainNav.classList.contains('active')) {
+        if (
+          isMobileView() &&
+          mainNav.classList.contains('active')
+        ) {
           closeMenu();
         }
       });
@@ -58,7 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && mainNav.classList.contains('active')) {
+      if (
+        event.key === 'Escape' &&
+        mainNav.classList.contains('active')
+      ) {
         closeMenu();
       }
     });
@@ -67,47 +85,67 @@ document.addEventListener('DOMContentLoaded', () => {
   let ticking = false;
 
   function updateParallax() {
-    if (!heroBg) return;
+    if (!heroBg) {
+      return;
+    }
 
     const reduceMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)'
     ).matches;
 
-    if (reduceMotion || window.innerWidth < 768) {
+    if (
+      reduceMotion ||
+      window.innerWidth < 768
+    ) {
       heroBg.style.transform = 'translate3d(0, 0, 0)';
       ticking = false;
       return;
     }
 
     const scrollY = window.scrollY;
-    heroBg.style.transform = `translate3d(0, ${scrollY * 0.22}px, 0)`;
+
+    heroBg.style.transform =
+      `translate3d(0, ${scrollY * 0.22}px, 0)`;
+
     ticking = false;
   }
 
   function requestParallaxUpdate() {
-    if (ticking) return;
+    if (ticking) {
+      return;
+    }
 
     window.requestAnimationFrame(updateParallax);
     ticking = true;
   }
 
   if (heroBg) {
-    window.addEventListener('scroll', requestParallaxUpdate, {
-      passive: true
-    });
+    window.addEventListener(
+      'scroll',
+      requestParallaxUpdate,
+      { passive: true }
+    );
 
-    window.addEventListener('resize', requestParallaxUpdate);
+    window.addEventListener(
+      'resize',
+      requestParallaxUpdate
+    );
 
     updateParallax();
   }
 
   const revealElements = document.querySelectorAll('.reveal');
 
-  if ('IntersectionObserver' in window && revealElements.length) {
+  if (
+    'IntersectionObserver' in window &&
+    revealElements.length
+  ) {
     const observer = new IntersectionObserver(
       (entries, observerInstance) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
+          if (!entry.isIntersecting) {
+            return;
+          }
 
           entry.target.classList.add('visible');
           observerInstance.unobserve(entry.target);
@@ -127,4 +165,60 @@ document.addEventListener('DOMContentLoaded', () => {
       element.classList.add('visible');
     });
   }
+
+  /*
+   * ELFSIGHT
+   * Lädt das Plattformskript nur einmal für
+   * Instagram und den Visitor Counter.
+   */
+  const elfsightWidgets = document.querySelectorAll(
+    '[class*="elfsight-app-"]'
+  );
+
+  if (!elfsightWidgets.length) {
+    return;
+  }
+
+  const scriptId = 'elfsight-platform-script';
+
+  const existingScript =
+    document.getElementById(scriptId) ||
+    document.querySelector(
+      'script[src^="https://elfsightcdn.com/platform.js"]'
+    );
+
+  if (existingScript) {
+    return;
+  }
+
+  const elfsightScript = document.createElement('script');
+
+  elfsightScript.id = scriptId;
+  elfsightScript.src = 'https://elfsightcdn.com/platform.js';
+  elfsightScript.async = true;
+
+  elfsightScript.addEventListener('error', () => {
+    const counterSection = document.querySelector(
+      '.visitor-counter-section'
+    );
+
+    if (!counterSection) {
+      return;
+    }
+
+    counterSection.classList.add('has-load-error');
+
+    const counterWidget = counterSection.querySelector(
+      '.visitor-counter-widget'
+    );
+
+    if (counterWidget) {
+      counterWidget.setAttribute(
+        'aria-label',
+        'Der Besucherzähler konnte nicht geladen werden.'
+      );
+    }
+  });
+
+  document.head.appendChild(elfsightScript);
 });

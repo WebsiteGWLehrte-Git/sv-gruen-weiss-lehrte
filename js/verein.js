@@ -23,7 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
     counter.textContent = `${target}${hasPlus ? '+' : ''}`;
   }
 
-  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+  if (
+    prefersReducedMotion ||
+    !('IntersectionObserver' in window)
+  ) {
     counters.forEach(setFinalCounterValue);
     return;
   }
@@ -67,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     },
     {
-      threshold: 0.5
+      threshold: 0.25
     }
   );
 
