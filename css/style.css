@@ -1531,3 +1531,157 @@ h3 {
     transform: none;
   }
 }
+/* =========================================================
+   BINGO-POP-UP
+   ========================================================= */
+
+body.popup-open {
+  overflow: hidden;
+}
+
+.bingo-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 6000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: clamp(0.75rem, 3vw, 1.5rem);
+
+  background: rgba(8, 24, 16, 0.82);
+  backdrop-filter: blur(5px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.bingo-popup[hidden] {
+  display: none !important;
+}
+
+.bingo-popup.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.bingo-popup-dialog {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: auto;
+  max-width: min(100%, 900px);
+  max-height: calc(100dvh - 1.5rem);
+
+  padding: 0.35rem;
+  overflow: hidden;
+
+  border-radius: clamp(0.75rem, 2vw, 1.1rem);
+
+  background: var(--white);
+
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.42);
+
+  transform: translateY(18px) scale(0.98);
+
+  transition: transform 0.25s ease;
+}
+
+.bingo-popup.is-open .bingo-popup-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.bingo-popup-image {
+  display: block;
+
+  width: auto;
+  max-width: 100%;
+
+  height: auto;
+  max-height: calc(100dvh - 2.2rem);
+
+  object-fit: contain;
+
+  border-radius: calc(clamp(0.75rem, 2vw, 1.1rem) - 0.25rem);
+  background: transparent;
+}
+
+.bingo-popup-close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+
+  border: 2px solid rgba(255, 255, 255, 0.82);
+  border-radius: 50%;
+
+  background: rgba(9, 82, 44, 0.92);
+  color: var(--white);
+
+  font: inherit;
+  font-size: 2rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.bingo-popup-close:hover,
+.bingo-popup-close:focus-visible {
+  background: var(--green-main);
+  transform: scale(1.04);
+}
+
+@media (max-width: 600px) {
+  .bingo-popup {
+    padding: 0.5rem;
+  }
+
+  .bingo-popup-dialog {
+    max-width: 100%;
+    max-height: calc(100dvh - 1rem);
+    padding: 0.25rem;
+    border-radius: 0.75rem;
+  }
+
+  .bingo-popup-image {
+    max-height: calc(100dvh - 1.5rem);
+    border-radius: 0.55rem;
+  }
+
+  .bingo-popup-close {
+    top: 0.5rem;
+    right: 0.5rem;
+
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bingo-popup,
+  .bingo-popup-dialog,
+  .bingo-popup-close {
+    transition: none;
+  }
+}
